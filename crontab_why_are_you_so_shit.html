@@ -1,0 +1,92 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"></script>
+
+<!-- Navigation Bar-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Stephane Durette</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">   
+      <li><a href = "#home"><span class = "active glyphicon glyphicon-home"></span> Home</a></li>
+      <li><a href="#about"><span class = "glyphicon glyphicon-info-sign"></span> About</a></li>
+      <li class = "dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> Projects
+        <span class = "caret">  
+        <ul class="dropdown-menu">
+          <li><a href="#projects">Projects Page</a></li>
+          <li><a href="#proj1">Project 1</a></li>
+          <li><a href="#proj2">Project 2</a></li>
+          <li><a href="#proj3">Project 3</a></li>
+        </ul>
+      </li>
+      <li><a href="#contact"><span class = "glyphicon glyphicon-earphone"></span> Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<!-- intro section-->
+<div class = "image" id = "home">
+  <img src = "http://all4desktop.com/data_images/original/4148966-aurora-sky.jpg" alt = "" class = "img-responsive">
+  <h2>Cool Stuff</h2>
+  <h1>My projects and information</h1>
+  <a href = "http://www.twitter.com" target = "_blank">
+  <button class = "btn buttonProperties"style = "left:1000px; background-color:#00ccff"><i class= "fa fa-twitter"> Twitter</i></button>
+  </a>
+  <a href = "http://www.facebook.com" target = "_blank">
+  <button class = "btn buttonProperties" style = "left:400px; background-color:#cc33ff"><i class= "fa fa-facebook-official"> Facebook</i></button>
+  </a>
+  <a href = "http://www.freecodecamp.com" target = "_blank">
+  <button class = "btn buttonProperties" style = "left:600px; background-color:#ff0066"><i class= "fa fa-free-code-camp"> Codecamp</i></button>
+  </a>
+  <a href = "http://www.Github.com" target = "_blank">
+  <button class = "btn buttonProperties" style = "left:800px; background-color:#009933"><i class= "fa fa-github">  GitHub</i></button>
+  </a>
+</div>
+<!-- About section -->
+<div class = "image"id="about">
+  <img src = "https://images5.alphacoders.com/285/thumb-1920-285195.jpg" alt = "" class = "img-responsive image">
+  <h2 style = "top:50px; color:white">About</h2>
+  <h1 style = "top:200px; left:50%;text-align:left; color:black">Information</h1> 
+  <img class = "profile-image img-responsive" src = "http://www.catster.com/wp-content/uploads/2016/05/cats-politics-TN.jpg" alt = "">
+  <p>us libero volutpat. Phasellus euismod turpis at dui cursus, vel pretium eros rhoncus. Maecenas volutpat risus nec bibendum mattis. Vivamus massa risus, bibendum venenatis faucibus quis, condimentum at leo. Donec non orci convallis, maximus arcu eget, elementum quam. Donec pulvinar semper diam vel finibus. In at auctor nibh. Integer dui tortor, efficitur ac purus et, pretium hendrerit neque. Integer diam neque, commodo eget venenatis at, volutpat ac eros. Sed dignissim justo ut sapien tincidunt, at vestibulum tortor placerat. Fusce pellentesque tellus in nisl ultricies aliquet.</p>
+  </a>
+</div>
+<!-- Projects Section-->
+<div class = "image" id = "projects">
+  <img src = "http://hdwpp.net/a/1600x900/g/1045/s3/underwater-theme-gj9.jpg" alt = "" class = "img-responsive image">
+  <h2 style = "top:50px; color:black">Projects</h2>
+  
+  <div style = "position:absolute; top:165px" id = "proj1"></div>
+  <h3 style = "top:200px; left:25%;text-align:left; color:black">Project 1</h3> 
+  <a href = "#"><img class = "thumbnail-image img-responsive" src = "https://i.ytimg.com/vi/XHs0nwT61qc/maxresdefault.jpg" alt = ""></a>
+  <p2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices ipsum sit amet velit ullamcorper, posuere varius libero volutpat. Phasellus euismod turpis at dui cursus, vel pretium eros rhoncus. Maecenas volutpat risus nec bibendum mattis. Vivamus massa risus, bibendum venenatis faucibus quis, condimentum at leo. Donec non orci convallis, maximus arcu eget, </p2>
+  
+  <div style = "position:absolute; top:365px" id = "proj2"></div>
+  <h3 style = "top:400px; left:25%;text-align:left; color:black">Project 2</h3> 
+  <a href = "#"><img class = "thumbnail-image img-responsive" src = "https://i.ytimg.com/vi/XHs0nwT61qc/maxresdefault.jpg" alt = "" style = "top:420px"></a>
+  <p2 style = "top:480px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices ipsum sit amet velit ullamcorper, posuere varius libero volutpat. Phasellus euismod turpis at dui cursus, vel pretium eros rhoncus. Maecenas volutpat risus nec bibendum mattis. Vivamus massa risus, bibendum venenatis faucibus quis, condimentum at leo. Donec non orci convallis, maximus arcu eget, </p2>
+  </a>
+  
+  <div style = "position:absolute; top:565px" id = "proj3"></div>
+  <h3 style = "top:600px; left:25%;text-align:left; color:black">Project 3</h3> 
+  <a href = "#"><img class = "thumbnail-image img-responsive" src = "https://i.ytimg.com/vi/XHs0nwT61qc/maxresdefault.jpg" alt = "" style = "top:620px"></a>
+  <p2 style = "top:680px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices ipsum sit amet velit ullamcorper, posuere varius libero volutpat. Phasellus euismod turpis at dui cursus, vel pretium eros rhoncus. Maecenas volutpat risus nec bibendum mattis. Vivamus massa risus, bibendum venenatis faucibus quis, condimentum at leo. Donec non orci convallis, maximus arcu eget, </p2>
+  </a>
+  
+</div>
+</body>
+</html>
