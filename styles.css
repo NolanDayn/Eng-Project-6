@@ -1,0 +1,101 @@
+.image{
+  position:relative;
+  width:100%;
+}
+h2{
+  position:absolute;
+  top:200px;
+  text-align: center;
+  width:100%;
+  font-size: 120px;
+  color:white;  
+}
+h1{
+  position:absolute;
+  top:320px;
+  text-align: center;
+  width:100%;
+  font-size: 72px;
+  color:white;  
+}
+h3{
+  position:absolute;
+  top:320px;
+  text-align: center;
+  width:100%;
+  font-size: 50px;
+  color:white;  
+}
+p{
+  position:absolute;
+  top:320px;
+  left:50%;
+  text-align: left;
+  width:50%;
+  font-size: 30px;
+  color:black; 
+}
+p2{
+  position:absolute;
+  top:280px;
+  left:25%;
+  text-align: left;
+  width:75%;
+  font-size: 20px;
+  color:black; 
+}
+.buttonProperties{
+  position:absolute;
+  top:440px;
+  width:11%;
+  height:50px;
+  font-size: 27px;
+  color : black;
+}
+.profile-image{
+    position:absolute;
+    top:270px;
+    left:50px;
+    border-color: black;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 50%;
+    width: 600px;  
+}
+.thumbnail-image{
+    position:absolute;
+    top:220px;
+    left:50px;
+    border-color: black;
+    border-width: 5px;
+    border-style: solid;
+    width: 16%;  
+}
+#about:before{
+  display:block;
+  content:"";
+}
+#home:before{
+  display:block;
+  content:"";
+}
+#projects:before{
+  display:block;
+  content:"";
+}
+#proj2:before{
+  display:block;
+  content:"";
+}
+#proj1:before{
+  display:block;
+  content:"";
+}
+#proj3:before{
+  display:block;
+  content:"";
+}
+#contact:before{
+  display:block;
+  content:"";
+}
