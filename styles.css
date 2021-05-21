@@ -24,3 +24,7 @@ h3{
 .form-inline{
 	margin-top:9px;
 }
+
+html {
+  scroll-behavior: smooth;
+}
