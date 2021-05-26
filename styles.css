@@ -28,3 +28,63 @@ h3{
 html {
   scroll-behavior: smooth;
 }
+
+.elevator_button{
+	display:inline-block;
+	width:240px;
+	height:140px;
+	border-radius:20px;
+	background-color:gray;
+	margin:20px;
+	box-shadow:4px 4px black;
+}
+
+.elevator_button h1{
+	width:20;
+	color:white;
+	font-size:84px;
+	text-shadow:2px 2px black;
+}
+
+.elevator_button .control{
+	width:100px;
+	height:100px;
+	border-radius:20px;
+	margin-top:8%;
+	margin-right:2%;
+	background-color:white;
+	box-shadow: 3px 3px black;
+} 
+
+.control{
+	transition:all 0.5s;
+}
+
+.control:hover{
+	background-color:#d1d8ff;
+}
+
+.control:active{
+	transition: all 0s;
+	box-shadow: 0px 0px black;
+	transform: translate(3px, 3px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
