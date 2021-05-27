@@ -1,11 +1,16 @@
+.navbar{
+		height:60px;
+}
+
 iframe{
 	width:1100px;
 	height:420px;
+	background-color:black;
 }
 
 .parallax {
   /* The image used */
-  background-image: url("https://i.redd.it/c3uhsgo1vx541.jpg");
+  background-image: url("./images/background_image.jpg");
 
   /* Set a specific height */
   min-height: 500px; 
@@ -15,6 +20,22 @@ iframe{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  margin:0;
+}
+
+.jumbotron{
+	  /* The image used */
+  background-image: url("./images/background_image_bright.jpg");
+
+  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin:0;
 }
 
 h3{
@@ -34,7 +55,7 @@ html {
 	width:240px;
 	height:140px;
 	border-radius:20px;
-	background-color:gray;
+	background-color:#4d4d4d;
 	margin:20px;
 	box-shadow:4px 4px black;
 }
@@ -61,17 +82,23 @@ html {
 }
 
 .control:hover{
+	cursor:pointer;
 	background-color:#d1d8ff;
 }
 
 .control:active{
 	transition: all 0s;
 	box-shadow: 0px 0px black;
+	background-color:#9cabff;
 	transform: translate(3px, 3px);
 }
 
+.col-sm-6{
+	transition:all 0.2s;
+}
+
 .col-sm-6.display_active{
-	color:green;
+	color:#7abceb;
 }
 
 

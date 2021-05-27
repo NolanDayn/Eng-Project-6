@@ -9,3 +9,31 @@ elevatorButtons[5].addEventListener('click', function (event) {
      musicPlayer.muted = !musicPlayer.muted;
 	 musicPlayer.muted ? elevatorDisplays[5].classList.remove("display_active") : elevatorDisplays[5].classList.add("display_active");
 });
+
+//elevator door open click
+elevatorButtons[3].addEventListener('click', function (event) {
+	MoveDoors(true);
+});
+
+//elevator door close click
+elevatorButtons[4].addEventListener('click', function (event) {
+	MoveDoors(false);
+});
+
+function MoveDoors(open) {
+	if (open){
+		elevatorDisplays[3].classList.add("display_active");
+		elevatorDisplays[4].classList.remove("display_active");
+	} else {
+		elevatorDisplays[4].classList.add("display_active");
+		elevatorDisplays[3].classList.remove("display_active");
+	}
+}
+
+function SetFloor(floorNumber){
+	for(var i = 0; i < 3; i++){
+		if (i == floorNumber) continue;
+		elevatorDisplays[i].classList.remove("display_active");
+	}
+	elevatorDisplays[floorNumber].classList.add("display_active");
+}
