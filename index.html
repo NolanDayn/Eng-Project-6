@@ -5,15 +5,23 @@
   <meta charset="utf-8">
 
   <title>Team 4 Elevator Project</title>
-
+	
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
 
 </head>
 
 <body>
+	<!-- bootstrap stuff -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<!-- music player -->
+	<audio controls autoplay muted loop id="music_player">
+		<source src="./music/music.mp3" type="audio/mpeg">
+		Your browser does not support the audio element.
+	</audio>
 
 <!-- Navigation Bar-->
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -68,44 +76,44 @@
 			<!-- 1 -->
 			<div class="elevator_button container col-sm-2">
 				<div class="row">
-					<h1 class="col-sm-6">1</h1>
-					<div class="control col-sm-6"></div>
+					<h1 class="col-sm-6" id="floor_1_display">1</h1>
+					<div class="control col-sm-6" id="floor_1_button"></div>
 				</div>
 			</div>
 			<!-- 2 -->
 			<div class="elevator_button container col-sm-2">
 				<div class="row">
-					<h1 class="col-sm-6">2</h1>
-					<div class="control col-sm-6"></div>
+					<h1 class="col-sm-6" id="floor_2_display">2</h1>
+					<div class="control col-sm-6" id="floor_2_button"></div>
 				</div>
 			</div>
 			<!-- 3 -->
 			<div class="elevator_button container col-sm-2">
 				<div class="row">
-					<h1 class="col-sm-6">3</h1>
-					<div class="control col-sm-6"></div>
+					<h1 class="col-sm-6" id="floor_3_display">3</h1>
+					<div class="control col-sm-6" id="floor_3_button"></div>
 				</div>
 			</div>
 			<div class="col-sm-12"></div> <!-- new row -->
 			<!-- open doors-->
 			<div class="elevator_button container col-sm-2">
 				<div class="row">
-					<h1 class="col-sm-6">O</h1>
-					<div class="control col-sm-6"></div>
+					<h1 class="col-sm-6" id="door_open_display"><i class="fas fa-door-open fa-sm"></i></h1>
+					<div class="control col-sm-6" id="door_open_button"></div>
 				</div>
 			</div>
 			<!-- close doors-->
 			<div class="elevator_button container col-sm-2">
 				<div class="row">
-					<h1 class="col-sm-6">C</h1>
-					<div class="control col-sm-6"></div>
+					<h1 class="col-sm-6" id="door_close_display"><i class="fas fa-door-closed fa-sm"></i></h1>
+					<div class="control col-sm-6" id="door_close_button"></div>
 				</div>
 			</div>
-			<!-- easy button-->
+			<!-- alarm -->
 			<div class="elevator_button container col-sm-2">
 				<div class="row">
-					<h1 class="col-sm-6">E</h1>
-					<div class="control col-sm-6"></div>
+					<h1 ="green" class="col-sm-6" id="music_display"><i class="fas fa-bell fa-sm"></i></h1>
+					<div class="control col-sm-6" id="music_button"></div>
 				</div>
 			</div>
 			
@@ -148,5 +156,8 @@
 	<li><h3>Ruchi's Logbook</h3></li>
 	</ul>
 </div>
+<!-- javascript -->
+<script src="main.js"></script>
+
 </body>
 </html>

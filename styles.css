@@ -70,6 +70,10 @@ html {
 	transform: translate(3px, 3px);
 }
 
+.col-sm-6.display_active{
+	color:green;
+}
+
 
 
 
