@@ -8,6 +8,7 @@ var elevatorButtons = [document.getElementById("floor_1_button"),document.getEle
 elevatorButtons[5].addEventListener('click', function (event) {
      musicPlayer.muted = !musicPlayer.muted;
 	 musicPlayer.muted ? elevatorDisplays[5].classList.remove("display_active") : elevatorDisplays[5].classList.add("display_active");
+	 musicPlayer.play()
 });
 
 //elevator door open click
