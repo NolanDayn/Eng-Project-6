@@ -99,21 +99,21 @@
 			<div class="elevator_button container col-sm-2">
 				<div class="row">
 					<h1 class="col-sm-6 display_active" id="door_open_display"><i class="fas fa-door-open fa-sm"></i></h1>
-					<div class="control col-sm-6" id="door_open_button"></div>
+					<div onClick="MoveDoors(true)" class="control col-sm-6" id="door_open_button"></div>
 				</div>
 			</div>
 			<!-- close doors-->
 			<div class="elevator_button container col-sm-2">
 				<div class="row">
 					<h1 class="col-sm-6" id="door_close_display"><i class="fas fa-door-closed fa-sm"></i></h1>
-					<div class="control col-sm-6" id="door_close_button"></div>
+					<div onClick="MoveDoors(false)" class="control col-sm-6" id="door_close_button"></div>
 				</div>
 			</div>
 			<!-- alarm -->
 			<div class="elevator_button container col-sm-2">
 				<div class="row">
 					<h1 ="green" class="col-sm-6" id="music_display"><i class="fas fa-bell fa-sm"></i></h1>
-					<div class="control col-sm-6" id="music_button"></div>
+					<div onClick="ToggleMusic()" class="control col-sm-6" id="music_button"></div>
 				</div>
 			</div>
 			
