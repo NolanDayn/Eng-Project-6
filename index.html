@@ -22,6 +22,12 @@
 		<source src="./music/music.mp3" type="audio/mpeg">
 		Your browser does not support the audio element.
 	</audio>
+	
+	<!-- misc sounds -->
+	<audio id="button_click" src="https://www.trekcore.com/audio/computer/computerbeep_9.mp3" preload="auto"></audio>
+	<audio id="door_open" src="https://www.trekcore.com/audio/doors/jefferies_tube.mp3" preload="auto"></audio>
+	<audio id="door_close" src="https://www.trekcore.com/audio/doors/raven_door.mp3" preload="auto"></audio>
+	<audio id="arrival_sound" src="https://www.trekcore.com/audio/doors/ent_doorchime.mp3" preload="auto"></audio>
 
 <!-- Navigation Bar-->
 <nav class="navbar navbar-inverse">
@@ -163,21 +169,31 @@
 <!-- Status Reports -->
 <div id="status" class="jumbotron text-center">
 	<h1>Status Reports</h1>
-	<form method="get" action="./status_reports/Week_1.doc"><button type="submit" class="btn btn-primary btn-lg">Week 1</button>
-	<form method="get" action="./status_reports/Week_2.doc"><button type="submit" class="btn btn-primary btn-lg">Week 2</button>
-	<form method="get" action="./status_reports/Week_3.doc"><button type="submit" class="btn btn-primary btn-lg" disabled>Week 3</button>
-	<form method="get" action="./status_reports/Week_4.doc"><button type="submit" class="btn btn-primary btn-lg" disabled>Week 4</button>
-	<form method="get" action="./status_reports/Week_5.doc"><button type="submit" class="btn btn-primary btn-lg" disabled>Week 5</button>
-	<form method="get" action="./status_reports/Week_6.doc"><button type="submit" class="btn btn-primary btn-lg" disabled>Week 6</button>
-	<form method="get" action="./status_reports/Week_7.doc"><button type="submit" class="btn btn-primary btn-lg" disabled>Week 7</button>
-	<form method="get" action="./status_reports/Week_8.doc"><button type="submit" class="btn btn-primary btn-lg" disabled>Week 8</button>
-	<form method="get" action="./status_reports/Week_9.doc"><button type="submit" class="btn btn-primary btn-lg" disabled>Week 9</button>
-	<form method="get" action="./status_reports/Week_10.doc"><button type="submit" class="btn btn-primary btn-lg" disabled>Week 10</button>
-	<form method="get" action="./status_reports/Week_11.doc"><button type="submit" class="btn btn-primary btn-lg" disabled>Week 11</button>
-	<form method="get" action="./status_reports/Week_12.doc"><button type="submit" class="btn btn-primary btn-lg" disabled>Week 12</button>
-	<form method="get" action="./status_reports/Week_13.doc"><button type="submit" class="btn btn-primary btn-lg" disabled>Week 13</button>
-	<form method="get" action="./status_reports/Week_14.doc"><button type="submit" class="btn btn-primary btn-lg" disabled>Week 14</button>
-</form>
+	<div class= "container">
+		<div class="row">
+			<form method="get" action="./status_reports/Week_1.doc"><button type="submit" class="btn_status_download btn btn-primary btn-lg col-sm-2">Week 1</button></form>
+			<form method="get" action="./status_reports/Week_2.doc"><button type="submit" class="btn_status_download btn btn-primary btn-lg col-sm-2">Week 2</button></form>
+			<form method="get" action="./status_reports/Week_3.doc"><button type="submit" class="btn_status_download btn btn-primary btn-lg col-sm-2" disabled>Week 3</button></form>
+			<form method="get" action="./status_reports/Week_4.doc"><button type="submit" class="btn_status_download btn btn-primary btn-lg col-sm-2" disabled>Week 4</button></form>
+		</div>
+		<div class="row">
+			<form method="get" action="./status_reports/Week_5.doc"><button type="submit" class="btn_status_download btn btn-primary btn-lg col-sm-2" disabled>Week 5</button></form>
+			<form method="get" action="./status_reports/Week_6.doc"><button type="submit" class="btn_status_download btn btn-primary btn-lg col-sm-2" disabled>Week 6</button></form>
+			<form method="get" action="./status_reports/Week_7.doc"><button type="submit" class="btn_status_download btn btn-primary btn-lg col-sm-2" disabled>Week 7</button></form>
+			<form method="get" action="./status_reports/Week_8.doc"><button type="submit" class="btn_status_download btn btn-primary btn-lg col-sm-2" disabled>Week 8</button></form>
+		</div>
+		<div class="row">
+			<form method="get" action="./status_reports/Week_9.doc"><button type="submit" class="btn_status_download btn btn-primary btn-lg col-sm-2" disabled>Week 9</button></form>
+			<form method="get" action="./status_reports/Week_10.doc"><button type="submit" class="btn_status_download btn btn-primary btn-lg col-sm-2" disabled>Week 10</button></form>
+			<form method="get" action="./status_reports/Week_11.doc"><button type="submit" class="btn_status_download btn btn-primary btn-lg col-sm-2" disabled>Week 11</button></form>
+			<form method="get" action="./status_reports/Week_12.doc"><button type="submit" class="btn_status_download btn btn-primary btn-lg col-sm-2" disabled>Week 12</button></form>
+		</div>
+		<div class="row">
+			<form method="get" action="./status_reports/Week_13.doc"><button type="submit" class="btn_status_download btn btn-primary btn-lg col-sm-2" disabled>Week 13</button></form>
+			<form method="get" action="./status_reports/Week_14.doc"><button type="submit" class="btn_status_download btn btn-primary btn-lg col-sm-2" disabled>Week 14</button></form>
+		</div>
+		
+	</div>
 </div>
 <!-- javascript -->
 <script src="main.js"></script>

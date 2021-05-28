@@ -1,6 +1,6 @@
 .navbar{
 	margin:0;
-		position:sticky;
+	position:sticky;
 	top:0;
 }
 
@@ -8,6 +8,10 @@ iframe{
 	width:1100px;
 	height:420px;
 	background-color:black;
+}
+
+.btn_status_download{
+	margin:20px;
 }
 
 .parallax {
