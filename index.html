@@ -24,35 +24,49 @@
 	</audio>
 
 <!-- Navigation Bar-->
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Team 4's Elevator Project</a>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">ESE Elevator Project Team 4</a>
     </div>
-    <ul class="nav navbar-nav navbar-right">   
-      <li><a href = "#intro"><span class = "active glyphicon glyphicon-home"></span> Intro</a></li>
-      <li><a href="#about"><span class = "glyphicon glyphicon-info-sign"></span> About</a></li>
-	  <li><a href="#controls"><span class = "glyphicon glyphicon-info-sign"></span> Elevator Controls</a></li>
-      <li class = "dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> Documentation
-        <span class = "caret">  
-        <ul class="dropdown-menu">
-          <li><a href="#gantt">Gantt Chart</a></li>
-          <li><a href="#nolan_log">Nolan's Logbook</a></li>
-          <li><a href="#stephane_log">Stephane's Logbook</a></li>
-          <li><a href="#ruchi_log">Ruchi's Logbook</a></li>
-        </ul>
-      </li>
-      <li><a href="#links"><span class = "glyphicon glyphicon-earphone"></span> Status Reports</a></li>
-	 <!-- Login form -->
-	 <li class="login-container">
-		<form class="form-inline" action="/action_page.php">
-		  <input class="form-control" type="text" placeholder="Username" name="username">
-		  <input class="form-control" type="text" placeholder="Password" name="psw">
-		  <button class="btn-success" type="submit">Login</button>
-		</form>
-	</li>
-    </ul>
-  </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Username">
+		  <input type="password" class="form-control" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#intro">Introduction</a></li>
+		<li><a href="#about">About Us</a></li>
+		<li><a href="#controls">Controls</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentation <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#gantt">Gantt Chart</a></li>
+			<li role="separator" class="divider"></li>
+            <li><a href="#nolan_log">Logbook - Nolan</a></li>
+			<li><a href="#ruchi_log">Logbook - Ruchi</a></li>
+			<li><a href="#stephane_log">Logbook - Stephane</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#status">Status Reports</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </nav>
 
 <!-- Introduction -->
@@ -145,8 +159,9 @@
 	<iframe src="https://docs.google.com/document/d/e/2PACX-1vTWJ84YrTNRfRiqc8k4T8vk5dm0-zIDfErfRWkbKPX0GHA6hdG_g0rneNT9IK3tvWeJ7zwvfOxGQtkY/pub"></iframe>
 </div>
 <div class="parallax"></div>
+
 <!-- Status Reports -->
-<div id="links" class="jumbotron text-center">
+<div id="status" class="jumbotron text-center">
 	<h1>Status Reports</h1>
 	<form method="get" action="./status_reports/Week_1.doc"><button type="submit" class="btn btn-primary btn-lg">Week 1</button>
 	<form method="get" action="./status_reports/Week_2.doc"><button type="submit" class="btn btn-primary btn-lg">Week 2</button>

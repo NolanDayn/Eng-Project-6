@@ -1,5 +1,7 @@
 .navbar{
-		height:60px;
+	margin:0;
+		position:sticky;
+	top:0;
 }
 
 iframe{
@@ -36,14 +38,6 @@ iframe{
   background-repeat: no-repeat;
   background-size: cover;
   margin:0;
-}
-
-h3{
-	text-align:left
-}
-
-.form-inline{
-	margin-top:9px;
 }
 
 html {
@@ -99,6 +93,10 @@ html {
 
 .col-sm-6.display_active{
 	color:#7abceb;
+}
+
+audio {
+	display:none;
 }
 
 
