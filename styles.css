@@ -2,6 +2,29 @@
 	margin:0;
 	position:sticky;
 	top:0;
+	z-index:2;
+}
+
+.jumbotron > h1{
+	font-size:92px;
+	font-color:black;
+	font-style:bold;
+}
+
+.card{
+	border: 2px solid black;
+	box-shadow:8px 8px black;
+	padding:10px;
+	background-color:white;
+}
+
+.card-title{
+	font-size:30px;	
+}
+
+.center {
+    margin: 0 auto;
+    width: 80%;
 }
 
 iframe{
@@ -13,6 +36,7 @@ iframe{
 .btn_status_download{
 	margin:20px;
 }
+
 
 .parallax {
   /* The image used */
