@@ -14,23 +14,29 @@ var animationStrings = ["Up_One .25s steps(7) 1", "Up_Two .25s steps(7) 1","Down
 // 8: 3 open
 // 9: 3 close
 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 function OpenDoors(open){
-	//1 -> 4 2->6 3->8
-	if (doorState == open) return;
+	//0:open, 1:close
+	if (doorState === open) return;
 	image.style.animation = animationStrings[currentFloor * 2 + 2 + open];
-	doorState == 1 ? doorState = 0 : doorState = 1;
+	doorState === 1 ? doorState = 0 : doorState = 1;
 	image.style.animationFillMode = "forwards";
 }
 
 function Move(dir){
 	if (dir == 1 && currentFloor < 3){
+		//OpenDoors(1);
+		//await sleep(500);
 		image.style.animation = animationStrings[currentFloor - 1];
 		currentFloor++;
-		doorState == 1;
+		doorState = 1;
 	} else if (dir == -1 && currentFloor > 1){
 		image.style.animation = animationStrings[currentFloor == 3 ? 2 : 3];
 		currentFloor--;
-		doorState == 1;
+		doorState = 1;
 	}
 	image.style.animationFillMode = "forwards";
 }
