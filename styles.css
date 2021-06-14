@@ -132,10 +132,53 @@ audio {
   height: 384px;
   width: 128px;
   background: url(./images/elevator-sprites.png) 0px 0px;
-  animation: Up_Two .25s steps(7) 1;
   animation-fill-mode:forwards;
 }
 
+#sprite-image.3down{
+	animation: Down_Two .25s steps(7) 1;
+}
+
+#sprite-image.2down{
+	animation: Down_One .25s steps(7) 1;
+}
+
+#sprite-image.1up{
+	animation: Up_One .25s steps(7) 1;
+}
+
+#sprite-image.2up{
+	animation: Up_Two .25s steps(7) 1;
+}
+
+#sprite-image.1open{
+	animation: One_Open .25s steps(6) 1;
+}
+
+#sprite-image.1close{
+	animation: One_Close .25s steps(6) 1;
+}
+
+#sprite-image.2open{
+	animation: Two_Open .25s steps(6) 1;
+}
+
+#sprite-image.2close{
+	animation: Two_Close .25s steps(6) 1;
+}
+
+#sprite-image.3open{
+	animation: Three_Open .25s steps(6) 1;
+}
+
+#sprite-image.3close{
+	animation: Three_Close .25s steps(6) 1;
+}
+
+
+
+
+/* 7 steps */
 @keyframes Up_One{
       from{background-position-x:0px;}
       to{background-position-x:-896px;}
@@ -145,7 +188,48 @@ audio {
       from{background-position-x:-896px;}
       to{background-position-x:-1792px;}
     }
+	
+@keyframes Down_One{
+      from{background-position-x:-896px;}
+      to{background-position-x:0px;}
+    }
 
+@keyframes Down_Two{
+      from{background-position-x:-1792px;}
+      to{background-position-x:-896px;}
+    }
+	
+/* 6 steps */
+@keyframes One_Open{
+      from{background-position-x:-2048px;}
+      to{background-position-x:-2816px;}
+    }
+
+@keyframes Two_Open{
+      from{background-position-x:-2944px;}
+      to{background-position-x:-3712px;}
+    }
+
+@keyframes Three_Open{
+      from{background-position-x:-3840px;}
+      to{background-position-x:-4608px;}
+    }
+
+
+@keyframes One_Close{
+      from{background-position-x:-2816px;}
+      to{background-position-x:-2048px;}
+    }
+
+@keyframes Two_Close{
+      from{background-position-x:-3712px;}
+      to{background-position-x:-2944px;}
+    }
+
+@keyframes Three_Close{
+      from{background-position-x:-4608px;}
+      to{background-position-x:-3840px;}
+    }
 
 
 
