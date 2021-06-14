@@ -27,7 +27,6 @@ async function Set_Dest(){
 	for(var i = currentFloor + 1; i <= 3; i++){
 		if(called_floors.has(i)){
 			await Move(1);
-			currentFloor++;
 			dest_found = 1;
 			break;
 		}
@@ -35,8 +34,7 @@ async function Set_Dest(){
 	if (!dest_found){
 		for(var i = currentFloor - 1; i >= 1; i--){
 			if(called_floors.has(i)){
-				await Move(1);
-				currentFloor--;
+				await Move(-1);
 				dest_found = 1;
 				break;
 			}
@@ -49,7 +47,7 @@ async function Set_Dest(){
 async function RequestFloor(floor){
 	called_floors.add(floor);
 	console.log(called_floors);
-	document.getElementById("log").value += "Floor " + floor.toString() + " Requested\n";
+	document.getElementById("log").value = "Floor " + floor.toString() + " Requested\n";
 	//await OpenDoors(0);
 	//OpenDoors(1);	
 	Set_Dest();
@@ -69,11 +67,13 @@ async function Move(dir){
 		image.style.animation = animationStrings[currentFloor - 1];
 		image.style.animationFillMode = "forwards";
 		doorState = 1;
+		currentFloor++;
 		await new Promise(function(resolve) { setTimeout(resolve, 900); });
 	} else if (dir == -1){
 		image.style.animation = animationStrings[currentFloor == 3 ? 2 : 3];
 		image.style.animationFillMode = "forwards";
 		doorState = 1;
+		currentFloor--;
 		await new Promise(function(resolve) { setTimeout(resolve, 900); });
 	}
 }
