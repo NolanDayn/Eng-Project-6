@@ -14,29 +14,37 @@ var animationStrings = ["Up_One .25s steps(7) 1", "Up_Two .25s steps(7) 1","Down
 // 8: 3 open
 // 9: 3 close
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+const called_floors = new Set();
+
+async function RequestFloor(floor){
+	called_floors.add(floor);
+	console.log(called_floors);
+	await OpenDoors(0);
+	OpenDoors(1);
+	
 }
 
-function OpenDoors(open){
+async function OpenDoors(open){
 	//0:open, 1:close
 	if (doorState === open) return;
 	image.style.animation = animationStrings[currentFloor * 2 + 2 + open];
-	doorState === 1 ? doorState = 0 : doorState = 1;
 	image.style.animationFillMode = "forwards";
+	await new Promise(function(resolve) { setTimeout(resolve, 900); });
+	doorState === 1 ? doorState = 0 : doorState = 1;
 }
 
-function Move(dir){
+async function Move(dir){
 	if (dir == 1 && currentFloor < 3){
-		//OpenDoors(1);
-		//await sleep(500);
 		image.style.animation = animationStrings[currentFloor - 1];
+		image.style.animationFillMode = "forwards";
 		currentFloor++;
 		doorState = 1;
+		await new Promise(function(resolve) { setTimeout(resolve, 900); });
 	} else if (dir == -1 && currentFloor > 1){
 		image.style.animation = animationStrings[currentFloor == 3 ? 2 : 3];
+		image.style.animationFillMode = "forwards";
 		currentFloor--;
 		doorState = 1;
+		await new Promise(function(resolve) { setTimeout(resolve, 900); });
 	}
-	image.style.animationFillMode = "forwards";
 }
