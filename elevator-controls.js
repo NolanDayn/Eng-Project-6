@@ -1,5 +1,6 @@
 var currentFloor = 1;
 var doorState = 1; //1: closed 0:open
+var direction = 0; //1: up, 0: none, -1:down
 var image = document.getElementById("sprite-image");
 
 var animationStrings = ["Up_One .25s steps(7) 1", "Up_Two .25s steps(7) 1","Down_Two .25s steps(7) 1","Down_One .25s steps(7) 1","One_Open .25s steps(6) 1","One_Close .25s steps(6) 1","Two_Open .25s steps(6) 1","Two_Close .25s steps(6) 1","Three_Open .25s steps(6) 1","Three_Close .25s steps(6) 1"];
@@ -16,12 +17,42 @@ var animationStrings = ["Up_One .25s steps(7) 1", "Up_Two .25s steps(7) 1","Down
 
 const called_floors = new Set();
 
+async function Set_Dest(){
+	var dest_found = 0;
+	if (called_floors.has(currentFloor)){
+		await OpenDoors(0);
+		await OpenDoors(1);
+		called_floors.delete(currentFloor);
+	}
+	for(var i = currentFloor + 1; i <= 3; i++){
+		if(called_floors.has(i)){
+			await Move(1);
+			currentFloor++;
+			dest_found = 1;
+			break;
+		}
+	}
+	if (!dest_found){
+		for(var i = currentFloor - 1; i >= 1; i--){
+			if(called_floors.has(i)){
+				await Move(1);
+				currentFloor--;
+				dest_found = 1;
+				break;
+			}
+		}
+	}
+	
+	if (dest_found) Set_Dest();
+}
+
 async function RequestFloor(floor){
 	called_floors.add(floor);
 	console.log(called_floors);
-	await OpenDoors(0);
-	OpenDoors(1);
-	
+	document.getElementById("log").value += "Floor " + floor.toString() + " Requested\n";
+	//await OpenDoors(0);
+	//OpenDoors(1);	
+	Set_Dest();
 }
 
 async function OpenDoors(open){
@@ -34,16 +65,14 @@ async function OpenDoors(open){
 }
 
 async function Move(dir){
-	if (dir == 1 && currentFloor < 3){
+	if (dir == 1){
 		image.style.animation = animationStrings[currentFloor - 1];
 		image.style.animationFillMode = "forwards";
-		currentFloor++;
 		doorState = 1;
 		await new Promise(function(resolve) { setTimeout(resolve, 900); });
-	} else if (dir == -1 && currentFloor > 1){
+	} else if (dir == -1){
 		image.style.animation = animationStrings[currentFloor == 3 ? 2 : 3];
 		image.style.animationFillMode = "forwards";
-		currentFloor--;
 		doorState = 1;
 		await new Promise(function(resolve) { setTimeout(resolve, 900); });
 	}
