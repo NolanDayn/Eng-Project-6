@@ -127,6 +127,26 @@ audio {
 	display:none;
 }
 
+/* animation stuff */
+#sprite-image {
+  height: 384px;
+  width: 128px;
+  background: url(./images/elevator-sprites.png) 0px 0px;
+  animation: Up_Two .25s steps(7) 1;
+  animation-fill-mode:forwards;
+}
+
+@keyframes Up_One{
+      from{background-position-x:0px;}
+      to{background-position-x:-896px;}
+    }
+
+@keyframes Up_Two{
+      from{background-position-x:-896px;}
+      to{background-position-x:-1792px;}
+    }
+
+
 
 
 
