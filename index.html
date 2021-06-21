@@ -53,13 +53,16 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
       </ul>
-      <form class="navbar-form navbar-left">
+	  
+	  <!-- form -->
+      <form class="navbar-form navbar-left" action="" method="POST">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Username">
-		  <input type="password" class="form-control" placeholder="Password">
+          <input type="text" class="form-control" name="user" placeholder="Username">
+		  <input type="password" class="form-control" name="pass" placeholder="Password">
         </div>
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" class="btn btn-primary" name="submit">Login</button>
       </form>
+	  
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#intro">Introduction</a></li>
 		<li><a href="#about">About Us</a></li>
