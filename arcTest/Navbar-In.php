@@ -1,7 +1,7 @@
 <?php
+session_start();
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-	// Initialize the session
-	session_start();
  
 	// Unset all of the session variables
 	$_SESSION = array();
@@ -77,6 +77,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       </form>
 	  
       <ul class="nav navbar-nav navbar-right">
+		<li style="font-size:22px;font-color:black"><a href="#intro">Welcome to the site, <?php echo htmlspecialchars($_SESSION["username"]); ?>!</a></li>
         <li><a href="#intro">Introduction</a></li>
 		<li><a href="#about">About Us</a></li>
 		<li><a href="./elevator-controls.html">Elevator Controls</a></li>
