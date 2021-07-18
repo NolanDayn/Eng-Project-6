@@ -63,15 +63,17 @@ function FillTable(table, data){
 	*/
 	//print data
 	
-	/*
 	for(int i = 0; i < data.length; i++){
-		table.innerHTML += "<tr>";
+		const row = document.createElement("tr");
 		for (var key in data[i]) {
-			table.innerHTML+=`<td>${data[i][key]}</td>`;
+			const data = document.createElement("td");
+			const node = document.createTextNode(data[i].key);
+			data.appendChild(node);
+			row.appendChild(data);
 		}
-		table.innerHTML += "/<tr>";
+		table.appendChild(row)
 	}
-	*/
+	
 }
 
 function CallNumber(){
