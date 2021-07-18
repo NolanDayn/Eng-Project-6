@@ -79,18 +79,18 @@ async function RequestFloor(floor){
 	
 	var url = `http://142.156.193.130:50050/Eng-Project-6/AddFloor.php?floor=${floor}`;
 	var xhr = new XMLHttpRequest();
-	xhr.responseType = 'json';
 	xhr.open('GET', url, true);
 	xhr.send();
 	xhr.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			PrintResults(this.response);
+			PrintResults(this.responseText);
 		}
 	}
 };
 
 function PrintResults(results){
-	console.log(results[0]);
+	const obj = JSON.parse(results);
+	console.log(obj);
 }
 
 
