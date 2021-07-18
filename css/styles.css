@@ -5,12 +5,12 @@
 	z-index:2;
 }
 
-table{
+#requestTable, #statusTable{
   border-spacing: 0.5rem;
   color: red;
 }
 
-td, th{
+#requestTable > td, #requestTable > th, #statusTable > td, #statusTable > th{
   border: 1px solid #999;
   padding: 0.5rem;
   color: red;
