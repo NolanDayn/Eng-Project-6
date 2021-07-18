@@ -90,7 +90,7 @@ async function RequestFloor(floor){
 
 function PrintResults(results){
 	const firstText = results.substring(0,results.indexOf(']'));
-	const firstTable = JSON.parse(firstText);
+	//const firstTable = JSON.parse(firstText);
 	console.log(firstText);
 }
 
