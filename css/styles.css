@@ -5,15 +5,13 @@
 	z-index:2;
 }
 
-#requestTable, #statusTable{
+table{
   border-spacing: 0.5rem;
-  color: red;
 }
 
-#requestTable > td, #requestTable > th, #statusTable > td, #statusTable > th{
+td, th{
   border: 1px solid #999;
   padding: 0.5rem;
-  color: red;
 }
 
 .error_text{
