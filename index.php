@@ -107,6 +107,7 @@
 <div class="parallax"></div>
 
 <!-- Elevator Controls -->
+<!-- Control panel -->
 <div id="controls" class="jumbotron text-center">
 	<h1>Test Animation</h1>
 	<button class="btn-primary" onClick="OpenDoors(0)" id="open">Open</button>
@@ -210,7 +211,7 @@
 </div>
 
 <!-- javascript -->
-<script src="js/elevator_controls.js"></script>
+<script src="js/main.js"></script>
 
 </body>
 </html>
