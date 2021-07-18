@@ -17,16 +17,16 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
 
     $statement = $db->prepare($query); 
     $params = [
-        'floor' => $floor
+        'floor' => 2
     ];
     $result = $statement->execute($params); 
 
     $rows = $db->query("SELECT * FROM requests");
-    //$dbdata = array();
+    $dbdata = array();
 
-    //while($row = $rows->fetch_assoc()) {
-    //    $dbdata[] = $row;
-   // }
+    while($row = $rows->fetch_assoc()) {
+        $dbdata[] = $row;
+    }
 
     echo json_encode($dbdata);
 }
