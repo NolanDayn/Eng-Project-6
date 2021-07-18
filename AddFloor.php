@@ -12,11 +12,12 @@ $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){
 
+    $floor = $_GET["floor"];
     $query = 'INSERT INTO requests(floor) VALUES (:floor)';
     
     $statement = $db->prepare($query); 
     $params = [
-        'floor' => 2
+        'floor' => $floor
     ];
     $result = $statement->execute($params); 
     var_dump($result);
