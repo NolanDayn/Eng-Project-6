@@ -29,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     foreach($rows as $row) {
         $dbdata[] = ($row);
     }
-    echo $dbdata;
+    echo json_encode($dbdata);
         
             
 }
