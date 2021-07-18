@@ -71,7 +71,7 @@ async function RequestFloor(floor){
 	//xhr.addEventListener("readystatechange", PrintResults, false);
 }
 
-function PrintResults(var results){
+function PrintResults(results){
 	alert("hi");
 }
 
