@@ -27,8 +27,8 @@
 	if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 		
 		echo '<form class="navbar-form navbar-left" action="./logout.php" method="POST">';
+		echo '<p>Hello ' + htmlspecialchars($_SESSION["username"]) + '!</p>';
 		echo '<button type="submit" class="btn btn-danger" name="submit">Logout</button>';
-		echo 'Hello ' + htmlspecialchars($_SESSION["username"]) + '!';
 		echo '</form>';
 	} else {
 		echo '<form class="navbar-form navbar-left" action="./login.php" method="POST">';
