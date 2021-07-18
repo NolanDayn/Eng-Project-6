@@ -34,7 +34,7 @@ function AddListeners(){
 	alarmButton.addEventListener('click', CallNumber, false);
 }
 
-function FillTable(var table, var data){
+function FillTable(table, data){
 	
 }
 
