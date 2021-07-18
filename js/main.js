@@ -67,7 +67,7 @@ function FillTable(table, data){
 		const row = document.createElement("tr");
 		for (var key in data[i]) {
 			const data = document.createElement("td");
-			const node = document.createTextNode(data.key);
+			const node = document.createTextNode(data.key.toString());
 			data.appendChild(node);
 			row.appendChild(data);
 		}
