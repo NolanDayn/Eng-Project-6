@@ -1,9 +1,6 @@
 <?php
 require_once "config.php";
 
-// Processing form data when form is submitted
-$floor = $_GET["floor"];
-
 if($_SERVER["REQUEST_METHOD"] == "GET"){
 
         //$con = new mysqli($DB_SERVER, $DB_USERNAME, $DB_PASSWORD, $DB_DATABASE);
@@ -23,12 +20,12 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
         $link->close();
 		*/
         //Insert a new requested floor to the elevators database
-        $stmt = $mysqli->prepare('INSERT INTO `requests` (`requestNumber`, `floor`) VALUES (NULL, ?)');    
+        $stmt = $mysqli->prepare("'INSERT INTO `requests` (`requestNumber`, `floor`) VALUES (NULL, '?')");    
 		$stmt = mysqli_prepare($link, $sql)){
         
             // Bind variables to the prepared statement as parameters
 		mysqli_stmt_bind_param($stmt, "s", $floor);
-        
+        $floor = _GET('floor');
 
         // Attempt to execute the prepared statement
 		if(mysqli_stmt_execute($stmt)){
