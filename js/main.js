@@ -53,7 +53,7 @@ function FillTable(table, data){
 		header.appendChild(node);
 		row.appendChild(header);
 	}
-	table.appendChild(row)
+	table.appendChild(row);
 	/*
 	  <tr>
     <td>Eve</td>
@@ -71,7 +71,7 @@ function FillTable(table, data){
 			data.appendChild(node);
 			row.appendChild(data);
 		}
-		table.appendChild(row)
+		table.appendChild(row);
 	}
 	
 }
