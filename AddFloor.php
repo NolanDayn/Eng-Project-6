@@ -6,21 +6,21 @@ $floor = $_GET["floor"];
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){
 
-        $con = new mysqli($DB_SERVER, $DB_USERNAME, $DB_PASSWORD, $DB_DATABASE);
+        //$con = new mysqli($DB_SERVER, $DB_USERNAME, $DB_PASSWORD, $DB_DATABASE);
         
-        if($con->connection_error){
-            die("Connection failed: " . $con->connection_error);
+        if($link->connection_error){
+            die("Connection failed: " . $link->connection_error);
         }
-        $sql  = 'INSERT INTO `requests` (`requestNumber`, `floor`) VALUES (NULL, \'${$floor}\')';
+        $sql  = 'INSERT INTO `requests` (`requestNumber`, `floor`) VALUES (NULL, \'2\')';
 
-        if($con->$query($sql) === TRUE){
+        if($link->$query($sql) === TRUE){
             echo "New record created successfully";
         } 
         else {
-            echo "Error: " . $sql . "<br>" . $con->error;
+            echo "Error: " . $sql . "<br>" . $link->error;
         }
 
-        $con->close();
+        $link->close();
 
         //Insert a new requested floor to the elevators database
         //$stmt = $mysqli->prepare("INSERT INTO requests(floor) VALUE(?)");    
