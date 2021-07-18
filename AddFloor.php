@@ -8,17 +8,17 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
 
         $con = new mysqli($DB_SERVER, $DB_USERNAME, $DB_PASSWORD, $DB_DATABASE);
         
-        //if($con->connection_error){
-         //   die("Connection failed: " . $con->connection_error);
-        //}
-        //$sql= "INSERT INTO requests (floor) VALUES ('$floor')";
+        if($con->connection_error){
+            die("Connection failed: " . $con->connection_error);
+        }
+        $sql  = "INSERT INTO requests (floor) VALUES (" . $floor . ")";
 
-        //if($con->$query($sql) === TRUE){
-        //    echo "New record created successfully";
-        //} 
-        //else {
-        //    echo "Error: " . $sql . "<br>" . $con->error;
-        //}
+        if($con->$query($sql) === TRUE){
+            echo "New record created successfully";
+        } 
+        else {
+            echo "Error: " . $sql . "<br>" . $con->error;
+        }
 
         $con->close();
 
