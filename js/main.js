@@ -3,6 +3,8 @@ var doorState = 1; //1: closed 0:open
 var direction = 0; //1: up, 0: none, -1:down
 var image = document.getElementById("sprite-image");
 var alarmButton = document.getElementById('alarmButton');
+var requestTable = document.getElementById("requestTable");
+var statusTable = document.getElementById("statusTable");
 
 var animationStrings = ["Up_One .25s steps(7) 1", "Up_Two .25s steps(7) 1","Down_Two .25s steps(7) 1","Down_One .25s steps(7) 1","One_Open .25s steps(6) 1","One_Close .25s steps(6) 1","Two_Open .25s steps(6) 1","Two_Close .25s steps(6) 1","Three_Open .25s steps(6) 1","Three_Close .25s steps(6) 1"];
 // 0: 1 to 2
@@ -30,6 +32,10 @@ function AddListeners(){
 		floor3[i].addEventListener('click', function(){RequestFloor(3);}, false);
 	}
 	alarmButton.addEventListener('click', CallNumber, false);
+}
+
+function FillTable(var table, var data){
+	
 }
 
 function CallNumber(){

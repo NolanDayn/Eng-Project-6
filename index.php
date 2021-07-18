@@ -155,8 +155,10 @@ if(isset($error) && $error != ""){
 					<button class="col-sm-4 btn-primary">C</button>
 					<button id="alarmButton" class="col-sm-4 btn-primary">A</button>
 				</div>
+				<!-- Tables -->
 				<h3>Request Logs</h3>
-				<textarea id="log" readonly style="width:400px;resize:none;height:200px;" name="Console" rows="10" cols="30"></textarea>
+				<table id = "requestTable"></table>
+				<table id = "statusTable"></table>
 			</div>
 		</div>
 	</div>
