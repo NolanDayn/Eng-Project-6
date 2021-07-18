@@ -35,7 +35,37 @@ function AddListeners(){
 }
 
 function FillTable(table, data){
-	console.log(data);
+	table.innerHTML = "";
+	if (data.length == 0) return;
+	//console.log(data);
+	
+	/*
+	  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Age</th>
+  </tr>
+  */
+	table.innerHTML += "<tr>";
+	for (var key in data[0]) {
+		table.innerHTML+=`<th>${data[key]}</th>`;
+	}
+	table.innerHTML += "/<tr>";
+	/*
+	  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr>
+	*/
+	//print data
+	for(int i = 0; i < data.length; i++){
+		table.innerHTML += "<tr>";
+		for (var key in data[i]) {
+			table.innerHTML+=`<td>${data[i][key]}</td>`;
+		}
+		table.innerHTML += "/<tr>";
+	}
 }
 
 function CallNumber(){
