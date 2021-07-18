@@ -15,6 +15,8 @@ var animationStrings = ["Up_One .25s steps(7) 1", "Up_Two .25s steps(7) 1","Down
 // 8: 3 open
 // 9: 3 close
 
+
+
 const called_floors = new Set();
 AddEventListeners();
 
@@ -59,11 +61,24 @@ async function Set_Dest(){
 
 async function RequestFloor(floor){
 	called_floors.add(floor);
-	console.log(called_floors);
-	document.getElementById("log").value = "Floor " + floor.toString() + " Requested\n";
-	//await OpenDoors(0);
-	//OpenDoors(1);	
+	var url = `http://142.156.193.130:50050/Eng-Project-6/AddFloor.php?floor=${floor}`;
+	httpGetAsync(url, PrintResults);
 	Set_Dest();
+}
+
+function PrintResults(var results){
+	console.log(results);
+}
+
+function httpGetAsync(theUrl, callback)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() { 
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            callback(xmlHttp.responseText);
+    }
+    xmlHttp.open("POST", theUrl, true); // true for asynchronous 
+    xmlHttp.send(null);
 }
 
 async function OpenDoors(open){
