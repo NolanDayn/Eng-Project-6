@@ -63,7 +63,7 @@ function FillTable(table, data){
 	*/
 	//print data
 	
-	for(int i = 0; i < data.length; i++){
+	for(var i = 0; i < data.length; i++){
 		const row = document.createElement("tr");
 		for (var key in data[i]) {
 			const data = document.createElement("td");
