@@ -66,11 +66,17 @@ async function RequestFloor(floor){
 	let xhr = new XMLHttpRequest();
 	xhr.open('GET', url, true);
 	xhr.send();
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			PrintResults(this.responseText);
+		}
+	}
+};
 	xhr.addEventListener("readystatechange", PrintResults, false);
 }
 
 function PrintResults(results){
-	alert("hi");
+	alert(results);
 }
 
 
