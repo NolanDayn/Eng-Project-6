@@ -35,9 +35,9 @@ function AddListeners(){
 }
 
 function FillTable(table, data){
+	console.log(data);
 	table.innerHTML = "";
 	if (data.length == 0) return;
-	//console.log(data);
 	
 	/*
 	  <tr>
@@ -48,7 +48,7 @@ function FillTable(table, data){
   */
 	table.innerHTML += "<tr>";
 	for (var key in data[0]) {
-		table.innerHTML+=`<th>${data[key]}</th>`;
+		table.innerHTML+=`<th>${key}</th>`;
 	}
 	table.innerHTML += "/<tr>";
 	/*
