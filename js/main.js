@@ -63,16 +63,16 @@ function FillTable(table, data){
 	*/
 	//print data
 	console.log(data[2]['requestNumber']);
-	for(var i = 0; i < 1; i++){
+	data.forEach( function (arrayItem) {
 		const row = document.createElement("tr");
-		for (var key in data[i]) {
+		for (var key in arrayItem) {
 			const data = document.createElement("td");
-			const node = document.createTextNode(data[i][key]);
+			const node = document.createTextNode(arrayItem[key]);
 			data.appendChild(node);
 			row.appendChild(data);
 		}
 		table.appendChild(row);
-	}
+	});
 	
 }
 
