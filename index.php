@@ -39,13 +39,13 @@
 <?php require "navbar.php" ?>
 
 <!-- Error Bar -->
-<h6 class = "error_text">
 <?php
 if(isset($error)){
-    echo $error;
+    echo '<h6 class = "error_text">';
+	echo htmlspecialchars($error);
+	echo '</h6>'
 }
 ?>
-</h6>
 
 <!-- Introduction -->
 <div id="intro" class="jumbotron text-center">
