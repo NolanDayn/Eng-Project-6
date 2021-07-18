@@ -89,7 +89,7 @@ async function RequestFloor(floor){
 };
 
 function PrintResults(results){
-	console.log(results[0]);
+	console.log(results);
 }
 
 
