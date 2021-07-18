@@ -40,7 +40,7 @@ iframe{
 
 .parallax {
   /* The image used */
-  background-image: url("./images/background_image.jpg");
+  background-image: url("./../images/background_image.jpg");
 
   /* Set a specific height */
   min-height: 500px; 
@@ -55,7 +55,7 @@ iframe{
 
 .jumbotron{
 	  /* The image used */
-  background-image: url("./images/background_image_bright.jpg");
+  background-image: url("./../images/background_image_bright.jpg");
 
   /* Set a specific height */
   min-height: 500px; 
