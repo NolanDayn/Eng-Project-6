@@ -5,7 +5,7 @@
 	z-index:2;
 }
 
-table{
+table, th, td{
 	border:1px solid black;
 	width:75%;
 	justify-content:center;
