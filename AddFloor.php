@@ -20,11 +20,11 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
         'floor' => $floor
     ];
     $result = $statement->execute($params); 
-    
+
     $rows = $db->query("SELECT * FROM requests");
     $dbdata = array();
 
-    foreach($rows as $row) {
+    while($row = $rows->fetch_assoc()) {
         $dbdata[] = $row;
     }
 
