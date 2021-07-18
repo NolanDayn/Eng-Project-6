@@ -33,6 +33,7 @@ function AddListeners(){
 }
 
 function CallNumber(){
+	alert("hi");
 	var url = `http:142.156.193.130:50050/Eng-Project-6/twilio/sendsms.php`;
 	let xhr = new XMLHttpRequest();
 	xhr.open('GET', url, true);
