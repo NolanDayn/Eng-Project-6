@@ -23,9 +23,7 @@ function AddListeners(){
 	var floor1 = document.getElementsByClassName("get_floor_1");
 	var floor2 = document.getElementsByClassName("get_floor_2");
 	var floor3 = document.getElementsByClassName("get_floor_3");
-	alert("hi1");
 	for (var i = 0; i < floor1.length; i++) {
-		alert("hi");
 		floor1[i].addEventListener('click', function(){RequestFloor(1);}, false);
 		floor2[i].addEventListener('click', function(){RequestFloor(2);}, false);
 		floor3[i].addEventListener('click', function(){RequestFloor(3);}, false);
@@ -64,11 +62,11 @@ async function RequestFloor(floor){
 	Set_Dest();
 	//Request
 	
-	//var url = `http://142.156.193.130:50050/Eng-Project-6/AddFloor.php?floor=${floor}`;
-	//let xhr = new XMLHttpRequest();
-	//xhr.open('GET', url, true);
-	//xhr.send();
-	//xhr.addEventListener("readystatechange", PrintResults, false);
+	var url = `http://142.156.193.130:50050/Eng-Project-6/AddFloor.php?floor=${floor}`;
+	let xhr = new XMLHttpRequest();
+	xhr.open('GET', url, true);
+	xhr.send();
+	xhr.addEventListener("readystatechange", PrintResults, false);
 }
 
 function PrintResults(results){
