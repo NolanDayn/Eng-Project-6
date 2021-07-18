@@ -63,11 +63,12 @@ async function RequestFloor(floor){
 	called_floors.add(floor);
 	Set_Dest();
 	//Request
-	var url = `http://142.156.193.130:50050/Eng-Project-6/AddFloor.php?floor=${floor}`;
-	let xhr = new XMLHttpRequest();
-	xhr.open('GET', url, true);
-	xhr.send();
-	xhr.addEventListener("readystatechange", PrintResults, false);
+	
+	//var url = `http://142.156.193.130:50050/Eng-Project-6/AddFloor.php?floor=${floor}`;
+	//let xhr = new XMLHttpRequest();
+	//xhr.open('GET', url, true);
+	//xhr.send();
+	//xhr.addEventListener("readystatechange", PrintResults, false);
 }
 
 function PrintResults(var results){
