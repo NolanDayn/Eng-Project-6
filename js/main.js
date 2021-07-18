@@ -37,7 +37,6 @@ function AddListeners(){
 function FillTable(table, data){
 	//clear table
 	while (table.firstChild) table.removeChild(table.firstChild);
-	console.log(data);
 	
 	if (data.length == 0) return;
 
