@@ -11,7 +11,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
         if($link->connection_error){
             die("Connection failed: " . $link->connection_error);
         }
-        $sql  = 'INSERT INTO `requests` (`requestNumber`, `floor`) VALUES (NULL, \'2\')';
+        $sql  = 'INSERT INTO `requests` (`requestNumber`, `floor`) VALUES (NULL, \'{$floor}\')';
 
         if($link->$query($sql) === TRUE){
             echo "New record created successfully";
