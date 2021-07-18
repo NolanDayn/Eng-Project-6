@@ -47,7 +47,7 @@ function FillTable(table, data){
   </tr>
   */
 	table.innerHTML += "<tr>";
-	for (var key in data[0]) {
+	for (var key in data) {
 		table.innerHTML+=`<th>${key}</th>`;
 	}
 	table.innerHTML += "/<tr>";
@@ -126,7 +126,7 @@ function PrintResults(results){
 	const firstTable = JSON.parse( results.substring(0,endPos) );
 	const secondTable = JSON.parse( results.substring(endPos + 1, results.length - 1) );
 	FillTable(requestTable, firstTable);
-	FillTable(statusTable, secondTable);
+	//FillTable(statusTable, secondTable);
 }
 
 
