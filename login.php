@@ -67,12 +67,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             header("location: index.php");
                         } else{
                             // Password is not valid, display a generic error message
-                            echo "Invalid username or password.";
+                            echo "Invalid password";
                         }
                     }
                 } else{
                     // Username doesn't exist, display a generic error message
-                    echo "Invalid username or password.";
+                    echo "User doesn't exist";
                 }
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
