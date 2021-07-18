@@ -1,5 +1,6 @@
 <?php
-	if($_SERVER["REQUEST_METHOD"] == "POST"){
-		return $_POST["floor"];
-	}
+	//if($_SERVER["REQUEST_METHOD"] == "POST"){
+	//	echo $_POST["floor"];
+	//}
+	echo 1;
 ?>
