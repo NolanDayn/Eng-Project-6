@@ -41,7 +41,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
         $dbdata[] = ($row);
     }
     $elevatorData[] = json_encode($dbdata);
-    print_r($elevatorData)
+    echo json_encode($elevatorData)
 
     //Add request into the floors requested table
     $query = 'INSERT INTO floorsRequested(requestedFloor, startingFloor) VALUES (:requestedFloor, :currentFloor)';
