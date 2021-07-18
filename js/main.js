@@ -89,9 +89,9 @@ async function RequestFloor(floor){
 };
 
 function PrintResults(results){
-	const firstText = results.substring(0,results.indexOf(']'));
-	//const firstTable = JSON.parse(firstText);
-	console.log(firstText);
+	const firstText = results.substring(0,results.indexOf(']') + 1);
+	const firstTable = JSON.parse(firstText);
+	console.log(firstTable);
 }
 
 
