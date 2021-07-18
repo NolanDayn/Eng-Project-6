@@ -107,46 +107,98 @@
 <div class="parallax"></div>
 
 <!-- Elevator Controls -->
-<!-- Control panel -->
 <div id="controls" class="jumbotron text-center">
-	<h1>Test Animation</h1>
-	<button class="btn-primary" onClick="OpenDoors(0)" id="open">Open</button>
-	<button class="btn-primary" onClick="OpenDoors(1)" id="close">Close</button>
-	<button class="btn-primary" onClick="Move(1)" id="up">Up</button>
-	<button class="btn-primary" onClick="Move(-1)" id="down">Down</button>
-	<div class = "container">
+	<h1>Controls</h1>
+	<div class="container">
 		<div class = "row">
-			<div class = "col-sm-4">
+			<h2>Inside Elevator</h2>
+			<!-- 1 -->
+			<div class="elevator_button container col-sm-2">
 				<div class="row">
-					<button style="height:128px;margin:10px;"class="btn-primary col-sm-5" id="" onClick="RequestFloor(3)">Up</button>
-					<button style="height:128px;margin:10px;"class="btn-primary col-sm-5" id="" onClick="RequestFloor(3)">Down</button>
+					<h1 class="col-sm-6 display_active" id="floor_1_display">1</h1>
+					<div onClick="SetFloor(0)" class="control col-sm-6" id="floor_1_button"></div>
 				</div>
-				<div class="row">
-					<button style="height:128px;margin:10px;"class="btn-primary col-sm-5" id="" onClick="RequestFloor(2)">Up</button>
-					<button style="height:128px;margin:10px;"class="btn-primary col-sm-5" id="" onClick="RequestFloor(2)">Down</button>
-				</div>
-				<div class="row">
-					<button style="height:128px;margin:10px;"class="btn-primary col-sm-5" id="" onClick="RequestFloor(1)">Up</button>
-					<button style="height:128px;margin:10px;"class="btn-primary col-sm-5" id="" onClick="RequestFloor(1)">Down</button>
-				</div>
-				
 			</div>
-			<div class="col-sm-4" id="sprite-image"></div>
-			<div class="col-sm-4">
-				<h3>Inside the elevator</h3>
+			<!-- 2 -->
+			<div class="elevator_button container col-sm-2">
 				<div class="row">
-					<button class="col-sm-4 btn-primary" onClick="RequestFloor(1)">1</button>
-					<button class="col-sm-4 btn-primary" onClick="RequestFloor(2)">2</button>
-					<button class="col-sm-4 btn-primary" onClick="RequestFloor(3)">3</button>
+					<h1 class="col-sm-6" id="floor_2_display">2</h1>
+					<div onClick="SetFloor(1)" class="control col-sm-6" id="floor_2_button"></div>
 				</div>
-				<div class="row">
-					<button class="col-sm-4 btn-primary">O</button>
-					<button class="col-sm-4 btn-primary">C</button>
-					<button class="col-sm-4 btn-primary">A</button>
-				</div>
-				<h3>Request Logs</h3>
-				<textarea id="log" readonly style="width:400px;resize:none;height:200px;" name="Console" rows="10" cols="30"></textarea>
 			</div>
+			<!-- 3 -->
+			<div class="elevator_button container col-sm-2">
+				<div class="row">
+					<h1 class="col-sm-6" id="floor_3_display">3</h1>
+					<div onClick="SetFloor(2)" class="control col-sm-6" id="floor_3_button"></div>
+				</div>
+			</div>
+			<div class="col-sm-12"></div> <!-- new row -->
+			<!-- open doors-->
+			<div class="elevator_button container col-sm-2">
+				<div class="row">
+					<h1 class="col-sm-6 display_active" id="door_open_display"><i class="fas fa-door-open fa-sm"></i></h1>
+					<div onClick="MoveDoors(true)" class="control col-sm-6" id="door_open_button"></div>
+				</div>
+			</div>
+			<!-- close doors-->
+			<div class="elevator_button container col-sm-2">
+				<div class="row">
+					<h1 class="col-sm-6" id="door_close_display"><i class="fas fa-door-closed fa-sm"></i></h1>
+					<div onClick="MoveDoors(false)" class="control col-sm-6" id="door_close_button"></div>
+				</div>
+			</div>
+			<!-- alarm -->
+			<div class="elevator_button container col-sm-2">
+				<div class="row">
+					<h1 class="col-sm-6" id="music_display"><i class="fas fa-bell fa-sm"></i></h1>
+					<div onClick="ToggleMusic()" class="control col-sm-6" id="music_button"></div>
+				</div>
+			</div>
+			
+			<div class="col-sm-12"></div> <!-- new row -->
+			
+			<!-- Floor 3 Outside -->
+			<h2 class = "col-sm-12">Floor 3 Outside</h2>
+			
+			<div class="elevator_button container col-sm-2">
+			</div>
+			
+			<div class="elevator_button container col-sm-2">
+				<div class="row">
+					<h1 class="col-sm-6" id="music_display"><i class="fas fa-arrow-down fa-sm"></i></h1>
+					<div onClick="" class="control col-sm-6" id=""></div>
+				</div>
+			</div>
+			
+			<!-- Floor 2 Outside -->
+			<h2 class = "col-sm-12">Floor 2 Outside</h2>
+			<div class="elevator_button container col-sm-2">
+				<div class="row">
+					<h1 class="col-sm-6" id="music_display"><i class="fas fa-arrow-up fa-sm"></i></h1>
+					<div onClick="" class="control col-sm-6" id=""></div>
+				</div>
+			</div>
+			<div class="elevator_button container col-sm-2">
+				<div class="row">
+					<h1 class="col-sm-6" id="music_display"><i class="fas fa-arrow-down fa-sm"></i></h1>
+					<div onClick="" class="control col-sm-6" id=""></div>
+				</div>
+			</div>
+			
+			<!-- Floor 1 Outside -->
+			<h2 class = "col-sm-12">Floor 1 Outside</h2>
+			<div class="elevator_button container col-sm-2">
+				<div class="row">
+					<h1 class="col-sm-6" id="music_display"><i class="fas fa-arrow-up fa-sm"></i></h1>
+					<div onClick="" class="control col-sm-6" id=""></div>
+				</div>
+			</div>
+			<div class="elevator_button container col-sm-2">
+			</div>
+			
+			
+			
 		</div>
 	</div>
 </div>
