@@ -20,14 +20,13 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
         'floor' => 2
     ];
     $result = $statement->execute($params); 
-
+    var_dump($result);
+    echo '<br/><br/>';
     $rows = $db->query("SELECT * FROM requests");
-    $dbdata = array();
-
-  //  while($row = $rows->fetch_assoc()) {
-   //     $dbdata[] = $row;
-   // }
-
-  //  echo json_encode($dbdata);
-}
+    foreach($rows as $row) {
+        var_dump($row);
+        echo "<br/>";
+    }
+    echo '<br/><br/><br/>';
+    }
 ?>
