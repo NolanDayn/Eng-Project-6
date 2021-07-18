@@ -19,7 +19,6 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-      </ul>
 	  
 	  <!-- form -->
 
@@ -38,7 +37,7 @@
 		echo '</form';
 	}
 ?>  
-	
+	     </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#intro">Introduction</a></li>
 		<li><a href="#about">About Us</a></li>
