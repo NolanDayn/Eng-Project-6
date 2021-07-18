@@ -62,24 +62,19 @@ async function Set_Dest(){
 async function RequestFloor(floor){
 	called_floors.add(floor);
 	Set_Dest();
+	//Request
 	var url = `http://142.156.193.130:50050/Eng-Project-6/AddFloor.php?floor=${floor}`;
-	httpGetAsync(url, PrintResults);
+	let xhr = new XMLHttpRequest();
+	xhr.open('GET', url, true);
+	xhr.send();
+	xhr.addEventListener("readystatechange", PrintResults, false);
 }
 
 function PrintResults(var results){
-	console.log(results);
+	alert("hi");
 }
 
-function httpGetAsync(theUrl, callback)
-{
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.onreadystatechange = function() { 
-        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-            callback(xmlHttp.responseText);
-    }
-    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
-    xmlHttp.send(null);
-}
+
 
 async function OpenDoors(open){
 	//0:open, 1:close
