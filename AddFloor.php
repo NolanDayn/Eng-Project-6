@@ -2,5 +2,5 @@
 	//if($_SERVER["REQUEST_METHOD"] == "POST"){
 	//	echo $_POST["floor"];
 	//}
-	echo 1;
+	echo $_GET["floor"];
 ?>
