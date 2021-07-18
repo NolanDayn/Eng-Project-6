@@ -117,7 +117,7 @@ if(isset($error) && $error != ""){
 <div class="parallax"></div>
 
 <!--elevator controls-->
-<div  class="jumbotron text-center">
+<div id="controls" class="jumbotron text-center">
 	<h1>Test Animation</h1>
 	<button class="btn-primary" onClick="OpenDoors(0)" id="open">Open</button>
 	<button class="btn-primary" onClick="OpenDoors(1)" id="close">Close</button>

@@ -41,7 +41,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#intro">Introduction</a></li>
 		<li><a href="#about">About Us</a></li>
-		<li><a href="./elevator-controls.html">Elevator Controls</a></li>
+		<li><a href="#controls">Elevator Controls</a></li>
 		<li><a href="./extra.html">Control Scheme</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentation <span class="caret"></span></a>
