@@ -38,6 +38,7 @@
 		echo '</form';
 	}
 ?>  
+	
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#intro">Introduction</a></li>
 		<li><a href="#about">About Us</a></li>
