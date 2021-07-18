@@ -48,6 +48,7 @@ function FillTable(table, data){
   */
 	table.innerHTML += "<tr>";
 	for (var key in data[0]) {
+		console.log(key);
 		table.innerHTML+=`<th>${key}</th>`;
 	}
 	table.innerHTML += "</tr>";
@@ -124,7 +125,7 @@ async function RequestFloor(floor){
 function PrintResults(results){
 	var endPos = results.indexOf(']') + 1;
 	const firstTable = JSON.parse( results.substring(0,endPos) );
-	const secondTable = JSON.parse( results.substring(endPos + 1, results.length - 1) );
+	//const secondTable = JSON.parse( results.substring(endPos + 1, results.length - 1) );
 	FillTable(requestTable, firstTable);
 	//FillTable(statusTable, secondTable);
 }
