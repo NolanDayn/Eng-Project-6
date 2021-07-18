@@ -13,27 +13,27 @@ require_once "config.php";
  
 // Define variables and initialize with empty values
 $username = $password = "";
-$username_err = $password_err = $login_err = "";
+$login_err = "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
  
     // Check if username is empty
     if(empty(trim($_POST["username"]))){
-        $username_err = "Please enter username.";
+        $login_err = "Please enter username.";
     } else{
         $username = trim($_POST["username"]);
     }
     
     // Check if password is empty
     if(empty(trim($_POST["password"]))){
-        $password_err = "Please enter your password.";
+        $login_err = "Please enter your password.";
     } else{
         $password = trim($_POST["password"]);
     }
     
     // Validate credentials
-    if(empty($username_err) && empty($password_err)){
+    if(empty($login_err)){
         // Prepare a select statement
         $sql = "SELECT id, username, password FROM users WHERE username = ?";
         
@@ -67,15 +67,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             header("location: index.php");
                         } else{
                             // Password is not valid, display a generic error message
-                            echo "Invalid password";
+                            $login_err = "Invalid password";
                         }
                     }
                 } else{
                     // Username doesn't exist, display a generic error message
-                    echo "User doesn't exist";
+                    $login_err = "User doesn't exist";
                 }
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                $login_err = "Oops! Something went wrong. Please try again later.";
             }
 
             // Close statement
@@ -84,5 +84,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     // Close connection
     mysqli_close($link);
+	header("location: index.php?error=$login_err");
 }
 ?>
