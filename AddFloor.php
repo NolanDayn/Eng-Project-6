@@ -31,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     foreach($rows as $row) {
         $dbdata[] = ($row);
     }
-    $elevatorData[] = json_encode($dbdata);
+    echo json_encode($dbdata);
 
     //Get the current floor so we can use this in floors requested!!!!
     //Give back elevator status as json
@@ -40,8 +40,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     foreach($rows as $row) {
         $dbdata[] = ($row);
     }
-    $elevatorData[] = json_encode($dbdata);
-    var_dump($elevatorData)
+   echo json_encode($dbdata);
 
     //Add request into the floors requested table
     $query = 'INSERT INTO floorsRequested(requestedFloor, startingFloor) VALUES (:requestedFloor, :currentFloor)';
