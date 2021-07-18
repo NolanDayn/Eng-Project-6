@@ -119,6 +119,12 @@ if(isset($error) && $error != ""){
 <!--elevator controls-->
 <div id="controls" class="jumbotron text-center">
 	<h1>Test Controls</h1>
+	<?php
+	if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+	} else {
+		echo '<h6 class = "error_text">Login in order to control the elevator</h6>';
+	}
+	?>
 	<div class = "container">
 		<div class = "row">
 			<div class = "col-sm-4">
@@ -216,7 +222,12 @@ if(isset($error) && $error != ""){
 </div>
 
 <!-- javascript -->
-<script src="js/main.js"></script>
+<?php
+	if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+		echo '<script src="js/main.js"></script>';
+	} else {
+	}
+?>
 
 </body>
 </html>
