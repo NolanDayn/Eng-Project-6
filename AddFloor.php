@@ -24,10 +24,10 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     $rows = $db->query("SELECT * FROM requests");
     $dbdata = array();
 
-    while($row = $rows->fetch_assoc()) {
-        $dbdata[] = $row;
-    }
+  //  while($row = $rows->fetch_assoc()) {
+   //     $dbdata[] = $row;
+   // }
 
-    echo json_encode($dbdata);
+  //  echo json_encode($dbdata);
 }
 ?>
