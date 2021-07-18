@@ -160,9 +160,9 @@ if(isset($error) && $error != ""){
 	</div>
 		<!-- Tables -->
 		<h3>Request Logs</h3>
-		<table style="width:100%" id = "requestTable"></table>
+		<table id = "requestTable"></table>
 		<h3>Elevator Status</h3>
-		<table style="width:100%" id = "statusTable"></table>
+		<table id = "statusTable"></table>
 </div>
 <div class="parallax"></div>
 

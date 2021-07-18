@@ -5,6 +5,11 @@
 	z-index:2;
 }
 
+table{
+	border:collapse;
+	width:75%;
+}
+
 .error_text{
 	font-size:14px;
 	font-style:italic;
