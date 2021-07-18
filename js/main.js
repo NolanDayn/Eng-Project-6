@@ -74,7 +74,7 @@ async function RequestFloor(floor){
 };
 
 function PrintResults(results){
-	alert(results);
+	console.log(results);
 }
 
 
