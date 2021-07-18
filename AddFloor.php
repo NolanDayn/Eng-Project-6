@@ -20,8 +20,6 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
         'floor' => $floor
     ];
     $result = $statement->execute($params); 
-    var_dump($result);
-    echo '<br/><br/>';
     $rows = $db->query("SELECT * FROM requests");
 
     $dbdata = array();
