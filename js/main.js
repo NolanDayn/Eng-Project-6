@@ -79,6 +79,7 @@ async function RequestFloor(floor){
 	
 	var url = `http://142.156.193.130:50050/Eng-Project-6/AddFloor.php?floor=${floor}`;
 	var xhr = new XMLHttpRequest();
+	xhr.responseType = 'json';
 	xhr.open('GET', url, true);
 	xhr.send();
 	xhr.onreadystatechange = function() {
