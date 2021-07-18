@@ -21,17 +21,21 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
 		*/
         //Insert a new requested floor to the elevators database
         $stmt = $mysqli->prepare("'INSERT INTO `requests` (`requestNumber`, `floor`) VALUES (NULL, '?')");    
-		$stmt = mysqli_prepare($link, $sql)){
+		//$stmt = mysqli_prepare($link, $sql)){
         
             // Bind variables to the prepared statement as parameters
-		mysqli_stmt_bind_param($stmt, "s", $floor);
+	    $stmt->bind_param("i", $floor);
         $floor = _GET('floor');
 
         // Attempt to execute the prepared statement
-		if(mysqli_stmt_execute($stmt)){
+		//if(mysqli_stmt_execute($stmt)){
       //      // Store result
-            mysqli_stmt_store_result($stmt);
-		}
+       //     mysqli_stmt_store_result($stmt);
+	//	}
+        $stmt->execute();
+
+        $result = $mysqli->query('SELECT requestNumber,floor FROM requests');
+        echo $result
         
         // Close statement
         mysqli_stmt_close($stmt);
