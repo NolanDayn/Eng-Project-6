@@ -35,7 +35,7 @@ function AddListeners(){
 }
 
 function FillTable(table, data){
-	
+	console.log(data);
 }
 
 function CallNumber(){
@@ -89,9 +89,11 @@ async function RequestFloor(floor){
 };
 
 function PrintResults(results){
-	const firstText = results.substring(0,results.indexOf(']') + 1);
-	const firstTable = JSON.parse(firstText);
-	console.log(firstTable);
+	var endPos = results.indexOf(']') + 1;
+	const firstTable = JSON.parse( results.substring(0,endPos) );
+	const secondTable = JSON.parse( results.substring(endPos + 1, results.length) );
+	FillTable(requestTable, firstTable);
+	FillTable(statusTable, secondTable);
 }
 
 
