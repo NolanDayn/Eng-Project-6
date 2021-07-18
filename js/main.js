@@ -47,7 +47,7 @@ function FillTable(table, data){
   </tr>
   */
 	table.innerHTML += "<tr>";
-	for (var key in data) {
+	for (var key in data[0]) {
 		table.innerHTML+=`<th>${key}</th>`;
 	}
 	table.innerHTML += "/<tr>";
