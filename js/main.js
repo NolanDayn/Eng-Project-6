@@ -59,6 +59,8 @@ function FillTable(table, data){
   </tr>
 	*/
 	//print data
+	
+	/*
 	for(int i = 0; i < data.length; i++){
 		table.innerHTML += "<tr>";
 		for (var key in data[i]) {
@@ -66,6 +68,7 @@ function FillTable(table, data){
 		}
 		table.innerHTML += "/<tr>";
 	}
+	*/
 }
 
 function CallNumber(){
