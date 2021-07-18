@@ -131,7 +131,7 @@ audio {
 #sprite-image {
   height: 384px;
   width: 128px;
-  background: url(../images/elevator-sprites.png) 0px 0px;
+  background: url(./../images/elevator-sprites.png) 0px 0px;
   animation-fill-mode:forwards;
 }
 
