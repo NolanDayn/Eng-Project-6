@@ -16,6 +16,19 @@ var animationStrings = ["Up_One .25s steps(7) 1", "Up_Two .25s steps(7) 1","Down
 // 9: 3 close
 
 const called_floors = new Set();
+AddEventListeners();
+
+
+function AddEventListeners(){
+	var floor1 = document.getElementsByClassName("get_floor_1");
+	var floor2 = document.getElementsByClassName("get_floor_2");
+	var floor3 = document.getElementsByClassName("get_floor_3");
+	for (var i = 0; i < floor1.length; i++) {
+		floor1[i].addEventListener('click', function(){RequestFloor(1);}, false);
+		floor2[i].addEventListener('click', function(){RequestFloor(2);}, false);
+		floor3[i].addEventListener('click', function(){RequestFloor(3);}, false);
+	}
+}
 
 async function Set_Dest(){
 	var dest_found = 0;
