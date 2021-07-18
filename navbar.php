@@ -42,7 +42,7 @@
         <li><a href="#intro">Introduction</a></li>
 		<li><a href="#about">About Us</a></li>
 		<li><a href="#controls">Elevator Controls</a></li>
-		<li><a href="./extra.html">Control Scheme</a></li>
+		<!-- Documentation Dropdown -->
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentation <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -53,6 +53,15 @@
 			<li><a href="#stephane_log">Logbook - Stephane</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#status">Status Reports</a></li>
+          </ul>
+        </li>
+		<!-- Schema dropdown -->
+		<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Control Scheme <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#stm_demos">STM Demos</a></li>
+			<li><a href="#state_machine">State Machine</a></li>
+			<li><a href="#logic_flow">Logic Flow</a></li>
           </ul>
         </li>
       </ul>

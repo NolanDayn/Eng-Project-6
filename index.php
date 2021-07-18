@@ -163,6 +163,28 @@ if(isset($error) && $error != ""){
 </div>
 <div class="parallax"></div>
 
+<!-- STM DEMOS -->
+<div id="stm_demos" class="jumbotron text-center">
+	<h1>STM demos</h1>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/scnOnqeBsO8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/TkJEqkO0AtU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/IrQav-2-4Dw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>	
+</div>
+<div class="parallax"></div>
+
+<!-- State Machine -->
+<div id="state_machine" class="jumbotron text-center">
+	<h1>State machine diagram</h1>
+	<img src="https://docs.google.com/drawings/d/e/2PACX-1vQQe9RNzqgKsA5gBZfs81BUEiTJY2zVHnR43YdbP8gYwdOr2Wq7F-baeLg3oceFKcSx3OvU3Ps_i3dr/pub?w=1008&amp;h=573"></div>
+<div class="parallax"></div>
+
+<!-- Logic Flow -->
+<div id="logic_flow" class="jumbotron text-center">
+	<h1>Elevator Floor Selection Logic</h1>
+	<img src="./images/floor_selection.png"></div>
+</div>
+<div class="parallax"></div>
+
 <!-- Gantt Chart -->
 <div id="gantt" class="jumbotron text-center">
 	<h1>Gantt Chart</h1>
