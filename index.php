@@ -38,6 +38,15 @@
 <!-- Navigation Bar-->
 <?php require "navbar.php" ?>
 
+<!-- Error Bar -->
+<h6 class = "error_text">
+<?php
+if(isset($error)){
+    echo $error;
+}
+?>
+</h6>
+
 <!-- Introduction -->
 <div id="intro" class="jumbotron text-center">
 	<h1>Introduction</h1>

@@ -5,6 +5,12 @@
 	z-index:2;
 }
 
+.error_text{
+	font-size:12px;
+	background:red;
+	font-color:white;
+}
+
 .jumbotron > h1{
 	font-size:92px;
 	font-color:black;
