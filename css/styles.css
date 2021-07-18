@@ -5,11 +5,13 @@
 	z-index:2;
 }
 
+table{
+	width:100%;
+}
+
 table, th, td{
 	border:1px solid black;
-	width:75%;
-	justify-content:center;
-	margin:0 auto;
+	margin:10px 10px 10px 10px;
 }
 
 .error_text{
