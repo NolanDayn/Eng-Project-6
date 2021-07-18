@@ -10,7 +10,7 @@ $db = new PDO(
 // Boilerplate - Return arrays with keys that are the field names in the database - Call the PDO method setAttribute()
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-//if($_SERVER["REQUEST_METHOD"] == "GET"){
+if($_SERVER["REQUEST_METHOD"] == "GET"){
 
     $query = 'INSERT INTO requests(floor) VALUES (:floor)';
     
@@ -69,5 +69,5 @@ $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     /// Close connection
    // mysqli_close($link);
 	//echo $_GET["floor"];
-//}
+}
 ?>
