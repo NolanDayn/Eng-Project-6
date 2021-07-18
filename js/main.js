@@ -72,8 +72,6 @@ async function RequestFloor(floor){
 		}
 	}
 };
-	xhr.addEventListener("readystatechange", PrintResults, false);
-}
 
 function PrintResults(results){
 	alert(results);
