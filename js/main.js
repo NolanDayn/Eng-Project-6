@@ -35,17 +35,12 @@ function AddListeners(){
 }
 
 function FillTable(table, data){
+	//clear table
 	while (table.firstChild) table.removeChild(table.firstChild);
-	console.log(data);
-	if (data.length == 0) return;
 	
-	/*
-	  <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Age</th>
-  </tr>
-  */
+	if (data.length == 0) return;
+
+	//headers
 	const row = document.createElement("tr");
 	for (var key in data[0]) {
 		const header = document.createElement("th");
@@ -54,15 +49,8 @@ function FillTable(table, data){
 		row.appendChild(header);
 	}
 	table.appendChild(row);
-	/*
-	  <tr>
-    <td>Eve</td>
-    <td>Jackson</td>
-    <td>94</td>
-  </tr>
-	*/
-	//print data
-	console.log(data[2]['requestNumber']);
+
+	//data
 	data.forEach( function (arrayItem) {
 		const row = document.createElement("tr");
 		for (var key in arrayItem) {
@@ -129,9 +117,9 @@ async function RequestFloor(floor){
 function PrintResults(results){
 	var endPos = results.indexOf(']') + 1;
 	const firstTable = JSON.parse( results.substring(0,endPos) );
-	//const secondTable = JSON.parse( results.substring(endPos + 1, results.length - 1) );
+	const secondTable = JSON.parse( results.substring(endPos + 1, results.length - 1) );
 	FillTable(requestTable, firstTable);
-	//FillTable(statusTable, secondTable);
+	FillTable(statusTable, secondTable);
 }
 
 
