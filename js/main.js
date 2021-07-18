@@ -61,9 +61,9 @@ async function Set_Dest(){
 
 async function RequestFloor(floor){
 	called_floors.add(floor);
+	Set_Dest();
 	var url = `http://142.156.193.130:50050/Eng-Project-6/AddFloor.php?floor=${floor}`;
 	httpGetAsync(url, PrintResults);
-	Set_Dest();
 }
 
 function PrintResults(var results){
@@ -77,7 +77,7 @@ function httpGetAsync(theUrl, callback)
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
             callback(xmlHttp.responseText);
     }
-    xmlHttp.open("POST", theUrl, true); // true for asynchronous 
+    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
     xmlHttp.send(null);
 }
 
