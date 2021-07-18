@@ -1,39 +1,79 @@
-var musicPlayer = document.getElementById("music_player");
+var currentFloor = 1;
+var doorState = 1; //1: closed 0:open
+var direction = 0; //1: up, 0: none, -1:down
+var image = document.getElementById("sprite-image");
 
-//0: floor 1, 1: floor 2, 2: floor 3, 3: door open, 4: door close, 5: music button
-var elevatorDisplays = [document.getElementById("floor_1_display"),document.getElementById("floor_2_display"),document.getElementById("floor_3_display"),document.getElementById("door_open_display"),document.getElementById("door_close_display"),document.getElementById("music_display")];
-var elevatorButtons = [document.getElementById("floor_1_button"),document.getElementById("floor_2_button"),document.getElementById("floor_3_button"),document.getElementById("door_open_button"),document.getElementById("door_close_button"),document.getElementById("music_button")];
+var animationStrings = ["Up_One .25s steps(7) 1", "Up_Two .25s steps(7) 1","Down_Two .25s steps(7) 1","Down_One .25s steps(7) 1","One_Open .25s steps(6) 1","One_Close .25s steps(6) 1","Two_Open .25s steps(6) 1","Two_Close .25s steps(6) 1","Three_Open .25s steps(6) 1","Three_Close .25s steps(6) 1"];
+// 0: 1 to 2
+// 1: 2 to 3
+// 2: 3 to 2
+// 3: 2 to 1
+// 4: 1 open
+// 5: 1 close
+// 6: 2 open
+// 7: 2 close
+// 8: 3 open
+// 9: 3 close
 
-//0: button click 1: door open, 2: door close, 3: arrival sound
-var sounds = [document.getElementById("button_click"),document.getElementById("door_open"),document.getElementById("door_close"),document.getElementById("arrival_sound")];
+const called_floors = new Set();
 
-
-function ToggleMusic(){
-	sounds[0].play()
-     musicPlayer.muted = !musicPlayer.muted;
-	 musicPlayer.muted ? elevatorDisplays[5].classList.remove("display_active") : elevatorDisplays[5].classList.add("display_active");
-	 musicPlayer.play();
+async function Set_Dest(){
+	var dest_found = 0;
+	if (called_floors.has(currentFloor)){
+		await OpenDoors(0);
+		await OpenDoors(1);
+		called_floors.delete(currentFloor);
+	}
+	for(var i = currentFloor + 1; i <= 3; i++){
+		if(called_floors.has(i)){
+			await Move(1);
+			dest_found = 1;
+			break;
+		}
+	}
+	if (!dest_found){
+		for(var i = currentFloor - 1; i >= 1; i--){
+			if(called_floors.has(i)){
+				await Move(-1);
+				dest_found = 1;
+				break;
+			}
+		}
+	}
+	
+	if (dest_found) Set_Dest();
 }
 
-function MoveDoors(open) {
-	sounds[0].play();
-	if (open){
-		setTimeout(() => {  sounds[1].play(); }, 500);
-		elevatorDisplays[3].classList.add("display_active");
-		elevatorDisplays[4].classList.remove("display_active");
-	} else {
-		setTimeout(() => {  sounds[2].play(); }, 500);
-		elevatorDisplays[4].classList.add("display_active");
-		elevatorDisplays[3].classList.remove("display_active");
-	}
+async function RequestFloor(floor){
+	called_floors.add(floor);
+	console.log(called_floors);
+	document.getElementById("log").value = "Floor " + floor.toString() + " Requested\n";
+	//await OpenDoors(0);
+	//OpenDoors(1);	
+	Set_Dest();
 }
 
-function SetFloor(floorNumber){
-	sounds[0].play()
-	setTimeout(() => {  sounds[3].play(); }, 500);
-	for(var i = 0; i < 3; i++){
-		if (i == floorNumber) continue;
-		elevatorDisplays[i].classList.remove("display_active");
+async function OpenDoors(open){
+	//0:open, 1:close
+	if (doorState === open) return;
+	image.style.animation = animationStrings[currentFloor * 2 + 2 + open];
+	image.style.animationFillMode = "forwards";
+	await new Promise(function(resolve) { setTimeout(resolve, 900); });
+	doorState === 1 ? doorState = 0 : doorState = 1;
+}
+
+async function Move(dir){
+	if (dir == 1){
+		image.style.animation = animationStrings[currentFloor - 1];
+		image.style.animationFillMode = "forwards";
+		doorState = 1;
+		currentFloor++;
+		await new Promise(function(resolve) { setTimeout(resolve, 900); });
+	} else if (dir == -1){
+		image.style.animation = animationStrings[currentFloor == 3 ? 2 : 3];
+		image.style.animationFillMode = "forwards";
+		doorState = 1;
+		currentFloor--;
+		await new Promise(function(resolve) { setTimeout(resolve, 900); });
 	}
-	elevatorDisplays[floorNumber].classList.add("display_active");
 }

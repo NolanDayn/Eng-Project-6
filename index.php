@@ -118,11 +118,7 @@ if(isset($error) && $error != ""){
 
 <!--elevator controls-->
 <div id="controls" class="jumbotron text-center">
-	<h1>Test Animation</h1>
-	<button class="btn-primary" onClick="OpenDoors(0)" id="open">Open</button>
-	<button class="btn-primary" onClick="OpenDoors(1)" id="close">Close</button>
-	<button class="btn-primary" onClick="Move(1)" id="up">Up</button>
-	<button class="btn-primary" onClick="Move(-1)" id="down">Down</button>
+	<h1>Test Controls</h1>
 	<div class = "container">
 		<div class = "row">
 			<div class = "col-sm-4">
