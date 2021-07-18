@@ -15,11 +15,11 @@ var animationStrings = ["Up_One .25s steps(7) 1", "Up_Two .25s steps(7) 1","Down
 // 8: 3 open
 // 9: 3 close
 
-
-
 const called_floors = new Set();
-AddEventListeners();
 
+window.addEventListener('load', (event) => {
+  AddEventListeners();
+});
 
 function AddEventListeners(){
 	var floor1 = document.getElementsByClassName("get_floor_1");
