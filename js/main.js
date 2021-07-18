@@ -117,9 +117,9 @@ async function RequestFloor(floor){
 
 function PrintResults(results){
 	var endPos = results.indexOf(']') + 1;
-	//const firstTable = JSON.parse( results.substring(0,endPos) );
+	const firstTable = JSON.parse( results.substring(0,endPos) );
 	const secondTable = JSON.parse( results.substring(endPos, results.length) );
-	//FillTable(requestTable, firstTable);
+	FillTable(requestTable, firstTable);
 	FillTable(statusTable, secondTable);
 }
 

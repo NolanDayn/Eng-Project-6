@@ -155,14 +155,14 @@ if(isset($error) && $error != ""){
 					<button class="col-sm-4 btn-primary">C</button>
 					<button id="alarmButton" class="col-sm-4 btn-primary">A</button>
 				</div>
-				<!-- Tables -->
-				<h3>Request Logs</h3>
-				<table style="width:100%" id = "requestTable"></table>
-				<h3>Elevator Status</h3>
-				<table style="width:100%" id = "statusTable"></table>
 			</div>
 		</div>
 	</div>
+		<!-- Tables -->
+		<h3>Request Logs</h3>
+		<table style="width:100%" id = "requestTable"></table>
+		<h3>Elevator Status</h3>
+		<table style="width:100%" id = "statusTable"></table>
 </div>
 <div class="parallax"></div>
 
