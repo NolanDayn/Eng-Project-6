@@ -123,16 +123,16 @@ if(isset($error) && $error != ""){
 		<div class = "row">
 			<div class = "col-sm-4">
 				<div class="row">
-					<button style="height:128px;margin:10px;" class="get_floor_3 btn-primary col-sm-5" id="" onClick="RequestFloor(3)">Up</button>
-					<button style="height:128px;margin:10px;"class="get_floor_3 btn-primary col-sm-5" id="" onClick="RequestFloor(3)">Down</button>
+					<button style="height:128px;margin:10px;" class="get_floor_3 btn-primary col-sm-5">Up</button>
+					<button style="height:128px;margin:10px;"class="get_floor_3 btn-primary col-sm-5">Down</button>
 				</div>
 				<div class="row">
-					<button style="height:128px;margin:10px;"class="get_floor_2 btn-primary col-sm-5" id="" onClick="RequestFloor(2)">Up</button>
-					<button style="height:128px;margin:10px;"class="get_floor_2 btn-primary col-sm-5" id="" onClick="RequestFloor(2)">Down</button>
+					<button style="height:128px;margin:10px;"class="get_floor_2 btn-primary col-sm-5">Up</button>
+					<button style="height:128px;margin:10px;"class="get_floor_2 btn-primary col-sm-5">Down</button>
 				</div>
 				<div class="row">
-					<button style="height:128px;margin:10px;"class="get_floor_1 btn-primary col-sm-5" id="" onClick="RequestFloor(1)">Up</button>
-					<button style="height:128px;margin:10px;"class="get_floor_1 btn-primary col-sm-5" id="" onClick="RequestFloor(1)">Down</button>
+					<button style="height:128px;margin:10px;"class="get_floor_1 btn-primary col-sm-5">Up</button>
+					<button style="height:128px;margin:10px;"class="get_floor_1 btn-primary col-sm-5">Down</button>
 				</div>
 				
 			</div>
@@ -140,9 +140,9 @@ if(isset($error) && $error != ""){
 			<div class="col-sm-4">
 				<h3>Inside the elevator</h3>
 				<div class="row">
-					<button class="get_floor_1 col-sm-4 btn-primary" onClick="RequestFloor(1)">1</button>
-					<button class="get_floor_2 col-sm-4 btn-primary" onClick="RequestFloor(2)">2</button>
-					<button class="get_floor_3 col-sm-4 btn-primary" onClick="RequestFloor(3)">3</button>
+					<button class="get_floor_1 col-sm-4 btn-primary">1</button>
+					<button class="get_floor_2 col-sm-4 btn-primary">2</button>
+					<button class="get_floor_3 col-sm-4 btn-primary">3</button>
 				</div>
 				<div class="row">
 					<button class="col-sm-4 btn-primary">O</button>
