@@ -28,6 +28,15 @@ function AddListeners(){
 		floor2[i].addEventListener('click', function(){RequestFloor(2);}, false);
 		floor3[i].addEventListener('click', function(){RequestFloor(3);}, false);
 	}
+	
+	document.getElementById('alarmButton').addEventListener('click', CallNumber, false);
+}
+
+function CallNumber(){
+	var url = `http:142.156.193.130:50050/Eng-Project-6/twilio/sendsms.php`;
+	let xhr = new XMLHttpRequest();
+	xhr.open('GET', url, true);
+	xhr.send();
 }
 
 async function Set_Dest(){

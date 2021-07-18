@@ -153,7 +153,7 @@ if(isset($error) && $error != ""){
 				<div class="row">
 					<button class="col-sm-4 btn-primary">O</button>
 					<button class="col-sm-4 btn-primary">C</button>
-					<button class="col-sm-4 btn-primary">A</button>
+					<button id="alarmButton" class="col-sm-4 btn-primary">A</button>
 				</div>
 				<h3>Request Logs</h3>
 				<textarea id="log" readonly style="width:400px;resize:none;height:200px;" name="Console" rows="10" cols="30"></textarea>
