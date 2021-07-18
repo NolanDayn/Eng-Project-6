@@ -6,8 +6,10 @@
 }
 
 table{
-	border:collapse;
+	border:1px solid black;
 	width:75%;
+	justify-content:center;
+	margin:0 auto;
 }
 
 .error_text{
