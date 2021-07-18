@@ -34,7 +34,7 @@ function AddListeners(){
 
 function CallNumber(){
 	var url = `http:142.156.193.130:50050/Eng-Project-6/twilio/sendsms.php`;
-	let xhr = new XMLHttpRequest();
+	var xhr = new XMLHttpRequest();
 	xhr.open('GET', url, true);
 	xhr.send();
 }
@@ -72,7 +72,7 @@ async function RequestFloor(floor){
 	//Request
 	
 	var url = `http://142.156.193.130:50050/Eng-Project-6/AddFloor.php?floor=${floor}`;
-	let xhr = new XMLHttpRequest();
+	var xhr = new XMLHttpRequest();
 	xhr.open('GET', url, true);
 	xhr.send();
 	xhr.onreadystatechange = function() {
