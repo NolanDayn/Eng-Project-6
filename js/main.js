@@ -26,7 +26,7 @@ function AddEventListeners(){
 	var floor2 = document.getElementsByClassName("get_floor_2");
 	var floor3 = document.getElementsByClassName("get_floor_3");
 	for (var i = 0; i < floor1.length; i++) {
-		console.log('f');
+		alert("hi");
 		floor1[i].addEventListener('click', function(){RequestFloor(1);}, false);
 		floor2[i].addEventListener('click', function(){RequestFloor(2);}, false);
 		floor3[i].addEventListener('click', function(){RequestFloor(3);}, false);
