@@ -84,7 +84,7 @@ async function RequestFloor(floor){
 	xhr.send();
 	xhr.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			PrintResults(this.responseText);
+			PrintResults(this.response);
 		}
 	}
 };
