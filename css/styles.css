@@ -6,9 +6,12 @@
 }
 
 .error_text{
-	font-size:12px;
-	background:red;
+	font-size:14px;
+	font-style:italic;
+	text-align:center;
+	background:pink;
 	font-color:white;
+	margin: 0;
 }
 
 .jumbotron > h1{
