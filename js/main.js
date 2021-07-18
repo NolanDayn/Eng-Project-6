@@ -52,6 +52,7 @@ function FillTable(table, data){
 		table.innerHTML+=`<th>${key}</th>`;
 	}
 	table.innerHTML += "</tr>";
+	console.log(table.innerHTML);
 	/*
 	  <tr>
     <td>Eve</td>
