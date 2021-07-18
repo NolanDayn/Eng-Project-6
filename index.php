@@ -40,6 +40,7 @@
 
 <!-- Error Bar -->
 <?php
+$error = $_GET["error"]
 if(isset($error) && $error != ""){
     echo '<h6 class = "error_text">';
 	echo "" . htmlspecialchars($error) . "";
