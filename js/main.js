@@ -35,8 +35,8 @@ function AddListeners(){
 }
 
 function FillTable(table, data){
+	while (table.firstChild) table.removeChild(table.firstChild);
 	console.log(data);
-	table.innerHTML = "";
 	if (data.length == 0) return;
 	
 	/*
@@ -46,13 +46,14 @@ function FillTable(table, data){
     <th>Age</th>
   </tr>
   */
-	table.innerHTML += "<tr>";
+	const row = document.createElement("tr");
 	for (var key in data[0]) {
-		console.log(key);
-		table.innerHTML+=`<th>${key}</th>`;
+		const header = document.createElement("th");
+		const node = document.createTextNode(key);
+		header.appendChild(node);
+		row.appendChild(header);
 	}
-	table.innerHTML += "</tr>";
-	console.log(table.innerHTML);
+	table.appendChild(row)
 	/*
 	  <tr>
     <td>Eve</td>
