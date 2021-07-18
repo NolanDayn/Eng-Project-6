@@ -62,7 +62,7 @@ function FillTable(table, data){
   </tr>
 	*/
 	//print data
-	console.log(data[2]);
+	console.log(data[2]['requestNumber']);
 	for(var i = 0; i < data.length; i++){
 		const row = document.createElement("tr");
 		for (var key in data[i]) {
