@@ -157,8 +157,8 @@ if(isset($error) && $error != ""){
 				</div>
 				<!-- Tables -->
 				<h3>Request Logs</h3>
-				<table id = "requestTable"></table>
-				<table id = "statusTable"></table>
+				<table style="width:100%" id = "requestTable"></table>
+				<table style="width:100%" id = "statusTable"></table>
 			</div>
 		</div>
 	</div>
