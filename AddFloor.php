@@ -40,6 +40,6 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
    // }
     /// Close connection
    // mysqli_close($link);
-    
-	//echo $_GET["floor"];
+       }
+	echo $_GET["floor"];
 ?>
