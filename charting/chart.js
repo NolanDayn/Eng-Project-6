@@ -36,7 +36,19 @@ function showBarGraph(){
 
             var barGraph = new Chart(ctx, {
                 type: 'bar',
-                data: chartData
+                data: chartData,
+                options: {
+                    responsive: true,
+                    plugins: {
+                      legend: {
+                        position: 'top',
+                      },
+                      title: {
+                        display: true,
+                        text: 'Requested Floor Over Time'
+                      }
+                    }
+                }
             });
         }
     };
@@ -81,7 +93,19 @@ function showPieChart(){
 
             var chart1 = new Chart(ctx, {
                 type:"pie",
-                data:chartData
+                data:chartData,
+                options: {
+                    responsive: true,
+                    plugins: {
+                      legend: {
+                        position: 'top',
+                      },
+                      title: {
+                        display: true,
+                        text: 'Requested Floors'
+                      }
+                    }
+                }
             })
 
         };
