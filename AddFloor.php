@@ -26,7 +26,6 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     $rows = $db->query("SELECT * FROM requests ORDER BY requestNumber DESC LIMIT 5");
 
     $dbdata = array();
-    $elevatorData = array();
 
     foreach($rows as $row) {
         $dbdata[] = ($row);
