@@ -160,7 +160,7 @@ if(isset($error) && $error != ""){
 				</div>
 				<div class="row">
 					<button id = "sabbathOn" class="col-sm-4 btn-success">Sabbath On</button>
-					<button id = "sabbathOff" class="col-sm-4 btn-danger" disabled>Sabbath Off</button>
+					<button id = "sabbathOff" class="col-sm-4 btn-danger">Sabbath Off</button>
 				</div>
 			</div>
 		</div>
