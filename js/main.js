@@ -39,7 +39,10 @@ function AddListeners(){
 }
 
 async function ToggleSabbath(){
-	RequestFloor(2).then(RequestFloor(3));
+	var floorList = [2, 3, 2, 1, 2, 3, 2, 1, 2, 3, 2, 1];
+	for(var i = 0; i < 12; i++){
+		await RequestFloor(i);
+	}
 }
 
 function FillTable(table, data){
