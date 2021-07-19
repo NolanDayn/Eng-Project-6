@@ -82,7 +82,7 @@ function CallNumber(){
 async function Set_Dest(){
 	var dest_found = 0;
 	if (called_floors.has(currentFloor)){
-		OpenDoors(0).then(OpenDoors(1).then(called_floors.delete(currentFloor));
+		OpenDoors(0).then(OpenDoors(1)).then(called_floors.delete(currentFloor));
 		//await OpenDoors(1);
 		//called_floors.delete(currentFloor);
 	}
