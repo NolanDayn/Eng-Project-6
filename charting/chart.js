@@ -49,7 +49,7 @@ function showBarGraph(){
 
 function showPieChart(){
 
-    location.reload();
+    window.location.reload();
 
     var xmlhttpShow = new XMLHttpRequest();
     xmlhttpShow.onreadystatechange = function(){
