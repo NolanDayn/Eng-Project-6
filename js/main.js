@@ -1,8 +1,10 @@
 var currentFloor = 1;
 var doorState = 1; //1: closed 0:open
 var direction = 0; //1: up, 0: none, -1:down
+var sabbath = 0;
 var image = document.getElementById("sprite-image");
 var alarmButton = document.getElementById('alarmButton');
+var sabbathButton = document.getElementById('sabbathButon');
 var requestTable = document.getElementById("requestTable");
 var statusTable = document.getElementById("statusTable");
 
@@ -33,6 +35,15 @@ function AddListeners(){
 		floor3[i].addEventListener('click', function(){RequestFloor(3);}, false);
 	}
 	alarmButton.addEventListener('click', CallNumber, false);
+	sabbathButon.addEventListener('click', ToggleSabbath, false);
+}
+
+async function ToggleSabbath(){
+	sabbath = !sabbath;
+	await RequestFloor(1);
+	await RequestFloor(2);
+	await RequestFloor(3);
+	if (!sabbath) return;
 }
 
 function FillTable(table, data){
