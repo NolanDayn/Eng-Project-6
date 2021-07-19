@@ -79,6 +79,8 @@ function showPieChart(){
                 ]
             }
                 
+            var ctx = document.getElementById("mycanvas");
+            
             var chart1 = new Chart(ctx, {
                 type:"pie",
                 data:chartData,
