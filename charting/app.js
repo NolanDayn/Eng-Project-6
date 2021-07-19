@@ -18,7 +18,7 @@ function showStats(){
             }
 
             var chartData = {
-                labels: floors,
+                labels: startingFloor,
                 datasets: [
                     {
                         label : 'Starting Floor',
