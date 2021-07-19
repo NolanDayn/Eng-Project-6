@@ -1,6 +1,5 @@
 var currentFloor = 1;
 var doorState = 1; //1: closed 0:open
-var direction = 0; //1: up, 0: none, -1:down
 var sabbath = 0;
 var image = document.getElementById("sprite-image");
 var alarmButton = document.getElementById('alarmButton');
@@ -19,8 +18,6 @@ var animationStrings = ["Up_One .25s steps(7) 1", "Up_Two .25s steps(7) 1","Down
 // 7: 2 close
 // 8: 3 open
 // 9: 3 close
-
-const called_floors = new Set();
 
 AddListeners();
 
@@ -111,10 +108,16 @@ async function Set_Dest(){
 }
 
 async function RequestFloor(floor){
-	called_floors.add(floor);
-	Set_Dest();
-	//Request
+	(floor === currentFloor) return;
+	var diff = floor = currentFloor;
+	for(var i = 0; i < abs(diff); i++){
+		await Move(Math.sign(diff));
+	}
+	await OpenDoors(0);
+	await OpenDoors(1);
 	
+	
+	//Request
 	var url = `http://142.156.193.130:50050/Eng-Project-6/AddFloor.php?floor=${floor}`;
 	var xhr = new XMLHttpRequest();
 	xhr.open('GET', url, true);
@@ -124,8 +127,8 @@ async function RequestFloor(floor){
 			PrintResults(this.responseText);
 		}
 	}
-	sound = new Audio(`../Eng-Project-6/music/${floor}.mp3`);
-	sound.play();
+	//sound = new Audio(`../Eng-Project-6/music/${floor}.mp3`);
+	//sound.play();
 };
 
 function PrintResults(results){
