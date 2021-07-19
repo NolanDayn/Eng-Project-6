@@ -23,9 +23,9 @@ function showBarGraph(){
                 datasets: [
                     {
                         label : 'Date',
-                        backgroundColor: 'rgba(200,200,200,0.75)',
+                        backgroundColor: 'rgba(25,25,25,0.75)',
                         borderColor: 'rgba(200,200,200,0.75)',
-                        hoverBackgroundColor: 'rgba(200,200,200,1)',
+                        hoverBackgroundColor: 'rgba(25,25,25,1)',
                         hoverBorderColor: 'rgba(200,200,200,1)',
                         data: requestedFloor
                     }
