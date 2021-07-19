@@ -7,21 +7,23 @@ function showStats(){
             //( 4 means finished request and server responce is ready)
             //status 200 for 'OK'
             var resp = this.responseText; //Text string returned from server in 'echo' statement
-            console.log(resp);
+            //console.log(resp);
 
-            var startingFloor = [];
+            var date = [];
             var requestedFloor = [];
 
             for(var i in resp){
-                startingFloor.push("starting floor" + resp[i].startingFloor)
+                date.push("date" + resp[i].date)
                 requestedFloor.push("requested floor" + resp[i].requestedFloor)
             }
 
+            console.log(date)
+
             var chartData = {
-                labels: startingFloor,
+                labels: date,
                 datasets: [
                     {
-                        label : 'Starting Floor',
+                        label : 'Date',
                         backgroundColor: 'rgba(200,200,200,0.75)',
                         borderColor: 'rgba(200,200,200,0.75)',
                         hoverBackgroundColor: 'rgba(200,200,200,1)',
