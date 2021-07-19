@@ -28,6 +28,7 @@ function AddListeners(){
 	var floor3 = document.getElementsByClassName("get_floor_3");
 	for (var i = 0; i < floor1.length; i++) {
 		floor1[i].addEventListener('click', function(){RequestFloor(1);}, false);
+		
 		floor2[i].addEventListener('click', function(){RequestFloor(2);}, false);
 		floor3[i].addEventListener('click', function(){RequestFloor(3);}, false);
 	}
@@ -112,6 +113,8 @@ async function RequestFloor(floor){
 			PrintResults(this.responseText);
 		}
 	}
+	sound = new Audio(`../Eng-Project-6/music/${floor}.mp3`);
+	sound.play();
 };
 
 function PrintResults(results){
@@ -131,6 +134,19 @@ async function OpenDoors(open){
 	image.style.animationFillMode = "forwards";
 	await new Promise(function(resolve) { setTimeout(resolve, 900); });
 	doorState === 1 ? doorState = 0 : doorState = 1;
+
+	if (open===0){
+		
+		sound = new Audio("../Eng-Project-6/music/o.mp3");
+		sound.play();
+		
+	}
+	else {
+		sound = new Audio("../Eng-Project-6/music/c.mp3");
+		sound.play();
+		
+	}
+	
 }
 
 async function Move(dir){
