@@ -6,8 +6,8 @@ function showStats(){
             //readyState holds the status of the XMLHttpRequest
             //( 4 means finished request and server responce is ready)
             //status 200 for 'OK'
-            var resp = this.responseText; //Text string returned from server in 'echo' statement
-            //console.log(resp);
+            var resp = JSON.parse(this.responseText); //Text string returned from server in 'echo' statement
+            console.log(resp);
 
             var date = [];
             var requestedFloor = [];
@@ -17,7 +17,8 @@ function showStats(){
                 requestedFloor.push(resp[i].requestedFloor)
             }
 
-            console.log(requestedFloor)
+            console.log(requestedFloor);
+            console.log(resp[1].date)
 
             var chartData = {
                 labels: date,
