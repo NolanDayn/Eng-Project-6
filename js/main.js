@@ -35,11 +35,11 @@ function AddListeners(){
 		floor3[i].addEventListener('click', function(){RequestFloor(3);}, false);
 	}
 	alarmButton.addEventListener('click', CallNumber, false);
-	sabbathButon.addEventListener('click', ToggleSabbath, false);
+	sabbathButton.addEventListener('click', ToggleSabbath, false);
 }
 
-function ToggleSabbath(){
-	alert("sabbath");
+async function ToggleSabbath(){
+	RequestFloor(2).then(RequestFloor(3));
 }
 
 function FillTable(table, data){
