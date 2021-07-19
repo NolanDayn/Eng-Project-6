@@ -1,5 +1,7 @@
 function showBarGraph(){
 
+    location.reload();
+
     var xmlhttpShow = new XMLHttpRequest();
     xmlhttpShow.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
@@ -47,6 +49,8 @@ function showBarGraph(){
 
 function showPieChart(){
 
+    location.reload();
+
     var xmlhttpShow = new XMLHttpRequest();
     xmlhttpShow.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
@@ -54,7 +58,6 @@ function showPieChart(){
             //( 4 means finished request and server responce is ready)
             //status 200 for 'OK'
             var resp = JSON.parse(this.responseText); //Text string returned from server in 'echo' statement
-            console.log(resp);
 
             //represents [floor1,floor2,floor3]
             var requestedFloor = [0,0,0];
@@ -64,14 +67,13 @@ function showPieChart(){
             }
 
             console.log(requestedFloor);
-            console.log(resp[1].date)
 
             var chartData = {
                 labels:["floor1","floor2", "floor3"],
                 datasets:[
                     {
                         label: "Requested Floor",
-                        data: [10,50,2],
+                        data: requestedFloor,
                         backgroundColor: ['#E01606','#19BF06','#06A1E0'],
                         borderColor:['#616161','#616161','#616161'],
                         borderWidth: [1,1,1]
@@ -80,7 +82,7 @@ function showPieChart(){
             }
                 
             var ctx = document.getElementById("mycanvas");
-            
+
             var chart1 = new Chart(ctx, {
                 type:"pie",
                 data:chartData,
