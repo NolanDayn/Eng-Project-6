@@ -14,10 +14,10 @@ function showStats(){
 
             for(var i in resp){
                 date.push("date" + resp[i].date)
-                requestedFloor.push("requested floor" + resp[i].requestedFloor)
+                requestedFloor.push(resp[i].requestedFloor)
             }
 
-            console.log(date)
+            console.log(requestedFloor)
 
             var chartData = {
                 labels: date,
