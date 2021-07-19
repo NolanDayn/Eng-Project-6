@@ -62,6 +62,7 @@
             <li><a href="#stm_demos">STM Demos</a></li>
 			<li><a href="#state_machine">State Machine</a></li>
 			<li><a href="#logic_flow">Logic Flow</a></li>
+			<li><a href="#charts">Charts</a></li>
           </ul>
         </li>
       </ul>
