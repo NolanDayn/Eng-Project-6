@@ -81,7 +81,7 @@ function showPieChart(){
                 ]
             }
                 
-            var chart1 = new Chart(ctx2, {
+            var chart1 = new Chart(ctx, {
                 type:"pie",
                 data:chartData,
                 options: {}
