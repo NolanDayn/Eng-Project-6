@@ -8,6 +8,35 @@ function showStats(){
             //status 200 for 'OK'
             var resp = this.responseText; //Text string returned from server in 'echo' statement
             console.log(resp);
+
+            var startingFloor = [];
+            var requestedFloor = [];
+
+            for(var i in resp){
+                startingFloor.push("starting floor" + resp[i].startingFloor)
+                requestedFloor.push("requested floor" + resp[i].requestedFloor)
+            }
+
+            var chartData = {
+                labels: floors,
+                datasets: [
+                    {
+                        label : 'Starting Floor',
+                        backgroundColor: 'rgba(200,200,200,0.75)',
+                        borderColor: 'rgba(200,200,200,0.75)',
+                        hoverBackgroundColor: 'rgba(200,200,200,1)',
+                        hoverBorderColor: 'rgba(200,200,200,1)',
+                        data: requestedFloor
+                    }
+                ]
+            };
+
+            var ctx = document.getElementById("mycanvas");
+
+            var barGraph = new Chart(ctx, {
+                type: 'bar',
+                data: chartData
+            });
         }
     };
 
