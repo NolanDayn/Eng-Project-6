@@ -1,8 +1,10 @@
 var currentFloor = 1;
 var doorState = 1; //1: closed 0:open
 var direction = 0; //1: up, 0: none, -1:down
+var sabbath = 0;
 var image = document.getElementById("sprite-image");
 var alarmButton = document.getElementById('alarmButton');
+var sabbathButton = document.getElementById("sabbathButton");
 var requestTable = document.getElementById("requestTable");
 var statusTable = document.getElementById("statusTable");
 
@@ -33,6 +35,14 @@ function AddListeners(){
 		floor3[i].addEventListener('click', function(){RequestFloor(3);}, false);
 	}
 	alarmButton.addEventListener('click', CallNumber, false);
+	sabbathButton.addEventListener('click', ToggleSabbath, false);
+}
+
+async function ToggleSabbath(){
+	var floorList = [2, 3, 2, 1, 2, 3, 2, 1, 2, 3, 2, 1];
+	for(var i = 0; i < 12; i++){
+		await RequestFloor(floorList[i]);
+	}
 }
 
 function FillTable(table, data){
@@ -75,6 +85,7 @@ function CallNumber(){
 async function Set_Dest(){
 	var dest_found = 0;
 	if (called_floors.has(currentFloor)){
+		//OpenDoors(0).then(OpenDoors(1).then(called_floors.delete(currentFloor));
 		await OpenDoors(0);
 		await OpenDoors(1);
 		called_floors.delete(currentFloor);
