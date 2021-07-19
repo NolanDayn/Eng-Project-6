@@ -40,10 +40,8 @@ function AddListeners(){
 
 async function ToggleSabbath(){
 	sabbath = !sabbath;
-	await RequestFloor(1);
-	await RequestFloor(2);
-	await RequestFloor(3);
 	if (!sabbath) return;
+	RequestFloor(2);
 }
 
 function FillTable(table, data){
