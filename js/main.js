@@ -28,18 +28,23 @@ function AddListeners(){
 	var floor2 = document.getElementsByClassName("get_floor_2");
 	var floor3 = document.getElementsByClassName("get_floor_3");
 	for (var i = 0; i < floor1.length; i++) {
-		floor1[i].addEventListener('click', function(){RequestFloor(1);}, false);
+		floor1[i].addEventListener('click', function(){ClickRequestFloor(1);}, false);
 		
-		floor2[i].addEventListener('click', function(){RequestFloor(2);}, false);
-		floor3[i].addEventListener('click', function(){RequestFloor(3);}, false);
+		floor2[i].addEventListener('click', function(){ClickRequestFloor(2);}, false);
+		floor3[i].addEventListener('click', function(){ClickRequestFloor(3);}, false);
 	}
 	alarmButton.addEventListener('click', CallNumber, false);
 	sabbathOn.addEventListener('click', StartSabbath, false);
 	sabbathOff.addEventListener('click', StopSabbath, false);
 }
 
-async function StartSabbath(){
+function ClickRequestFloor(floor){
 	if (sabbath) return;
+	RequestFloor(floor);
+}
+
+async function StartSabbath(){
+	sabbathOn.disabled = true;
 	sabbath = 1;
 	
 	var floor = currentFloor;
@@ -54,6 +59,7 @@ async function StartSabbath(){
 }
 
 function StopSabbath(){
+	sabbathOn.disabled = false;
 	sabbath = 0;
 }
 
