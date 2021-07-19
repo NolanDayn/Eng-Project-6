@@ -36,13 +36,24 @@ function AddListeners(){
 }
 
 async function ToggleSabbath(){
-	var floor = 2;
+	sabbathButton.removeEventListener('click',ToggleSabbath,false);
+	sabbathButton.addEventListener('click', StopSabbath, false);
+	
+	var floor = currentFloor;
 	var dir = 1;
+	sabbath = 1;
 	for(var i = 0; i < 12; i++){
-		await RequestFloor(floor);
 		dir = (floor == 3) ? -1 : (floor == 1) ? 1 : dir;
 		floor += dir;
+		await RequestFloor(floor);
+		if (sabbath = 0) break;
 	}
+}
+
+function StopSabbath(){
+	sabbathButton.removeEventListener('click',StopSabbath,false);
+	sabbathButton.addEventListener('click', ToggleSabbath, false);
+	sabbath = 0;
 }
 
 function FillTable(table, data){
@@ -83,13 +94,17 @@ function CallNumber(){
 }
 
 async function RequestFloor(floor){
+	//sound
+	sound = new Audio(`../Eng-Project-6/music/${floor}.mp3`);
+	sound.play();
+	
+	//move
 	var diff = floor - currentFloor;
 	for(var i = 0; i < Math.abs(diff); i++){
 		await Move(Math.sign(diff));
 	}
 	await OpenDoors(0);
 	await OpenDoors(1);
-	
 	
 	//Request
 	var url = `http://142.156.193.130:50050/Eng-Project-6/AddFloor.php?floor=${floor}`;
@@ -101,8 +116,6 @@ async function RequestFloor(floor){
 			PrintResults(this.responseText);
 		}
 	}
-	sound = new Audio(`../Eng-Project-6/music/${floor}.mp3`);
-	sound.play();
 };
 
 function PrintResults(results){
