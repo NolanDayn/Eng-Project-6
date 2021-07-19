@@ -159,7 +159,8 @@ if(isset($error) && $error != ""){
 					<button id="alarmButton" class="col-sm-4 btn-primary">A</button>
 				</div>
 				<div class="row">
-					<button id = "sabbathButton" class="col-sm-4 btn-primary">Sabbath Toggle</button>
+					<button id = "sabbathOn" class="col-sm-4 btn-success">Sabbath On</button>
+					<button id = "sabbathOff" class="col-sm-4 btn-danger" disabled>Sabbath Off</button>
 				</div>
 			</div>
 		</div>

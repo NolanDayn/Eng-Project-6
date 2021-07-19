@@ -1,11 +1,13 @@
 var currentFloor = 1;
 var doorState = 1; //1: closed 0:open
-var sabbath = 0;
 var image = document.getElementById("sprite-image");
 var alarmButton = document.getElementById('alarmButton');
-var sabbathButton = document.getElementById("sabbathButton");
+var sabbathOn = document.getElementById("sabbathOn");
+var sabbathOff = document.getElementById("sabbathOff");
 var requestTable = document.getElementById("requestTable");
 var statusTable = document.getElementById("statusTable");
+
+var sabbath = 0;
 
 var animationStrings = ["Up_One .25s steps(7) 1", "Up_Two .25s steps(7) 1","Down_Two .25s steps(7) 1","Down_One .25s steps(7) 1","One_Open .25s steps(6) 1","One_Close .25s steps(6) 1","Two_Open .25s steps(6) 1","Two_Close .25s steps(6) 1","Three_Open .25s steps(6) 1","Three_Close .25s steps(6) 1"];
 // 0: 1 to 2
@@ -32,16 +34,19 @@ function AddListeners(){
 		floor3[i].addEventListener('click', function(){RequestFloor(3);}, false);
 	}
 	alarmButton.addEventListener('click', CallNumber, false);
-	sabbathButton.addEventListener('click', ToggleSabbath, false);
+	sabbathOn.addEventListener('click', StartSabbath, false);
+	sabbathOff.addEventListener('click', StopSabbath, false);
 }
 
-async function ToggleSabbath(){
-	sabbathButton.removeEventListener('click',ToggleSabbath,false);
-	sabbathButton.addEventListener('click', StopSabbath, false);
+async function StartSabbath(){
+	sabbath = 1;
+	
+	sabbathOff.disabled = false;
+	sabbathOn.disabled = true;
 	
 	var floor = currentFloor;
 	var dir = 1;
-	sabbath = 1;
+
 	for(var i = 0; i < 12; i++){
 		dir = (floor == 3) ? -1 : (floor == 1) ? 1 : dir;
 		floor += dir;
@@ -51,8 +56,8 @@ async function ToggleSabbath(){
 }
 
 function StopSabbath(){
-	sabbathButton.removeEventListener('click',StopSabbath,false);
-	sabbathButton.addEventListener('click', ToggleSabbath, false);
+	sabbathOff.disabled = true;
+	sabbathOn.disabled = false;
 	sabbath = 0;
 }
 
