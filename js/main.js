@@ -141,7 +141,7 @@ async function OpenDoors(open){
 	image.style.animation = animationStrings[currentFloor * 2 + 2 + open];
 	image.style.animationFillMode = "forwards";
 	await new Promise(function(resolve) { setTimeout(resolve, 900); });
-	//doorState === 1 ? doorState = 0 : doorState = 1;
+	doorState === 1 ? doorState = 0 : doorState = 1;
 
 	if (open===0){
 		
@@ -161,13 +161,13 @@ async function Move(dir){
 	if (dir == 1){
 		image.style.animation = animationStrings[currentFloor - 1];
 		image.style.animationFillMode = "forwards";
-		//doorState = 1;
+		doorState = 1;
 		currentFloor++;
 		await new Promise(function(resolve) { setTimeout(resolve, 900); });
 	} else if (dir == -1){
 		image.style.animation = animationStrings[currentFloor == 3 ? 2 : 3];
 		image.style.animationFillMode = "forwards";
-		//doorState = 1;
+		doorState = 1;
 		currentFloor--;
 		await new Promise(function(resolve) { setTimeout(resolve, 900); });
 	}
