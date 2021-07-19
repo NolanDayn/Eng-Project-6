@@ -41,7 +41,7 @@ function AddListeners(){
 async function ToggleSabbath(){
 	var floorList = [2, 3, 2, 1, 2, 3, 2, 1, 2, 3, 2, 1];
 	for(var i = 0; i < 12; i++){
-		await RequestFloor(i);
+		await RequestFloor(floorList[i]);
 	}
 }
 
