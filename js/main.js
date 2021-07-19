@@ -45,12 +45,13 @@ function ClickRequestFloor(floor){
 
 async function StartSabbath(){
 	sabbathOn.disabled = true;
+	sabbathOff.disabled = false;
 	sabbath = 1;
 	
 	var floor = currentFloor;
 	var dir = 1;
 
-	for(var i = 0; i < 12; i++){
+	for(var i = 0; i < 100; i++){
 		dir = (floor == 3) ? -1 : (floor == 1) ? 1 : dir;
 		floor += dir;
 		await RequestFloor(floor);
@@ -60,6 +61,7 @@ async function StartSabbath(){
 
 function StopSabbath(){
 	sabbathOn.disabled = false;
+	sabbathOff.disabled = true;
 	sabbath = 0;
 }
 
