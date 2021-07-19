@@ -88,8 +88,6 @@ function showPieChart(){
                     }
                 ]
             }
-                
-            var ctx = document.getElementById("mycanvas2");
 
             var chart1 = new Chart(ctx, {
                 type:"pie",
