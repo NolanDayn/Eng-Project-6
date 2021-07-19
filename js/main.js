@@ -140,7 +140,7 @@ async function OpenDoors(open){
 	if (doorState === open) return;
 	image.style.animation = animationStrings[currentFloor * 2 + 2 + open];
 	image.style.animationFillMode = "forwards";
-	//await new Promise(function(resolve) { setTimeout(resolve, 900); });
+	await new Promise(function(resolve) { setTimeout(resolve, 900); });
 	doorState === 1 ? doorState = 0 : doorState = 1;
 
 	if (open===0){
