@@ -108,7 +108,7 @@ async function Set_Dest(){
 }
 
 async function RequestFloor(floor){
-	var diff = floor = currentFloor;
+	var diff = floor - currentFloor;
 	for(var i = 0; i < Math.abs(diff); i++){
 		await Move(Math.sign(diff));
 	}
