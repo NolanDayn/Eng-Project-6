@@ -74,7 +74,6 @@ function showPieChart(){
                 requestedFloor[(resp[i].requestedFloor-1)]++;
             }
 
-            console.log(requestedFloor);
 
             var chartData = {
                 labels:["floor1","floor2", "floor3"],
@@ -89,6 +88,7 @@ function showPieChart(){
                 ]
             }
 
+            var ctx = document.getElementById("mycanvas2");
             var chart1 = new Chart(ctx, {
                 type:"pie",
                 data:chartData,
