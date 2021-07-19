@@ -1,7 +1,5 @@
 function showBarGraph(){
 
-    window.location.reload();
-
     var xmlhttpShow = new XMLHttpRequest();
     xmlhttpShow.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
@@ -49,8 +47,6 @@ function showBarGraph(){
 
 function showPieChart(){
 
-    window.location.reload();
-
     var xmlhttpShow = new XMLHttpRequest();
     xmlhttpShow.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
@@ -81,12 +77,11 @@ function showPieChart(){
                 ]
             }
                 
-            var ctx = document.getElementById("mycanvas");
+            var ctx = document.getElementById("mycanvas2");
 
             var chart1 = new Chart(ctx, {
                 type:"pie",
-                data:chartData,
-                options: {}
+                data:chartData
             })
 
         };
