@@ -38,7 +38,7 @@ function showBarGraph(){
                 type: 'bar',
                 data: chartData,
                 options: {
-                    responsive: true,
+                    responsive: false,
                     plugins: {
                       legend: {
                         position: 'top',
@@ -93,7 +93,7 @@ function showPieChart(){
                 type:"pie",
                 data:chartData,
                 options: {
-                    responsive: true,
+                    responsive: false,
                     plugins: {
                       legend: {
                         position: 'top',
