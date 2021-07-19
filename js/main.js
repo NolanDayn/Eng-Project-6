@@ -83,8 +83,8 @@ async function Set_Dest(){
 	var dest_found = 0;
 	if (called_floors.has(currentFloor)){
 		//OpenDoors(0).then(OpenDoors(1).then(called_floors.delete(currentFloor));
-		await OpenDoors(1);
 		await OpenDoors(0);
+		await OpenDoors(1);
 		called_floors.delete(currentFloor);
 	}
 	for(var i = currentFloor + 1; i <= 3; i++){
@@ -137,7 +137,7 @@ function PrintResults(results){
 
 async function OpenDoors(open){
 	//0:open, 1:close
-	//if (doorState === open) return;
+	if (doorState === open) return;
 	image.style.animation = animationStrings[currentFloor * 2 + 2 + open];
 	image.style.animationFillMode = "forwards";
 	await new Promise(function(resolve) { setTimeout(resolve, 900); });
