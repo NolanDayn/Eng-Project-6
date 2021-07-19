@@ -1,6 +1,6 @@
 function showBarGraph(){
 
-    location.reload();
+    window.location.reload();
 
     var xmlhttpShow = new XMLHttpRequest();
     xmlhttpShow.onreadystatechange = function(){
