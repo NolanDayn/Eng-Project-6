@@ -49,12 +49,11 @@ async function StartSabbath(){
 		dir = (floor == 3) ? -1 : (floor == 1) ? 1 : dir;
 		floor += dir;
 		await RequestFloor(floor);
-		if (sabbath = 0) break;
+		if (sabbath == 0) break;
 	}
 }
 
 function StopSabbath(){
-	
 	sabbath = 0;
 }
 
