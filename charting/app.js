@@ -17,6 +17,10 @@ function showStats(){
 
 
 function createBarGraph(resp){
+
+    var date = [];
+    var requestedFloor = [];
+
     for(var i in resp){
         date.push("Date " + resp[i].date)
         requestedFloor.push(resp[i].requestedFloor)
