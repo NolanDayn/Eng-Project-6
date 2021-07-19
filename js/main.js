@@ -1,12 +1,13 @@
 var currentFloor = 1;
 var doorState = 1; //1: closed 0:open
-var direction = 0; //1: up, 0: none, -1:down
-var sabbath = 0;
 var image = document.getElementById("sprite-image");
 var alarmButton = document.getElementById('alarmButton');
-var sabbathButton = document.getElementById("sabbathButton");
+var sabbathOn = document.getElementById("sabbathOn");
+var sabbathOff = document.getElementById("sabbathOff");
 var requestTable = document.getElementById("requestTable");
 var statusTable = document.getElementById("statusTable");
+
+var sabbath = 0;
 
 var animationStrings = ["Up_One .25s steps(7) 1", "Up_Two .25s steps(7) 1","Down_Two .25s steps(7) 1","Down_One .25s steps(7) 1","One_Open .25s steps(6) 1","One_Close .25s steps(6) 1","Two_Open .25s steps(6) 1","Two_Close .25s steps(6) 1","Three_Open .25s steps(6) 1","Three_Close .25s steps(6) 1"];
 // 0: 1 to 2
@@ -20,8 +21,6 @@ var animationStrings = ["Up_One .25s steps(7) 1", "Up_Two .25s steps(7) 1","Down
 // 8: 3 open
 // 9: 3 close
 
-const called_floors = new Set();
-
 AddListeners();
 
 function AddListeners(){
@@ -29,20 +28,41 @@ function AddListeners(){
 	var floor2 = document.getElementsByClassName("get_floor_2");
 	var floor3 = document.getElementsByClassName("get_floor_3");
 	for (var i = 0; i < floor1.length; i++) {
-		floor1[i].addEventListener('click', function(){RequestFloor(1);}, false);
+		floor1[i].addEventListener('click', function(){ClickRequestFloor(1);}, false);
 		
-		floor2[i].addEventListener('click', function(){RequestFloor(2);}, false);
-		floor3[i].addEventListener('click', function(){RequestFloor(3);}, false);
+		floor2[i].addEventListener('click', function(){ClickRequestFloor(2);}, false);
+		floor3[i].addEventListener('click', function(){ClickRequestFloor(3);}, false);
 	}
 	alarmButton.addEventListener('click', CallNumber, false);
-	sabbathButton.addEventListener('click', ToggleSabbath, false);
+	sabbathOn.addEventListener('click', StartSabbath, false);
+	sabbathOff.addEventListener('click', StopSabbath, false);
 }
 
-async function ToggleSabbath(){
-	var floorList = [2, 3, 2, 1, 2, 3, 2, 1, 2, 3, 2, 1];
-	for(var i = 0; i < 12; i++){
-		await RequestFloor(floorList[i]);
+function ClickRequestFloor(floor){
+	if (sabbath) return;
+	RequestFloor(floor);
+}
+
+async function StartSabbath(){
+	sabbathOn.disabled = true;
+	sabbathOff.disabled = false;
+	sabbath = 1;
+	
+	var floor = currentFloor;
+	var dir = 1;
+
+	for(var i = 0; i < 100; i++){
+		dir = (floor == 3) ? -1 : (floor == 1) ? 1 : dir;
+		floor += dir;
+		await RequestFloor(floor);
+		if (sabbath == 0) break;
 	}
+}
+
+function StopSabbath(){
+	sabbathOn.disabled = false;
+	sabbathOff.disabled = true;
+	sabbath = 0;
 }
 
 function FillTable(table, data){
@@ -82,39 +102,20 @@ function CallNumber(){
 	xhr.send();
 }
 
-async function Set_Dest(){
-	var dest_found = 0;
-	if (called_floors.has(currentFloor)){
-		//OpenDoors(0).then(OpenDoors(1).then(called_floors.delete(currentFloor));
-		await OpenDoors(0);
-		await OpenDoors(1);
-		called_floors.delete(currentFloor);
-	}
-	for(var i = currentFloor + 1; i <= 3; i++){
-		if(called_floors.has(i)){
-			await Move(1);
-			dest_found = 1;
-			break;
-		}
-	}
-	if (!dest_found){
-		for(var i = currentFloor - 1; i >= 1; i--){
-			if(called_floors.has(i)){
-				await Move(-1);
-				dest_found = 1;
-				break;
-			}
-		}
-	}
-	
-	if (dest_found) Set_Dest();
-}
-
 async function RequestFloor(floor){
-	called_floors.add(floor);
-	Set_Dest();
-	//Request
+	//sound
+	sound = new Audio(`../Eng-Project-6/music/${floor}.mp3`);
+	sound.play();
 	
+	//move
+	var diff = floor - currentFloor;
+	for(var i = 0; i < Math.abs(diff); i++){
+		await Move(Math.sign(diff));
+	}
+	await OpenDoors(0);
+	await OpenDoors(1);
+	
+	//Request
 	var url = `http://142.156.193.130:50050/Eng-Project-6/AddFloor.php?floor=${floor}`;
 	var xhr = new XMLHttpRequest();
 	xhr.open('GET', url, true);
@@ -124,8 +125,6 @@ async function RequestFloor(floor){
 			PrintResults(this.responseText);
 		}
 	}
-	sound = new Audio(`../Eng-Project-6/music/${floor}.mp3`);
-	sound.play();
 };
 
 function PrintResults(results){
