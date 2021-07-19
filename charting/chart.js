@@ -17,8 +17,6 @@ function showBarGraph(){
                 requestedFloor.push(resp[i].requestedFloor)
             }
 
-            console.log(requestedFloor);
-            console.log(resp[1].date)
 
             var chartData = {
                 labels: date,
@@ -87,9 +85,8 @@ function showPieChart(){
                 options: {}
             })
 
-    };
-
+        };
+    }
     xmlhttpShow.open("GET", "http://142.156.193.130:50050/Eng-Project-6/charting/data.php", true);
     xmlhttpShow.send();
-    }
 }
