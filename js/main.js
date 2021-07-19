@@ -36,9 +36,12 @@ function AddListeners(){
 }
 
 async function ToggleSabbath(){
-	var floorList = [2, 3, 2, 1, 2, 3, 2, 1, 2, 3, 2, 1];
+	var floor = 2;
+	var dir = 1;
 	for(var i = 0; i < 12; i++){
-		await RequestFloor(floorList[i]);
+		await RequestFloor(floor);
+		dir = (floor == 3) ? -1 : (floor == 1) ? 1 : dir;
+		floor += dir;
 	}
 }
 
@@ -79,34 +82,6 @@ function CallNumber(){
 	xhr.send();
 }
 
-async function Set_Dest(){
-	var dest_found = 0;
-	if (called_floors.has(currentFloor)){
-		//OpenDoors(0).then(OpenDoors(1).then(called_floors.delete(currentFloor));
-		await OpenDoors(0);
-		await OpenDoors(1);
-		called_floors.delete(currentFloor);
-	}
-	for(var i = currentFloor + 1; i <= 3; i++){
-		if(called_floors.has(i)){
-			await Move(1);
-			dest_found = 1;
-			break;
-		}
-	}
-	if (!dest_found){
-		for(var i = currentFloor - 1; i >= 1; i--){
-			if(called_floors.has(i)){
-				await Move(-1);
-				dest_found = 1;
-				break;
-			}
-		}
-	}
-	
-	if (dest_found) Set_Dest();
-}
-
 async function RequestFloor(floor){
 	var diff = floor - currentFloor;
 	for(var i = 0; i < Math.abs(diff); i++){
@@ -126,8 +101,8 @@ async function RequestFloor(floor){
 			PrintResults(this.responseText);
 		}
 	}
-	//sound = new Audio(`../Eng-Project-6/music/${floor}.mp3`);
-	//sound.play();
+	sound = new Audio(`../Eng-Project-6/music/${floor}.mp3`);
+	sound.play();
 };
 
 function PrintResults(results){
