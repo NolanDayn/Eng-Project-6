@@ -22,6 +22,9 @@
 	<!-- bootstrap stuff -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	<!-- Chart.js -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 	<!-- music player -->
 	<audio controls autoplay muted loop id="music_player">
@@ -166,6 +169,18 @@ if(isset($error) && $error != ""){
 </div>
 <div class="parallax"></div>
 
+<!-- Charts -->
+<div id="charts" class="jumbotron text-center">
+	<h1>Charts</h1>
+	<div id="chart-container">
+        <canvas id="mycanvas" width="6" height="3"></canvas>
+        <canvas id="mycanvas2" width="6" height="3"></canvas>
+    </div>
+	<button id="barGraphB" type="button" onclick="showBarGraph()">Bar Graph</button>
+    <button id="pieChartB" type="button" onclick="showPieChart()">Pie Chart</button>
+</div>
+<div class="parallax"></div>
+
 <!-- STM DEMOS -->
 <div id="stm_demos" class="jumbotron text-center">
 	<h1>STM demos</h1>
@@ -253,6 +268,7 @@ if(isset($error) && $error != ""){
 	} else {
 	}
 ?>
+<script type="text/javascript" src="js/chart.js"></script>
 
 </body>
 </html>

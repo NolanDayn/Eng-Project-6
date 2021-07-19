@@ -53,7 +53,7 @@ function showBarGraph(){
         }
     };
 
-    xmlhttpShow.open("GET", "http://142.156.193.130:50050/Eng-Project-6/charting/data.php", true);
+    xmlhttpShow.open("GET", "http://142.156.193.130:50050/Eng-Project-6/data.php", true);
     xmlhttpShow.send();
 }
 
@@ -110,6 +110,6 @@ function showPieChart(){
 
         };
     }
-    xmlhttpShow.open("GET", "http://142.156.193.130:50050/Eng-Project-6/charting/data.php", true);
+    xmlhttpShow.open("GET", "http://142.156.193.130:50050/Eng-Project-6/data.php", true);
     xmlhttpShow.send();
 }
