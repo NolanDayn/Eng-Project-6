@@ -176,8 +176,8 @@ if(isset($error) && $error != ""){
 <div id="charts" class="jumbotron text-center">
 	<h1>Charts</h1>
 	<div id="chart-container">
-        <canvas id="mycanvas" width="6" height="3"></canvas>
-        <canvas id="mycanvas2" width="6" height="3"></canvas>
+        <canvas id="mycanvas" width="800" height="600"></canvas>
+        <canvas id="mycanvas2" width="800" height="600"></canvas>
     </div>
 	<button id="barGraphB" type="button" onclick="showBarGraph()">Bar Graph</button>
     <button id="pieChartB" type="button" onclick="showPieChart()">Pie Chart</button>

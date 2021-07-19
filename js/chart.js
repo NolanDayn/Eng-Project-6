@@ -23,9 +23,9 @@ function showBarGraph(){
                 datasets: [
                     {
                         label : 'Date',
-                        backgroundColor: 'rgba(200,200,200,0.75)',
+                        backgroundColor: 'rgba(25,25,25,0.75)',
                         borderColor: 'rgba(200,200,200,0.75)',
-                        hoverBackgroundColor: 'rgba(200,200,200,1)',
+                        hoverBackgroundColor: 'rgba(25,25,25,1)',
                         hoverBorderColor: 'rgba(200,200,200,1)',
                         data: requestedFloor
                     }
@@ -38,7 +38,7 @@ function showBarGraph(){
                 type: 'bar',
                 data: chartData,
                 options: {
-                    responsive: true,
+                    responsive: false,
                     plugins: {
                       legend: {
                         position: 'top',
@@ -74,7 +74,6 @@ function showPieChart(){
                 requestedFloor[(resp[i].requestedFloor-1)]++;
             }
 
-            console.log(requestedFloor);
 
             var chartData = {
                 labels:["floor1","floor2", "floor3"],
@@ -88,14 +87,13 @@ function showPieChart(){
                     }
                 ]
             }
-                
-            var ctx = document.getElementById("mycanvas2");
 
+            var ctx = document.getElementById("mycanvas2");
             var chart1 = new Chart(ctx, {
                 type:"pie",
                 data:chartData,
                 options: {
-                    responsive: true,
+                    responsive: false,
                     plugins: {
                       legend: {
                         position: 'top',
