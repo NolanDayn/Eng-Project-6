@@ -39,10 +39,8 @@ function AddListeners(){
 }
 
 async function StartSabbath(){
+	if (sabbath) return;
 	sabbath = 1;
-	
-	sabbathOff.disabled = false;
-	sabbathOn.disabled = true;
 	
 	var floor = currentFloor;
 	var dir = 1;
@@ -56,8 +54,7 @@ async function StartSabbath(){
 }
 
 function StopSabbath(){
-	sabbathOff.disabled = true;
-	sabbathOn.disabled = false;
+	
 	sabbath = 0;
 }
 
