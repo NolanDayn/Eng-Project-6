@@ -247,8 +247,8 @@ if(isset($error) && $error != ""){
 		<div class="row">
 			<form method="get" action="./status_reports/Week_5.doc"><button type="submit" class="btn_status_download btn btn-primary btn-lg col-sm-2" >Week 5</button></form>
 			<form method="get" action="./status_reports/Week_6.doc"><button type="submit" class="btn_status_download btn btn-primary btn-lg col-sm-2" >Week 6</button></form>
-			<form method="get" action="./status_reports/Week_7.doc"><button type="submit" class="btn_status_download btn btn-success btn-lg col-sm-2" >Week 7</button></form>
-			<form method="get" action="./status_reports/Week_8.doc"><button type="submit" class="btn_status_download btn btn-primary btn-lg col-sm-2" disabled>Week 8</button></form>
+			<form method="get" action="./status_reports/Week_7.doc"><button type="submit" class="btn_status_download btn btn-primary btn-lg col-sm-2" >Week 7</button></form>
+			<form method="get" action="./status_reports/Week_8.doc"><button type="submit" class="btn_status_download btn btn-success btn-lg col-sm-2" >Week 8</button></form>
 		</div>
 		<div class="row">
 			<form method="get" action="./status_reports/Week_9.doc"><button type="submit" class="btn_status_download btn btn-primary btn-lg col-sm-2" disabled>Week 9</button></form>

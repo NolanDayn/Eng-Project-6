@@ -4,7 +4,7 @@ var direction = 0; //1: up, 0: none, -1:down
 var sabbath = 0;
 var image = document.getElementById("sprite-image");
 var alarmButton = document.getElementById('alarmButton');
-var sabbathButton = document.getElementById('sabbathButon');
+var sabbathButton = document.getElementById("sabbathButton");
 var requestTable = document.getElementById("requestTable");
 var statusTable = document.getElementById("statusTable");
 
@@ -38,10 +38,8 @@ function AddListeners(){
 	sabbathButon.addEventListener('click', ToggleSabbath, false);
 }
 
-async function ToggleSabbath(){
-	sabbath = !sabbath;
-	if (!sabbath) return;
-	RequestFloor(2);
+function ToggleSabbath(){
+	alert("sabbath");
 }
 
 function FillTable(table, data){
