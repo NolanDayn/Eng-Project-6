@@ -1,3 +1,5 @@
+import * as THREE from 'https://cdn.skypack.dev/three@<version>https://cdn.skypack.dev/pin/three@v0.130.1-bsY6rEPcA1ZYyZeKdbHd/mode=imports,min/optimized/three.js';
+
 var canvasContainer = document.getElementsByClassName("threeContainer")[0];
 
 //scene

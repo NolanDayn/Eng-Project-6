@@ -284,8 +284,8 @@ if(isset($error) && $error != ""){
 	}
 ?>
 
-<script src="js/three.js"></script>
-<script src="js/threeTest.js"></script>
+<!-- <script src="js/three.js"></script> -->
+<script type="module" src="js/threeTest.js"></script>
 <script type="text/javascript" src="js/chart.js"></script>
 
 </body>
