@@ -112,4 +112,3 @@ function showRequestPieChart(){
     xmlhttpShow.send();
 }
 
-
