@@ -12,7 +12,6 @@ function Initialize(){
 }
 
 function showBarGraph(){
-	if (myChart) myChart.destroy();
     var xmlhttpShow = new XMLHttpRequest();
     xmlhttpShow.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
@@ -61,6 +60,7 @@ function showBarGraph(){
                     }
                 }
             });
+			myChart.update();
         }
     };
 
@@ -69,7 +69,6 @@ function showBarGraph(){
 }
 
 function showRequestPieChart(){
-	if (myChart) myChart.destroy();
     var xmlhttpShow = new XMLHttpRequest();
     xmlhttpShow.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
@@ -116,6 +115,7 @@ function showRequestPieChart(){
                     }
                 }
             })
+			myChart.update();
 
         };
     }
