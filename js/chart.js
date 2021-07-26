@@ -5,7 +5,7 @@ var canvasContainer = document.getElementById("canvasContainer");
 Initialize();
 
 function createCanvas(){
-	while (canvasContainer.firstChild) canvasContainer.removeChild(table.firstChild);
+	while (canvasContainer.firstChild) canvasContainer.removeChild(canvasContainer.firstChild);
 	
 	var canvas = document.createElement('canvas');
 	canvas.width = 800;
