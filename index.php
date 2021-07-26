@@ -177,12 +177,11 @@ if(isset($error) && $error != ""){
 <div id="charts" class="jumbotron text-center">
 	<h1>Charts</h1>
 	<div id="chart-container">
-		<div class="row">
-			<button id = "barGraphB" style="height:10px;margin:10px;"class="btn-primary col-sm-5">Pie Chart</button>
-			<button id = "pieChartB" style="height:10px;margin:10px;"class="btn-primary col-sm-5">Bar Chart</button>
-		</div>
         <canvas id="mycanvas" width="800" height="600"></canvas>
+        <canvas id="mycanvas2" width="800" height="600"></canvas>
     </div>
+	<button id="barGraphB" type="button" onclick="showBarGraph()">Bar Graph</button>
+    <button id="pieChartB" type="button" onclick="showPieChart()">Pie Chart</button>
 </div>
 <div class="parallax"></div>
 
