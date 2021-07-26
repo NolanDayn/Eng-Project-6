@@ -5,7 +5,7 @@ var canvas = document.getElementById("mycanvas");
 Initialize();
 
 function Initialize(){
-	btn_PieChart.addEventListener("click", showPieChart);
+	btn_PieChart.addEventListener("click", showRequestPieChart);
 	btn_BarGraph.addEventListener("click", showBarGraph);
 }
 
