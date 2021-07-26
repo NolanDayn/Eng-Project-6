@@ -1,10 +1,15 @@
 var btn_PieChart = document.getElementById("pieChartB");
 var btn_BarGraph = document.getElementById("barGraphB");
-var canvas = document.getElementById("mycanvas");
+var canvasContainer = document.getElementById("canvasContainer");
 
 var myChart; //reusable chart in canvas
 
 Initialize();
+
+function createCanvas(var container){
+	container.innerHTML = '<canvas id="mycanvas" width="800" height="600"></canvas>';
+	document.getElementById("mycanvas");
+}
 
 function Initialize(){
 	btn_PieChart.addEventListener("click", showRequestPieChart);
@@ -44,6 +49,8 @@ function showBarGraph(){
                 ]
             };
 
+			var canvas = createCanvas(canvasContainer);
+
             var myChart = new Chart(canvas, {
                 type: 'bar',
                 data: chartData,
@@ -60,7 +67,6 @@ function showBarGraph(){
                     }
                 }
             });
-			myChart.update();
         }
     };
 
@@ -99,6 +105,8 @@ function showRequestPieChart(){
                 ]
             }
 
+			var canvas = createCanvas(canvasContainer);
+
             myChart = new Chart(canvas, {
                 type:"pie",
                 data:chartData,
@@ -115,8 +123,6 @@ function showRequestPieChart(){
                     }
                 }
             })
-			myChart.update();
-
         };
     }
     xmlhttpShow.open("GET", "http://142.156.193.130:50050/Eng-Project-6/data.php", true);

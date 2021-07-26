@@ -181,7 +181,9 @@ if(isset($error) && $error != ""){
 			<button id = "barGraphB" class="btn-primary col-sm-5">Pie Chart</button>
 			<button id = "pieChartB" class="btn-primary col-sm-5">Bar Chart</button>
 		</div>
-        <canvas id="mycanvas" width="800" height="600"></canvas>
+		<div class = "canvasContainer">
+			<!-- <canvas id="mycanvas" width="800" height="600"></canvas> -->
+		</div>
     </div>
 </div>
 <div class="parallax"></div>
