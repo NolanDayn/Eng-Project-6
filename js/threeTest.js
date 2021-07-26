@@ -1,43 +1,35 @@
-import * as THREE from 'https://cdn.skypack.dev/three@<version>https://cdn.skypack.dev/pin/three@v0.130.1-bsY6rEPcA1ZYyZeKdbHd/mode=imports,min/optimized/three.js';
+import * as THREE from '../three/build/three.module.js';
 
-var canvasContainer = document.getElementsByClassName("threeContainer")[0];
+let camera, scene, renderer;
+let geometry, material, mesh;
 
-//scene
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+init();
 
-//set canvas
-const renderer = new THREE.WebGLRenderer( {canvas:document.getElementById("threeCanvas")});
-renderer.setSize( window.innerWidth, window.innerHeight );
-canvasContainer.appendChild( renderer.domElement );
+function init() {
 
-var model;
-//const geometry = new THREE.BoxGeometry();
-//const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-//const cube = new THREE.Mesh( geometry, material );
-//scene.add( cube );
+	camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 10 );
+	camera.position.z = 1;
 
-const loader = new THREE.GLTFLoader();
+	scene = new THREE.Scene();
 
-loader.load( './blender_files/models.glb', function ( gltf ) {
-	model = gltf.scene;
-	scene.add( model );
-}, undefined, function ( error ) {
-	console.error( error );
-} );
+	geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
+	material = new THREE.MeshNormalMaterial();
 
-camera.position.z = 5;
+	mesh = new THREE.Mesh( geometry, material );
+	scene.add( mesh );
 
-const animate = function () {
-	requestAnimationFrame( animate );
-	
-	if (model) model.rotation.x += 0.01;
-	if (model) model.rotation.y += 0.01;
-	
-	//cube.rotation.x += 0.01;
-	//cube.rotation.y += 0.01;
+	renderer = new THREE.WebGLRenderer( { canvas: document.getElementById('threeCanvas') } );
+	renderer.setSize( window.innerWidth, window.innerHeight );
+	renderer.setAnimationLoop( animation );
+	document.getElementById('threeContainer').appendChild( renderer.domElement );
+
+}
+
+function animation( time ) {
+
+	mesh.rotation.x = time / 2000;
+	mesh.rotation.y = time / 1000;
 
 	renderer.render( scene, camera );
-};
 
-animate();
+}
