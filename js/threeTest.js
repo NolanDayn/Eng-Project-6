@@ -8,8 +8,8 @@ init();
 
 function init() {
 	//Camera
-	camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 30 );
-	camera.position.z = 5;
+	camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 40 );
+	camera.position.z = 6;
 	
 	//Scene
 	scene = new THREE.Scene();
