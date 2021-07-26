@@ -12,11 +12,12 @@ function init() {
 
 	scene = new THREE.Scene();
 
-	geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
-	material = new THREE.MeshNormalMaterial();
-
-	mesh = new THREE.Mesh( geometry, material );
-	scene.add( mesh );
+	loader.load( '../blender_files/models.glb', function ( gltf ) {
+	mesh = gltf.scene;
+	scene.add( model );
+	}, undefined, function ( error ) {
+		console.error( error );
+	} );
 
 	renderer = new THREE.WebGLRenderer( { canvas: document.getElementById('threeCanvas') } );
 	renderer.setSize( window.innerWidth, window.innerHeight );
