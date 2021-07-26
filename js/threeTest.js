@@ -13,7 +13,7 @@ function init() {
 
 	scene = new THREE.Scene();
 
-	const loader = new THREE.GLTFLoader();
+	const loader = new GLTFLoader();
 	loader.load( '../blender_files/models.glb', function ( gltf ) {
 	mesh = gltf.scene;
 	scene.add( model );
