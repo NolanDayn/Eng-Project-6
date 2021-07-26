@@ -10,7 +10,7 @@ function createCanvas(){
 	var canvas = document.createElement('canvas');
 	canvas.width = 800;
 	canvas.height = 600;
-	canvas.id = mycanvas;
+	canvas.id = 'mycanvas';
 	canvasContainer.appendChild(canvas);
 	return canvas;
 }
