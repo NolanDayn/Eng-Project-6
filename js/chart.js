@@ -2,13 +2,17 @@ var btn_PieChart = document.getElementById("pieChartB");
 var btn_BarGraph = document.getElementById("barGraphB");
 var canvasContainer = document.getElementById("canvasContainer");
 
-var myChart; //reusable chart in canvas
-
 Initialize();
 
-function createCanvas(var container){
-	container.innerHTML = '<canvas id="mycanvas" width="800" height="600"></canvas>';
-	return document.getElementById("mycanvas");
+function createCanvas(){
+	while (canvasContainer.firstChild) canvasContainer.removeChild(table.firstChild);
+	
+	var canvas = document.createElement('canvas');
+	canvas.width = 800;
+	canvas.height = 600;
+	canvas.id = mycanvas;
+	canvasContainer.appendChild(canvas);
+	return canvas;
 }
 
 function Initialize(){
@@ -49,7 +53,7 @@ function showBarGraph(){
                 ]
             };
 
-			var canvas = createCanvas(canvasContainer);
+			var canvas = createCanvas();
 
             var myChart = new Chart(canvas, {
                 type: 'bar',
@@ -105,7 +109,7 @@ function showRequestPieChart(){
                 ]
             }
 
-			var canvas = createCanvas(canvasContainer);
+			var canvas = createCanvas();
 
             myChart = new Chart(canvas, {
                 type:"pie",
