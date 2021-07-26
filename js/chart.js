@@ -1,11 +1,13 @@
-var btn_PieChart = Document.getElementById("pieChartB");
-var btn_BarGraph = Document.getElementById("barGraphB");
-var canvas = Document.getElementById("mycanvas");
+var btn_PieChart = document.getElementById("pieChartB");
+var btn_BarGraph = document.getElementById("barGraphB");
+var canvas = document.getElementById("mycanvas");
 
+Initialize();
 
-function addEventListeners(){
+function Initialize(){
 	btn_PieChart.addEventListener("click", showPieChart);
 	btn_BarGraph.addEventListener("click", showBarGraph);
+}
 
 function showBarGraph(){
 
