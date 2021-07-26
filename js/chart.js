@@ -57,7 +57,7 @@ function showBarGraph(){
     xmlhttpShow.send();
 }
 
-function showPieChart(){
+function showRequestPieChart(){
 
     var xmlhttpShow = new XMLHttpRequest();
     xmlhttpShow.onreadystatechange = function(){
@@ -111,3 +111,6 @@ function showPieChart(){
     xmlhttpShow.open("GET", "http://142.156.193.130:50050/Eng-Project-6/data.php", true);
     xmlhttpShow.send();
 }
+
+showRequestPieChart();
+showBarGraph();
