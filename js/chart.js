@@ -112,5 +112,4 @@ function showRequestPieChart(){
     xmlhttpShow.send();
 }
 
-showRequestPieChart();
-showBarGraph();
+

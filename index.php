@@ -186,6 +186,7 @@ if(isset($error) && $error != ""){
         	<canvas id="requestPi" width="800" height="600"></canvas>
 		</div>
     </div>
+	<button type="button" onclick="showBarGraph()">Bar Graph</button>
 </div>
 <div class="parallax"></div>
 
