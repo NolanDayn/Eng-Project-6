@@ -67,7 +67,7 @@ if(isset($error) && $error != ""){
 <div class="parallax"></div>
 
 <!-- Three.js Test -->
-<div class="jumbotron text-center">
+<div class="jumbotron text-center threeContainer">
 	<h1>Three.js test</h1>
 	<canvas id="threeCanvas" width="800" height="600"></canvas>
 </div>
