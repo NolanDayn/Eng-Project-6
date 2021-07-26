@@ -28,7 +28,7 @@ function showBarGraph(){
             //( 4 means finished request and server responce is ready)
             //status 200 for 'OK'
             var resp = JSON.parse(this.responseText); //Text string returned from server in 'echo' statement
-            console.log(resp);
+            //console.log(resp);
 
             var date = [];
             var requestedFloor = [];
@@ -94,7 +94,7 @@ function showRequestPieChart(){
                 requestedFloor[(resp[i].requestedFloor-1)]++;
             }
 
-            console.log(requestedFloor);
+            //console.log(requestedFloor);
 
             var chartData = {
                 labels:["floor1","floor2", "floor3"],
