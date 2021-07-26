@@ -1,3 +1,12 @@
+var btn_PieChart = Document.getElementById("pieChartB");
+var btn_BarGraph = Document.getElementById("barGraphB");
+var canvas = Document.getElementById("mycanvas");
+
+
+function addEventListeners(){
+	btn_PieChart.addEventListener("click", showPieChart);
+	btn_BarGraph.addEventListener("click", showBarGraph);
+
 function showBarGraph(){
 
     var xmlhttpShow = new XMLHttpRequest();
@@ -23,22 +32,20 @@ function showBarGraph(){
                 datasets: [
                     {
                         label : 'Date',
-                        backgroundColor: 'rgba(25,25,25,0.75)',
+                        backgroundColor: 'rgba(200,200,200,0.75)',
                         borderColor: 'rgba(200,200,200,0.75)',
-                        hoverBackgroundColor: 'rgba(25,25,25,1)',
+                        hoverBackgroundColor: 'rgba(200,200,200,1)',
                         hoverBorderColor: 'rgba(200,200,200,1)',
                         data: requestedFloor
                     }
                 ]
             };
 
-            var ctx = document.getElementById("mycanvas");
-
-            var barGraph = new Chart(ctx, {
+            var barGraph = new Chart(canvas, {
                 type: 'bar',
                 data: chartData,
                 options: {
-                    responsive: false,
+                    responsive: true,
                     plugins: {
                       legend: {
                         position: 'top',
@@ -74,6 +81,7 @@ function showPieChart(){
                 requestedFloor[(resp[i].requestedFloor-1)]++;
             }
 
+            console.log(requestedFloor);
 
             var chartData = {
                 labels:["floor1","floor2", "floor3"],
@@ -88,12 +96,11 @@ function showPieChart(){
                 ]
             }
 
-            var ctx = document.getElementById("mycanvas2");
-            var chart1 = new Chart(ctx, {
+            var chart1 = new Chart(canvas, {
                 type:"pie",
                 data:chartData,
                 options: {
-                    responsive: false,
+                    responsive: true,
                     plugins: {
                       legend: {
                         position: 'top',
