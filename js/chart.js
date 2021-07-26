@@ -65,7 +65,7 @@ function showBarGraph(){
 }
 
 function showRequestPieChart(){
-
+	alert("hi");
     var xmlhttpShow = new XMLHttpRequest();
     xmlhttpShow.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
