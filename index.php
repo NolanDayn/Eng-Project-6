@@ -66,6 +66,13 @@ if(isset($error) && $error != ""){
 </div>
 <div class="parallax"></div>
 
+<!-- Three.js Test -->
+<div id="intro" class="jumbotron text-center">
+	<h1>Three.js test</h1>
+	<canvas id="threeCanvas" width="800" height="600"></canvas>
+</div>
+<div class="parallax"></div>
+
 <!-- About Us -->
 <div id="about" class="jumbotron text-center">
 	<h1>About Us</h1>
@@ -269,12 +276,16 @@ if(isset($error) && $error != ""){
 </div>
 
 <!-- javascript -->
+
 <?php
 	if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 		echo '<script src="js/main.js"></script>';
 	} else {
 	}
 ?>
+
+<script src="js/three.js"></script>
+<script src="js/threeTest.js"></script>
 <script type="text/javascript" src="js/chart.js"></script>
 
 </body>
