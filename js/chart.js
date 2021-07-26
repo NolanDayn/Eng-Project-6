@@ -8,7 +8,7 @@ Initialize();
 
 function createCanvas(var container){
 	container.innerHTML = '<canvas id="mycanvas" width="800" height="600"></canvas>';
-	document.getElementById("mycanvas");
+	return document.getElementById("mycanvas");
 }
 
 function Initialize(){
