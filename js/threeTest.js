@@ -15,7 +15,7 @@ var model;
 //const cube = new THREE.Mesh( geometry, material );
 //scene.add( cube );
 
-const loader = new GLTFLoader();
+const loader = new THREE.GLTFLoader();
 
 loader.load( './blender_files/models.glb', function ( gltf ) {
 	model = gltf.scene;
