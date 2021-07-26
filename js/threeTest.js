@@ -16,7 +16,7 @@ function init() {
 	const loader = new GLTFLoader();
 	loader.load( '../blender_files/models.glb', function ( gltf ) {
 	mesh = gltf.scene;
-	scene.add( model );
+	scene.add( mesh );
 	}, undefined, function ( error ) {
 		console.error( error );
 	} );
