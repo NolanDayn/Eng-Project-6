@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 $stmt = "UPDATE carNode SET floorNumber=? WHERE nodeID=1";
-$stmt->bind_param("i", $_GET["floor"]);
+$stmt->bind_param("i", 2);
 $stmt->execute();
 $stmt->close();
 
