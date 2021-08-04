@@ -1,4 +1,4 @@
-<?php
+
 
 <form action="/editCarNode.php">
   <label for="fname">New Floor Number:</label><br>
@@ -6,4 +6,3 @@
   <input type="submit" value="Submit">
 </form>
 
-?>
