@@ -27,15 +27,15 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-
-$sql = "SELECT * FROM elevatorNodes LEFT JOIN carNode ON elevatorNodes.nodeID = carNode.nodeID";
+//$sql = "SELECT * FROM elevatorNodes LEFT JOIN carNode ON elevatorNodes.nodeID = carNode.nodeID";
+$sql = "SELECT * FROM elevatorNodes";
 $result = $conn->query($sql);
 
 
   // output data of each row
 while($row = $result->fetch_assoc()) {
     //echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-	echo "<tr><td>{$row['nodeID']}</td></tr>";
+	echo "<tr><td>{$row['nodeID']}</td><td>{$row['info']}</td><td>{$row['status']}</td></tr>";
 }
 
 
