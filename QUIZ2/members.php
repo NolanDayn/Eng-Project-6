@@ -6,6 +6,14 @@
   <input type="submit" value="Submit">
 </form>
 
+<table style="width:100%">
+  <tr>
+    <th>Node ID</th>
+    <th>Info</th>
+    <th>Status</th>
+	<th>Floor Number</th>
+  </tr>
+
 <?php
 
 $servername = "localhost:3306";
@@ -20,18 +28,20 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM elevatorNodes";
+$sql = "SELECT * FROM elevatorNodes LEFT JOIN carNode ON elevatorNodes.nodeID = carNode.nodeID";
 $result = $conn->query($sql);
 
 
   // output data of each row
 while($row = $result->fetch_assoc()) {
     //echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-	echo "<h1>hi</h1>";
+	echo "<tr><td>{$row['nodeID']}</td></tr>";
 }
 
 
 $conn->close();
 
 ?>
+
+</table>
 
