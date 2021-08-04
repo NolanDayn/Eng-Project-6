@@ -23,6 +23,6 @@ if ($conn->query($sql) === TRUE) {
 
 $conn->close();
 
-//header("location: members.php");
+header("location: members.php");
 
 ?>
