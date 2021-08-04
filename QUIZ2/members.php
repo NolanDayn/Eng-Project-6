@@ -38,8 +38,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-$sql = "SELECT * FROM elevatorNodes LEFT JOIN carNode ON elevatorNodes.nodeID = carNode.nodeID";
-//$sql = "SELECT * FROM elevatorNodes";
+$sql = "SELECT * FROM elevatorNodes LEFT JOIN carNode";
+//$sql = "SELECT * FROM elevatorNodes LEFT JOIN carNode ON elevatorNodes.nodeID = carNode.nodeID";
 $result = $conn->query($sql);
 
 
