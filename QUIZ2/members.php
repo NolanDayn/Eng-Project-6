@@ -1,12 +1,23 @@
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+table {
+  border-collapse: collapse;
+}
 
+</style>
+</head>
 
+<body>
 <form action="editCarNode.php">
   <label for="floor">New Floor Number:</label><br>
   <input type="text" id="floor" name="floor" value="1"><br>
   <input type="submit" value="Submit">
 </form>
 
-<table style="width:100%;border-collapse:collapse;border:1px solid black;">
+<table>
   <tr>
     <th>Node ID</th>
     <th>Info</th>
@@ -34,7 +45,6 @@ $result = $conn->query($sql);
 
   // output data of each row
 while($row = $result->fetch_assoc()) {
-    //echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
 	echo "<tr><td>{$row['nodeID']}</td><td>{$row['info']}</td><td>{$row['status']}</td><td>{$row['floorNumber']}</td></tr>";
 }
 
@@ -44,4 +54,5 @@ $conn->close();
 ?>
 
 </table>
+</body>
 
