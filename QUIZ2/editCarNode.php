@@ -22,6 +22,6 @@ if ($conn->query($sql) === TRUE) {
 
 $conn->close();
 
-header("location: /Eng-Project-6/QUIZ2/members.php");
+header("location: /members.php");
 
 ?>
