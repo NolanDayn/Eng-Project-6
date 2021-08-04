@@ -12,7 +12,8 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "UPDATE carNode SET floorNumber='$_GET["floor"]' WHERE nodeID=1";
+$floor = $_GET["floor"];
+$sql = "UPDATE carNode SET floorNumber='$floor' WHERE nodeID=1";
 
 if ($conn->query($sql) === TRUE) {
 	
