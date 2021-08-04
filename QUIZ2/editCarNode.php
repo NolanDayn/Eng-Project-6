@@ -12,10 +12,13 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$stmt = "UPDATE carNode SET floorNumber=? WHERE nodeID=1";
-$stmt->bind_param("i", 2);
-$stmt->execute();
-$stmt->close();
+$sql = "UPDATE carNode SET floorNumber=" . htmlspecialchars($_POST["floor"]) . "WHERE nodeID=1";
+
+if ($conn->query($sql) === TRUE) {
+	
+} else {
+  echo "Error updating record: " . $conn->error;
+}
 
 $conn->close();
 
