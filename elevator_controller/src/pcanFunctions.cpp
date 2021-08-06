@@ -59,12 +59,6 @@ int pcanRx(int num_msgs){
 
 	// Clear the channel - new - Must clear the channel before Tx/Rx
 	status = CAN_Status(h2);
-
-	// Clear screen to show received messages
-	system("@cls||clear");
-
-	// receive CAN message  - CODE adapted from PCAN BASIC C++ examples pcanread.cpp
-	printf("\nReady to receive message(s) over CAN bus\n");
 	
 	// Read 'num' messages on the CAN bus
 	while(i < num_msgs) {
@@ -88,6 +82,5 @@ int pcanRx(int num_msgs){
 
 	// Close CAN 2.0 channel and exit	
 	CAN_Close(h2);
-	//printf("\nEnd Rx\n");
 	return ((int)Rxmsg.DATA[0]);						// Return the last value received
 }

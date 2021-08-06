@@ -39,6 +39,37 @@ int db_getFloorNum() {
 	return floorNum;
 }
 
+int db_checkIfRequested(int floorNum){
+	sql::Driver *driver; 	// Create a pointer to a MySQL driver object
+	sql::Connection *con; 	// Create a pointer to a database connection object
+	sql::Statement *stmt;	// Crealte a pointer to a Statement object to hold statements 
+	sql::ResultSet *res;	// Create a pointer to a ResultSet object to hold results 	
+	int requested = 0;
+
+	// Create a connection 
+	driver = get_driver_instance();
+	con = driver->connect("tcp://127.0.0.1:3306", "root", "password");
+	con->setSchema("elevator");		
+	
+	// Query database
+	// ***************************** 
+	char q[100];
+	snprintf(q, 100,"SELECT floor FROM requests WHERE floor=%d",floorNum);
+	stmt = con->createStatement();
+	res = stmt->executeQuery(q);
+	while(res->next()){
+	    requested = res->getInt("floor");
+	}
+	
+	// Clean up pointers 
+	delete res;
+	delete stmt;
+	delete con;
+	
+	return requested;
+
+}
+
 int db_getReqFloor(){
 
 	sql::Driver *driver;	//Create a pointer to a MySQL driver object
@@ -61,11 +92,6 @@ int db_getReqFloor(){
 		reqFloor = res->getInt("floor");
 	}
 
-	if(reqFloor != 0){
-		printf("REQUESTED FLOOR : %d\n", reqFloor);
-		stmt->execute("DELETE FROM requests ORDER BY requestNumber DESC LIMIT 1");
-	}
-
 	//Clean up pointers
 	delete res;
 	delete stmt;
@@ -74,6 +100,33 @@ int db_getReqFloor(){
 	return reqFloor;
 }
 
+void db_deleteRequest(int floorNum){
+
+	sql::Driver *driver;	//Create a pointer to a MySQL driver object
+	sql::Connection *con;	//Create a pointer to a database connection object
+	sql::Statement *stmt;	//Create a pointer to a statement object
+	int reqFloor = 0;		//Requested Floor Number
+
+	//create connection
+	driver = get_driver_instance();
+       	con = driver->connect("tcp://127.0.0.1:3306", "root", "password");
+	con->setSchema("elevator");
+	
+	//Query Database
+	// *************************
+	
+	char q[100];
+	snprintf(q, 100,"DELETE FROM requests WHERE floor=%d",floorNum);
+	
+	stmt = con->createStatement();
+	stmt->execute(q);
+
+	//Clean up pointers
+	delete stmt;
+	delete con;
+
+	return;
+}
 int db_getDestFloor(){
 
 	sql::Driver *driver;	//Create a pointer to a MySQL driver object
