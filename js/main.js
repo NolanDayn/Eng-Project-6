@@ -24,7 +24,7 @@ var animationStrings = ["Up_One .25s steps(7) 1", "Up_Two .25s steps(7) 1","Down
 // 9: 3 close
 
 AddListeners();
-var intervalID = window.setInterval(CheckElevatorStatus, 5000);
+var intervalID = window.setInterval(CheckElevatorStatus, 2000);
 
 function AddListeners(){
 	var floor1 = document.getElementsByClassName("get_floor_1");
