@@ -49,6 +49,7 @@ function CheckElevatorStatus(){
 		if (this.readyState == 4 && this.status == 200) {
 			var json = JSON.parse( this.responseText );
 			MoveFloor(json.currenFloor, json.destinationFloor);
+			FillTable(statusTable, json);
 		}
 	}
 }
@@ -121,6 +122,7 @@ async function MoveFloor(currentFloor, destinationFloor){
 	
 	//move
 	var diff = destinationFloor - currentFloor;
+	if (diff == 0) return;
 	for(var i = 0; i < Math.abs(diff); i++){
 		sound = new Audio(`../Eng-Project-6/music/${floor}.mp3`);
 		sound.play();
