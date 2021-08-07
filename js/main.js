@@ -9,6 +9,7 @@ var requestTable = document.getElementById("requestTable");
 var statusTable = document.getElementById("statusTable");
 
 var sabbath = 0;
+var sabbathInterval;
 var sabbathDir = 1;
 
 var animationStrings = ["Up_One .25s steps(7) 1", "Up_Two .25s steps(7) 1","Down_Two .25s steps(7) 1","Down_One .25s steps(7) 1","One_Open .25s steps(6) 1","One_Close .25s steps(6) 1","Two_Open .25s steps(6) 1","Two_Close .25s steps(6) 1","Three_Open .25s steps(6) 1","Three_Close .25s steps(6) 1"];
@@ -42,7 +43,7 @@ function AddListeners(){
 	sabbathOff.addEventListener('click', StopSabbath, false);
 }
 
-async function CheckElevatorStatus(){
+function CheckElevatorStatus(){
 	//Request
 	var url = `http://142.156.193.130:50050/Eng-Project-6/GetElevatorStatus.php`;
 	var xhr = new XMLHttpRequest();
@@ -57,11 +58,6 @@ async function CheckElevatorStatus(){
 				MoveFloor(json[0].currentFloor, json[0].destinationFloor);
 				lastJson = JSON.stringify(json);
 			}
-			if (sabbath == 1){
-				var currentFloor = json[0].currentFloor;
-				sabbathDir = (currentFloor == 3) ? -1 : (currentFloor == 1) ? 1 : dir;
-				await RequestFloor(currentFloor + sabbathDir);
-			}
 		}
 	}
 }
@@ -71,10 +67,11 @@ function ClickRequestFloor(floor){
 	RequestFloor(floor);
 }
 
-async function StartSabbath(){
+function StartSabbath(){
 	sabbathOn.disabled = true;
 	sabbathOff.disabled = false;
 	sabbath = 1;
+	sabbathInterval = setInterval(SabbathRequests, 5000);
 	/*
 	var floor = 1;
 	var dir = 1;
@@ -89,10 +86,17 @@ async function StartSabbath(){
 	*/
 }
 
+function SabbathRequests(){
+	var currentFloor = JSON.parse(lastJson)[0].currentFloor;
+	sabbathDir = (currentFloor == 3) ? -1 : (currentFloor == 1) ? 1 : dir;
+	RequestFloor(currentFloor + sabbathDir);
+}
+
 function StopSabbath(){
 	sabbathOn.disabled = false;
 	sabbathOff.disabled = true;
 	sabbath = 0;
+	clearInterval(sabbathInterval);
 }
 
 function FillTable(table, data){
