@@ -1,4 +1,4 @@
-var currentFloor = 1;
+//var currentFloor = 1;
 var doorState = 1; //1: closed 0:open
 var image = document.getElementById("sprite-image");
 var alarmButton = document.getElementById('alarmButton');
@@ -122,14 +122,17 @@ async function MoveFloor(currentFloor, destinationFloor){
 	
 	//move
 	var diff = destinationFloor - currentFloor;
-	if (diff == 0) return;
+	var moved = 0;
 	for(var i = 0; i < Math.abs(diff); i++){
+		moved = 1;
 		sound = new Audio(`../Eng-Project-6/music/${floor}.mp3`);
 		sound.play();
 		await Move(Math.sign(diff));
 	}
-	await OpenDoors(0);
-	await OpenDoors(1);
+	if moved{
+		await OpenDoors(0);
+		await OpenDoors(1);
+	}
 }
 
 async function RequestFloor(floor){
@@ -182,13 +185,13 @@ async function Move(dir){
 		image.style.animation = animationStrings[currentFloor - 1];
 		image.style.animationFillMode = "forwards";
 		doorState = 1;
-		currentFloor++;
+		//currentFloor++;
 		await new Promise(function(resolve) { setTimeout(resolve, 900); });
 	} else if (dir == -1){
 		image.style.animation = animationStrings[currentFloor == 3 ? 2 : 3];
 		image.style.animationFillMode = "forwards";
 		doorState = 1;
-		currentFloor--;
+		//currentFloor--;
 		await new Promise(function(resolve) { setTimeout(resolve, 900); });
 	}
 }
