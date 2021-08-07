@@ -90,7 +90,7 @@ function SabbathRequests(){
 	var currentFloor = JSON.parse(lastJson)[0].currentFloor;
 	console.log(currentFloor);
 	sabbathDir = (currentFloor == 3) ? -1 : (currentFloor == 1) ? 1 : sabbathDir;
-	RequestFloor(currentFloor + sabbathDir);
+	RequestFloor(parseInt(currentFloor) + parseInt(sabbathDir));
 }
 
 function StopSabbath(){
