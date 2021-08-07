@@ -50,7 +50,7 @@ function CheckElevatorStatus(){
 			const json = JSON.parse( this.responseText );
 			//MoveFloor(parseInt(json.currentFloor, 10), parseInt(json.destinationFloor, 10));
 			console.log(json);
-			console.log(json.currentFloor);
+			console.log(json[0].currentFloor);
 			FillTable(statusTable, json);
 		}
 	}
