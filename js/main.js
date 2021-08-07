@@ -1,5 +1,4 @@
 var lastJson = "";
-var canSabbathAgain = 1;
 
 var doorState = 1; //1: closed 0:open
 var image = document.getElementById("sprite-image");
@@ -54,11 +53,14 @@ function CheckElevatorStatus(){
 			
 			if(JSON.stringify(json) === lastJson) return;
 			
-			MoveFloor(json[0].currentFloor, json[0].destinationFloor);
 			FillTable(statusTable, json);
+			await MoveFloor(json[0].currentFloor, json[0].destinationFloor);
+			
+			if (sabbath == 1){
+				RequestFloor(json[0].currentFloor == 3 ? 2 : json[0].currentFloor == 2 ? 1 : json[0].currentFloor == 1 : 2);
+			}
 			
 			lastJson = JSON.stringify(json);
-			canSabbathAgain = 1;
 		}
 	}
 }
@@ -72,20 +74,18 @@ async function StartSabbath(){
 	sabbathOn.disabled = true;
 	sabbathOff.disabled = false;
 	sabbath = 1;
-	
+	/*
 	var floor = 1;
 	var dir = 1;
 
 	for(var i = 0; i < 10; i++){
-		canSabbathAgain = 0;
 		
 		dir = (floor == 3) ? -1 : (floor == 1) ? 1 : dir;
 		floor += dir;
 		await RequestFloor(floor);
 		if (sabbath == 0) break;
-		
-		while(!canSabbathAgain);
 	}
+	*/
 }
 
 function StopSabbath(){
