@@ -88,7 +88,7 @@ function StartSabbath(){
 
 function SabbathRequests(){
 	var currentFloor = JSON.parse(lastJson)[0].currentFloor;
-	sabbathDir = (currentFloor == 3) ? -1 : (currentFloor == 1) ? 1 : dir;
+	sabbathDir = (currentFloor == 3) ? -1 : (currentFloor == 1) ? 1 : sabbathDir;
 	RequestFloor(currentFloor + sabbathDir);
 }
 
