@@ -42,7 +42,7 @@ function AddListeners(){
 	sabbathOff.addEventListener('click', StopSabbath, false);
 }
 
-function CheckElevatorStatus(){
+async function CheckElevatorStatus(){
 	//Request
 	var url = `http://142.156.193.130:50050/Eng-Project-6/GetElevatorStatus.php`;
 	var xhr = new XMLHttpRequest();
@@ -60,7 +60,7 @@ function CheckElevatorStatus(){
 			if (sabbath == 1){
 				var currentFloor = json[0].currentFloor;
 				sabbathDir = (currentFloor == 3) ? -1 : (currentFloor == 1) ? 1 : dir;
-				RequestFloor(currentFloor + sabbathDir);
+				await RequestFloor(currentFloor + sabbathDir);
 			}
 		}
 	}
