@@ -122,14 +122,11 @@ async function MoveFloor(currentFloor, destinationFloor){
 	
 	//move
 	var diff = destinationFloor - currentFloor;
-	var moved = 0;
 	for(var i = 0; i < Math.abs(diff); i++){
 		moved = 1;
 		sound = new Audio(`../Eng-Project-6/music/${floor}.mp3`);
 		sound.play();
 		await Move(Math.sign(diff));
-	}
-	if moved{
 		await OpenDoors(0);
 		await OpenDoors(1);
 	}
