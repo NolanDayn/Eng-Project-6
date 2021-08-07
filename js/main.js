@@ -9,6 +9,7 @@ var requestTable = document.getElementById("requestTable");
 var statusTable = document.getElementById("statusTable");
 
 var sabbath = 0;
+var sabbathDir = 1;
 
 var animationStrings = ["Up_One .25s steps(7) 1", "Up_Two .25s steps(7) 1","Down_Two .25s steps(7) 1","Down_One .25s steps(7) 1","One_Open .25s steps(6) 1","One_Close .25s steps(6) 1","Two_Open .25s steps(6) 1","Two_Close .25s steps(6) 1","Three_Open .25s steps(6) 1","Three_Close .25s steps(6) 1"];
 // 0: 1 to 2
@@ -57,7 +58,9 @@ function CheckElevatorStatus(){
 				lastJson = JSON.stringify(json);
 			}
 			if (sabbath == 1){
-				RequestFloor(json[0].currentFloor + 1);
+				var currentFloor = json[0].currentFloor;
+				sabbathDir = (currentFloor == 3) ? -1 : (currentFloor == 1) ? 1 : dir;
+				RequestFloor(currentFloor + sabbathDir);
 			}
 		}
 	}
