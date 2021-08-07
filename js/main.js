@@ -48,7 +48,7 @@ function CheckElevatorStatus(){
 	xhr.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			var json = JSON.parse( this.responseText );
-			console.log(json);
+			MoveFloor(json.currenFloor, json.destinationFloor);
 		}
 	}
 }
@@ -118,13 +118,12 @@ function CallNumber(){
 }
 
 async function MoveFloor(currentFloor, destinationFloor){
-	//sound
-	sound = new Audio(`../Eng-Project-6/music/${floor}.mp3`);
-	sound.play();
 	
 	//move
 	var diff = destinationFloor - currentFloor;
 	for(var i = 0; i < Math.abs(diff); i++){
+		sound = new Audio(`../Eng-Project-6/music/${floor}.mp3`);
+		sound.play();
 		await Move(Math.sign(diff));
 	}
 	await OpenDoors(0);
