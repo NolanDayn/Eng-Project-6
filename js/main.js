@@ -71,7 +71,7 @@ async function StartSabbath(){
 	sabbathOff.disabled = false;
 	sabbath = 1;
 	
-	var floor = currentFloor;
+	var floor = (JSON.parse(lastJson))[0].currentFloor;
 	var dir = 1;
 
 	for(var i = 0; i < 100; i++){
