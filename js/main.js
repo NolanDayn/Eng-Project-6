@@ -24,7 +24,8 @@ var animationStrings = ["Up_One .25s steps(7) 1", "Up_Two .25s steps(7) 1","Down
 // 9: 3 close
 
 AddListeners();
-var intervalID = window.setInterval(CheckElevatorStatus, 2000);
+CheckElevatorStatus();
+var intervalID = window.setInterval(CheckElevatorStatus, 1000);
 
 function AddListeners(){
 	var floor1 = document.getElementsByClassName("get_floor_1");
@@ -74,7 +75,7 @@ async function StartSabbath(){
 	var floor = (JSON.parse(lastJson))[0].currentFloor;
 	var dir = 1;
 
-	for(var i = 0; i < 100; i++){
+	for(var i = 0; i < 10; i++){
 		dir = (floor == 3) ? -1 : (floor == 1) ? 1 : dir;
 		floor += dir;
 		await RequestFloor(floor);
