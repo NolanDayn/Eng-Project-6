@@ -127,8 +127,8 @@ async function MoveFloor(currentFloor, destinationFloor){
 		sound = new Audio(`../Eng-Project-6/music/${destinationFloor}.mp3`);
 		sound.play();
 		await Move(Math.sign(diff), currentFloor);
-		await OpenDoors(0);
-		await OpenDoors(1);
+		await OpenDoors(0, currentFloor);
+		await OpenDoors(1, currentFloor);
 	}
 }
 
@@ -155,7 +155,7 @@ function PrintResults(results){
 
 
 
-async function OpenDoors(open){
+async function OpenDoors(open, currentFloor){
 	//0:open, 1:close
 	if (doorState === open) return;
 	image.style.animation = animationStrings[currentFloor * 2 + 2 + open];
