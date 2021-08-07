@@ -129,7 +129,7 @@ function CallNumber(){
 async function MoveFloor(currentFloor, destinationFloor){
 	
 	//move
-	if (destinationFloor === 0) return;
+	if (destinationFloor == 0) return;
 	var diff = destinationFloor - currentFloor;
 	for(var i = 0; i < Math.abs(diff); i++){
 		sound = new Audio(`../Eng-Project-6/music/${destinationFloor}.mp3`);
