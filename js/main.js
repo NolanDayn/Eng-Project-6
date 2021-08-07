@@ -126,7 +126,7 @@ async function MoveFloor(currentFloor, destinationFloor){
 		moved = 1;
 		sound = new Audio(`../Eng-Project-6/music/${destinationFloor}.mp3`);
 		sound.play();
-		await Move(Math.sign(diff));
+		await Move(Math.sign(diff), currentFloor);
 		await OpenDoors(0);
 		await OpenDoors(1);
 	}
@@ -177,7 +177,7 @@ async function OpenDoors(open){
 	
 }
 
-async function Move(dir){
+async function Move(dir, currentFloor){
 	if (dir == 1){
 		image.style.animation = animationStrings[currentFloor - 1];
 		image.style.animationFillMode = "forwards";
