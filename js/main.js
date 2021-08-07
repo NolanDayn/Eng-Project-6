@@ -22,6 +22,7 @@ var animationStrings = ["Up_One .25s steps(7) 1", "Up_Two .25s steps(7) 1","Down
 // 9: 3 close
 
 AddListeners();
+var intervalID = window.setInterval(CheckElevatorStatus, 5000);
 
 function AddListeners(){
 	var floor1 = document.getElementsByClassName("get_floor_1");
@@ -36,6 +37,20 @@ function AddListeners(){
 	alarmButton.addEventListener('click', CallNumber, false);
 	sabbathOn.addEventListener('click', StartSabbath, false);
 	sabbathOff.addEventListener('click', StopSabbath, false);
+}
+
+function CheckElevatorStatus(){
+	//Request
+	var url = `http://142.156.193.130:50050/Eng-Project-6/GetElevatorStatus.php`;
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', url, true);
+	xhr.send();
+	xhr.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			var json = JSON.parse( this.responseText );
+			console.log(json);
+		}
+	}
 }
 
 function ClickRequestFloor(floor){
@@ -102,19 +117,21 @@ function CallNumber(){
 	xhr.send();
 }
 
-async function RequestFloor(floor){
+async function MoveFloor(currentFloor, destinationFloor){
 	//sound
 	sound = new Audio(`../Eng-Project-6/music/${floor}.mp3`);
 	sound.play();
 	
 	//move
-	var diff = floor - currentFloor;
+	var diff = destinationFloor - currentFloor;
 	for(var i = 0; i < Math.abs(diff); i++){
 		await Move(Math.sign(diff));
 	}
 	await OpenDoors(0);
 	await OpenDoors(1);
-	
+}
+
+async function RequestFloor(floor){
 	//Request
 	var url = `http://142.156.193.130:50050/Eng-Project-6/AddFloor.php?floor=${floor}`;
 	var xhr = new XMLHttpRequest();
