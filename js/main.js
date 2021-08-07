@@ -48,9 +48,7 @@ function CheckElevatorStatus(){
 	xhr.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			const json = JSON.parse( this.responseText );
-			//MoveFloor(parseInt(json.currentFloor, 10), parseInt(json.destinationFloor, 10));
-			console.log(json);
-			console.log(json[0].currentFloor);
+			MoveFloor(json[0].currentFloor, json[0].destinationFloor);
 			FillTable(statusTable, json);
 		}
 	}
