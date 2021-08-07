@@ -51,16 +51,14 @@ function CheckElevatorStatus(){
 		if (this.readyState == 4 && this.status == 200) {
 			const json = JSON.parse( this.responseText );
 			
-			if(JSON.stringify(json) === lastJson) return;
-			
-			FillTable(statusTable, json);
-			MoveFloor(json[0].currentFloor, json[0].destinationFloor);
-			
+			if(JSON.stringify(json) !== lastJson){
+				FillTable(statusTable, json);
+				MoveFloor(json[0].currentFloor, json[0].destinationFloor);
+				lastJson = JSON.stringify(json);
+			}
 			if (sabbath == 1){
 				RequestFloor(json[0].currentFloor + 1);
 			}
-			
-			lastJson = JSON.stringify(json);
 		}
 	}
 }
