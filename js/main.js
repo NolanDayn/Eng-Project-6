@@ -1,5 +1,5 @@
 var lastJson = "";
-
+var canSabbathAgain = 1;
 
 var doorState = 1; //1: closed 0:open
 var image = document.getElementById("sprite-image");
@@ -58,6 +58,7 @@ function CheckElevatorStatus(){
 			FillTable(statusTable, json);
 			
 			lastJson = JSON.stringify(json);
+			canSabbathAgain = 1;
 		}
 	}
 }
@@ -76,10 +77,14 @@ async function StartSabbath(){
 	var dir = 1;
 
 	for(var i = 0; i < 10; i++){
+		canSabbathAgain = 0;
+		
 		dir = (floor == 3) ? -1 : (floor == 1) ? 1 : dir;
 		floor += dir;
 		await RequestFloor(floor);
 		if (sabbath == 0) break;
+		
+		while(!canSabbathAgain);
 	}
 }
 
