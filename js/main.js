@@ -132,8 +132,8 @@ async function MoveFloor(currentFloor, destinationFloor){
 	new Audio(`../Eng-Project-6/music/${destinationFloor}.mp3`).play();
 	//console.log(`current floor: ${currentFloor} destination floor: ${destinationFloor}`);
 	await Move(currentFloor, destinationFloor);
-	//await OpenDoors(0, destinationFloor);
-	//await OpenDoors(1, destinationFloor);
+	await OpenDoors(0, destinationFloor);
+	await OpenDoors(1, destinationFloor);
 }
 
 async function RequestFloor(floor){
@@ -197,19 +197,4 @@ async function Move(currentFloor, destinationFloor){
 		
 		await new Promise(function(resolve) { setTimeout(resolve, 1000); });
 	}
-	/*
-	if (dir == 1){
-		image.style.animation = animationStrings[currentFloor - 1];
-		image.style.animationFillMode = "forwards";
-		doorState = 1;
-		//currentFloor++;
-		await new Promise(function(resolve) { setTimeout(resolve, 900); });
-	} else if (dir == -1){
-		image.style.animation = animationStrings[currentFloor == 3 ? 2 : 3];
-		image.style.animationFillMode = "forwards";
-		doorState = 1;
-		//currentFloor--;
-		await new Promise(function(resolve) { setTimeout(resolve, 900); });
-	}
-	*/
 }
