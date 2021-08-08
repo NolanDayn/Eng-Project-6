@@ -71,19 +71,7 @@ function StartSabbath(){
 	sabbathOn.disabled = true;
 	sabbathOff.disabled = false;
 	sabbath = 1;
-	sabbathInterval = setInterval(SabbathRequests, 7000);
-	/*
-	var floor = 1;
-	var dir = 1;
-
-	for(var i = 0; i < 10; i++){
-		
-		dir = (floor == 3) ? -1 : (floor == 1) ? 1 : dir;
-		floor += dir;
-		await RequestFloor(floor);
-		if (sabbath == 0) break;
-	}
-	*/
+	sabbathInterval = setInterval(SabbathRequests, 1000);
 }
 
 function SabbathRequests(){
@@ -139,18 +127,13 @@ function CallNumber(){
 
 async function MoveFloor(currentFloor, destinationFloor){
 	
-	//move
-	if (destinationFloor == 0) return;
-	var diff = destinationFloor - currentFloor;
-	for(var i = 0; i < Math.abs(diff); i++){
-		sound = new Audio(`../Eng-Project-6/music/${destinationFloor}.mp3`);
-		sound.play();
-		await Move(Math.sign(diff), currentFloor + i * Math.sign(diff));
-	}
-	if(diff != 0){
-		await OpenDoors(0, destinationFloor);
-		await OpenDoors(1, destinationFloor);
-	}
+	if (destinationFloor == 0 || destinationFloor == currentFloor) return;
+
+	new Audio(`../Eng-Project-6/music/${destinationFloor}.mp3`).play();
+	
+	await Move(currentFloor, destinationFloor);
+	await OpenDoors(0, destinationFloor);
+	await OpenDoors(1, destinationFloor);
 }
 
 async function RequestFloor(floor){
@@ -198,7 +181,16 @@ async function OpenDoors(open, currentFloor){
 	
 }
 
-async function Move(dir, currentFloor){
+async function Move(currentFloor, destinationFloor){
+	var dir = destinationFloor - currentFloor;
+	
+	for(var floor = currentFloor; floor != destinationFloor, floor += dir){
+		var animationString = (dir == 1) ? animationStrings[floor - 1] : animationStrings[floor == 3 ? 2 : 3];
+		image.style.animationFillMode = "forwards";
+		doorState = 1;
+		await new Promise(function(resolve) { setTimeout(resolve, 900); });
+	}
+	/*
 	if (dir == 1){
 		image.style.animation = animationStrings[currentFloor - 1];
 		image.style.animationFillMode = "forwards";
@@ -212,4 +204,5 @@ async function Move(dir, currentFloor){
 		//currentFloor--;
 		await new Promise(function(resolve) { setTimeout(resolve, 900); });
 	}
+	*/
 }
