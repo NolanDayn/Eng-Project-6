@@ -132,8 +132,8 @@ async function MoveFloor(currentFloor, destinationFloor){
 	new Audio(`../Eng-Project-6/music/${destinationFloor}.mp3`).play();
 	
 	await Move(currentFloor, destinationFloor);
-	await OpenDoors(0, destinationFloor);
-	await OpenDoors(1, destinationFloor);
+	//await OpenDoors(0, destinationFloor);
+	//await OpenDoors(1, destinationFloor);
 }
 
 async function RequestFloor(floor){
