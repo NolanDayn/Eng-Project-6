@@ -130,7 +130,7 @@ async function MoveFloor(currentFloor, destinationFloor){
 	if (destinationFloor == 0 || destinationFloor == currentFloor) return;
 
 	new Audio(`../Eng-Project-6/music/${destinationFloor}.mp3`).play();
-	
+	console.log(`current floor: ${currentFloor} destination floor: ${destinationFloor}`);
 	await Move(currentFloor, destinationFloor);
 	//await OpenDoors(0, destinationFloor);
 	//await OpenDoors(1, destinationFloor);
