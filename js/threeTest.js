@@ -14,9 +14,9 @@ function init() {
 	scene = new THREE.Scene();
 	clock = new THREE.Clock();
 	
-	//Lights
-	const aL = new THREE.AmbientLight( 0xffffff ); // soft white light
-	scene.add( aL );
+	//lights
+	const ambientLight = new THREE.AmbientLight( 0x404040, 2 ); // soft white light
+	scene.add( ambientLight );
 	
 	//Blender Model
 	const loader = new GLTFLoader();
