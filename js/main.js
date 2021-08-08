@@ -129,6 +129,12 @@ function FillTable(table, data){
 }
 
 function CallNumber(){
+	//set alarm flag
+	var xhr1 = new XMLHttpRequest();
+	xhr1.open('GET',`http://142.156.193.130:50050/Eng-Project-6/SetHelpFlag.php`, true);
+	xhr1.send();
+	
+	//twillio service
 	var url = `http://142.156.193.130:50050/Eng-Project-6/twilio/sendsms.php`;
 	var xhr = new XMLHttpRequest();
 	xhr.open('GET', url, true);
