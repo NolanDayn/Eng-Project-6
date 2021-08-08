@@ -22,8 +22,8 @@ function init() {
 		mesh.traverse((object) => { if (object.isCamera) camera = object;});
 		
 		//animations
-		mixer = new THREE.AnimationMixer(gltf);
-		var clips = gltf.animations;
+		mixer = new THREE.AnimationMixer(mesh);
+		var clips = mesh.animations;
 		
 		clips.forEach( function ( clip ) {
 			mixer.clipAction( clip ).play();
