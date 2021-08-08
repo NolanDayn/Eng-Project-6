@@ -29,6 +29,7 @@ function init() {
 		
 		//animations
 		mixer = new THREE.AnimationMixer(mesh);
+		mixer.timeScale = 0.4;
 		var clips = gltf.animations;
 		
 		clips.forEach( function ( clip ) {
