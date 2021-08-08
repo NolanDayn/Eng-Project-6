@@ -71,7 +71,7 @@ function StartSabbath(){
 	sabbathOn.disabled = true;
 	sabbathOff.disabled = false;
 	sabbath = 1;
-	sabbathInterval = setInterval(SabbathRequests, 5000);
+	sabbathInterval = setInterval(SabbathRequests, 7000);
 	/*
 	var floor = 1;
 	var dir = 1;
