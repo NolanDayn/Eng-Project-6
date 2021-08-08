@@ -47,7 +47,7 @@ function AddListeners(){
 	sabbathOff.addEventListener('click', StopSabbath, false);
 }
 
-function ClickOpen(var open){
+function ClickOpen(open){
 	if (sabbath) return;
 	var currentFloor = parseInt(JSON.parse(lastJson)[0].currentFloor);
 	OpenDoors(open, currentFloor);
