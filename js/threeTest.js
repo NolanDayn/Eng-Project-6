@@ -15,7 +15,7 @@ function init() {
 	clock = new THREE.Clock();
 	
 	//lights
-	const ambientLight = new THREE.AmbientLight( 0x404040, 2 ); // soft white light
+	const ambientLight = new THREE.AmbientLight( 0x404040, 10 ); // soft white light
 	scene.add( ambientLight );
 	
 	//Blender Model
