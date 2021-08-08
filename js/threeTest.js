@@ -8,7 +8,6 @@ var clock;
 var camera;
 
 init();
-animate();
 
 function init() {
 	//Scene
@@ -39,6 +38,7 @@ function init() {
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	document.getElementById('threeContainer').appendChild( renderer.domElement );
 
+	animate();
 }
 
 function animate() {
