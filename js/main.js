@@ -130,7 +130,7 @@ async function MoveFloor(currentFloor, destinationFloor){
 	if (destinationFloor == 0 || destinationFloor == currentFloor) return;
 
 	new Audio(`../Eng-Project-6/music/${destinationFloor}.mp3`).play();
-	console.log(`current floor: ${currentFloor} destination floor: ${destinationFloor}`);
+	//console.log(`current floor: ${currentFloor} destination floor: ${destinationFloor}`);
 	await Move(currentFloor, destinationFloor);
 	//await OpenDoors(0, destinationFloor);
 	//await OpenDoors(1, destinationFloor);
@@ -186,6 +186,7 @@ async function Move(currentFloor, destinationFloor){
 	
 	for(var floor = currentFloor; floor != destinationFloor; floor += dir){
 		var animationString = (dir == 1) ? animationStrings[floor - 1] : animationStrings[floor == 3 ? 2 : 3];
+		console.log(animationString);
 		image.style.animationFillMode = "forwards";
 		doorState = 1;
 		await new Promise(function(resolve) { setTimeout(resolve, 2000); });
