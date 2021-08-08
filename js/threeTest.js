@@ -1,34 +1,33 @@
 import * as THREE from '../three/build/three.module.js';
 import { GLTFLoader } from '../three/examples/jsm/loaders/GLTFLoader.js';
 
-let camera, scene, renderer;
+let scene, renderer;
 let geometry, material, mesh;
 var mixer;
 var clock;
+var camera;
 
 init();
 animate();
 
 function init() {
-	//Camera
-	camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 40 );
-	camera.position.z = 6;
-	
 	//Scene
 	scene = new THREE.Scene();
 	clock = new THREE.Clock();
 	
-	const light = new THREE.AmbientLight( 0x404040 ); // soft white light
-	scene.add( light );
-
 	//Blender Model
 	const loader = new GLTFLoader();
 	loader.load( './blender_files/models.glb', function ( gltf ) {
 		mesh = gltf.scene;
+		mesh.traverse((object) => { if (object.isCamera) camera = object;});
 		
-		//animation
-		mixer = new THREE.AnimationMixer(mesh);
-		mixer.clipAction(gltf.animations[0]).play();
+		//animations
+		mixer = new THREE.AnimationMixer(gltf);
+		var clips = gltf.animations;
+		
+		clips.forEach( function ( clip ) {
+			mixer.clipAction( clip ).play();
+		} );
 	
 		scene.add( mesh );
 		}, undefined, function ( error ) {
