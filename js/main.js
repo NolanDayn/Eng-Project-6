@@ -55,7 +55,7 @@ function CheckElevatorStatus(){
 			
 			if(JSON.stringify(json) !== lastJson){
 				FillTable(statusTable, json);
-				MoveFloor(json[0].currentFloor, json[0].destinationFloor);
+				MoveFloor(parseInt(json[0].currentFloor), parseInt(json[0].destinationFloor));
 				lastJson = JSON.stringify(json);
 			}
 		}
