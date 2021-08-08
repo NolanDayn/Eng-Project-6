@@ -188,7 +188,7 @@ async function Move(currentFloor, destinationFloor){
 		var animationString = (dir == 1) ? animationStrings[floor - 1] : animationStrings[floor == 3 ? 2 : 3];
 		image.style.animationFillMode = "forwards";
 		doorState = 1;
-		await new Promise(function(resolve) { setTimeout(resolve, 900); });
+		await new Promise(function(resolve) { setTimeout(resolve, 2000); });
 	}
 	/*
 	if (dir == 1){
