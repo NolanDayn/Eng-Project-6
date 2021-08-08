@@ -182,14 +182,20 @@ async function OpenDoors(open, currentFloor){
 }
 
 async function Move(currentFloor, destinationFloor){
-	var dir = destinationFloor - currentFloor;
+	var dir = Math.sign(destinationFloor - currentFloor);
 	
 	for(var floor = currentFloor; floor != destinationFloor; floor += dir){
 		var animationString = (dir == 1) ? animationStrings[floor - 1] : animationStrings[floor == 3 ? 2 : 3];
+		
 		console.log(animationString);
+		console.log(dir);
+		
+		image.style.animation = animationString;
 		image.style.animationFillMode = "forwards";
+		
 		doorState = 1;
-		await new Promise(function(resolve) { setTimeout(resolve, 2000); });
+		
+		await new Promise(function(resolve) { setTimeout(resolve, 1000); });
 	}
 	/*
 	if (dir == 1){
