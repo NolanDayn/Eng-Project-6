@@ -3,6 +3,8 @@ var lastJson = "";
 var doorState = 1; //1: closed 0:open
 var image = document.getElementById("sprite-image");
 var alarmButton = document.getElementById('alarmButton');
+var openButton = document.getElementById('openButton');
+var closeButton = document.getElementById('closeButton');
 var sabbathOn = document.getElementById("sabbathOn");
 var sabbathOff = document.getElementById("sabbathOff");
 var requestTable = document.getElementById("requestTable");
@@ -39,8 +41,16 @@ function AddListeners(){
 		floor3[i].addEventListener('click', function(){ClickRequestFloor(3);}, false);
 	}
 	alarmButton.addEventListener('click', CallNumber, false);
+	openButton.addEventListener('click', function(){ClickOpen(0);}, false);
+	closeButton.addEventListener('click', function(){ClickOpen(1);}, false);
 	sabbathOn.addEventListener('click', StartSabbath, false);
 	sabbathOff.addEventListener('click', StopSabbath, false);
+}
+
+function ClickOpen(var open){
+	if (sabbath) return;
+	var currentFloor = parseInt(JSON.parse(lastJson)[0].currentFloor);
+	OpenDoors(open, currentFloor);
 }
 
 function CheckElevatorStatus(){

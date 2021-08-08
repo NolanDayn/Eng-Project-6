@@ -161,8 +161,8 @@ if(isset($error) && $error != ""){
 					<button class="get_floor_3 col-sm-4 btn-primary">3</button>
 				</div>
 				<div class="row">
-					<button class="col-sm-4 btn-primary">O</button>
-					<button class="col-sm-4 btn-primary">C</button>
+					<button id="openButton" class="col-sm-4 btn-primary">O</button>
+					<button id="closeButton" class="col-sm-4 btn-primary">C</button>
 					<button id="alarmButton" class="col-sm-4 btn-primary">A</button>
 				</div>
 				<div class="row">
