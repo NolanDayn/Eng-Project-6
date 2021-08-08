@@ -21,6 +21,12 @@ function init() {
 	const hemLight = new THREE.HemisphereLight(0xB1E1FF, 0xB97A20, 1);
 	scene.add( hemLight );
 	
+	//Create a DirectionalLight and turn on shadows for the light
+	const light = new THREE.DirectionalLight( 0xffffff, 1, 100 );
+	light.position.set( 0, 1, 0 ); //default; light shining from top
+	light.castShadow = true; // default false
+	scene.add( light );
+	
 	//Blender Model
 	const loader = new GLTFLoader();
 	loader.load( './blender_files/models.glb', function ( gltf ) {
