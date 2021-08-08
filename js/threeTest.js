@@ -14,6 +14,10 @@ function init() {
 	scene = new THREE.Scene();
 	clock = new THREE.Clock();
 	
+	//Lights
+	const aL = new THREE.AmbientLight( 0xffffff ); // soft white light
+	scene.add( aL );
+	
 	//Blender Model
 	const loader = new GLTFLoader();
 	loader.load( './blender_files/models.glb', function ( gltf ) {
