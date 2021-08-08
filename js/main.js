@@ -184,7 +184,7 @@ async function OpenDoors(open, currentFloor){
 async function Move(currentFloor, destinationFloor){
 	var dir = destinationFloor - currentFloor;
 	
-	for(var floor = currentFloor; floor != destinationFloor, floor += dir){
+	for(var floor = currentFloor; floor != destinationFloor; floor += dir){
 		var animationString = (dir == 1) ? animationStrings[floor - 1] : animationStrings[floor == 3 ? 2 : 3];
 		image.style.animationFillMode = "forwards";
 		doorState = 1;
