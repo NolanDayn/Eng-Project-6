@@ -22,7 +22,7 @@ function init() {
 		
 		//animations
 		mixer = new THREE.AnimationMixer(mesh);
-		var clips = mesh.animations;
+		var clips = gltf.animations;
 		
 		clips.forEach( function ( clip ) {
 			mixer.clipAction( clip ).play();
