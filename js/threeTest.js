@@ -53,6 +53,6 @@ function animate() {
   var delta = clock.getDelta();
   if ( mixer ) mixer.update( delta );
 
-  renderer.render( scene, camera );
+  if (camera) renderer.render( scene, camera );
 
 }
