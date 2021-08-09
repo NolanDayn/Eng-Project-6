@@ -162,7 +162,7 @@ if(isset($error) && $error != ""){
 				</div>
 				<div class="row">
 					<button style="font-size:50px" id="openButton" class="col-sm-4 btn-primary"><i class="fas fa-door-open"></i></button>
-					<button style="font-size:50px" id="closeButton" class="col-sm-4 btn-primary"><i class="fas fa-door-open"></i></button>
+					<button style="font-size:50px" id="closeButton" class="col-sm-4 btn-primary"><i class="fas fa-door-closed"></i></button>
 					<button style="font-size:50px" id="alarmButton" class="col-sm-4 btn-primary"><i class="fas fa-bell"></i></button>
 				</div>
 				<div class="row">
