@@ -140,7 +140,7 @@ if(isset($error) && $error != ""){
 		<div class = "row">
 			<div class = "col-sm-4">
 				<div class="row">
-					<button style="height:128px;margin:10px;font-size:70px" class="get_floor_3 btn-primary col-sm-5"><i class="fas fa-arrow-up"></i></button>
+					<button style="height:128px;margin:10px;font-size:70px" class="get_floor_3 btn-primary col-sm-5" disabled></button>
 					<button style="height:128px;margin:10px;font-size:70px"class="get_floor_3 btn-primary col-sm-5"><i class="fas fa-arrow-down"></i></button>
 				</div>
 				<div class="row">
@@ -149,7 +149,7 @@ if(isset($error) && $error != ""){
 				</div>
 				<div class="row">
 					<button style="height:128px;margin:10px;font-size:70px"class="get_floor_1 btn-primary col-sm-5"><i class="fas fa-arrow-up"></i></button>
-					<button style="height:128px;margin:10px;font-size:70px"class="get_floor_1 btn-primary col-sm-5"><i class="fas fa-arrow-down"></i></button>
+					<button style="height:128px;margin:10px;font-size:70px"class="get_floor_1 btn-primary col-sm-5" disabled></button>
 				</div>
 				
 			</div>
@@ -265,12 +265,12 @@ if(isset($error) && $error != ""){
 		<div class="row">
 			<form method="get" action="./status_reports/Week_9.doc"><button type="submit" class="btn_status_download btn btn-primary btn-lg col-sm-2">Week 9</button></form>
 			<form method="get" action="./status_reports/Week_10.doc"><button type="submit" class="btn_status_download btn btn-primary btn-lg col-sm-2">Week 10</button></form>
-			<form method="get" action="./status_reports/Week_11.doc"><button type="submit" class="btn_status_download btn btn-success btn-lg col-sm-2">Week 11</button></form>
-			<form method="get" action="./status_reports/Week_12.doc"><button type="submit" class="btn_status_download btn btn-primary btn-lg col-sm-2" disabled>Week 12</button></form>
+			<form method="get" action="./status_reports/Week_11.doc"><button type="submit" class="btn_status_download btn btn-primary btn-lg col-sm-2">Week 11</button></form>
+			<form method="get" action="./status_reports/Week_12.doc"><button type="submit" class="btn_status_download btn btn-primary btn-lg col-sm-2">Week 12</button></form>
 		</div>
 		<div class="row">
-			<form method="get" action="./status_reports/Week_13.doc"><button type="submit" class="btn_status_download btn btn-primary btn-lg col-sm-2" disabled>Week 13</button></form>
-			<form method="get" action="./status_reports/Week_14.doc"><button type="submit" class="btn_status_download btn btn-primary btn-lg col-sm-2" disabled>Week 14</button></form>
+			<form method="get" action="./status_reports/Week_13.doc"><button type="submit" class="btn_status_download btn btn-danger btn-lg col-sm-2" disabled>Civic Holiday</button></form>
+			<form method="get" action="./status_reports/Week_14.doc"><button type="submit" class="btn_status_download btn btn-primary btn-lg col-sm-2">Week 14</button></form>
 		</div>
 		
 	</div>
