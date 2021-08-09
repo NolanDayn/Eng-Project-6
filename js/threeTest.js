@@ -73,9 +73,8 @@ function init() {
 }
 
 function animate() {
-  if(animationPlaying == 0) return;
   
-  requestAnimationFrame( animate );
+  if (animationPlaying) requestAnimationFrame( animate );
   var delta = clock.getDelta();
   if ( mixer ) mixer.update( delta );
 
