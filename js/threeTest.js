@@ -23,6 +23,7 @@ function InitializeControls(){
 
 function PlayAnimation(play){
 	animationPlaying = play;
+	console.log('hi');
 }
 
 function init() {
