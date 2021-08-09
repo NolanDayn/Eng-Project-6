@@ -2,8 +2,7 @@ import * as THREE from '../three/build/three.module.js';
 import { GLTFLoader } from '../three/examples/jsm/loaders/GLTFLoader.js';
 
 
-var threeStartButton = document.getElementById('threeStart');
-var threeStopButton = document.getElementById('threeStop');
+var threeToggleButton = document.getElementById('threeStart');
 
 let scene, renderer;
 let geometry, material, mesh;
@@ -11,19 +10,17 @@ var mixer;
 var clock;
 var camera;
 
-var animationPlaying = 1;
+var animationPlaying = true;
 
 InitializeControls();
 init();
 
 function InitializeControls(){
-	threeStartButton.addEventListener('click', function(){PlayAnimation(1);}, false);
-	threeStopButton.addEventListener('click', function(){PlayAnimation(0);}, false);
+	threeToggleButton.addEventListener('click', ToggleAnimation, false);
 }
 
-function PlayAnimation(play){
-	animationPlaying = play;
-	console.log('hi');
+function ToggleAnimation(){
+	animationPlaying = !animationPlaying;
 }
 
 function init() {
@@ -73,8 +70,8 @@ function init() {
 }
 
 function animate() {
-  
-  if (animationPlaying) requestAnimationFrame( animate );
+  if (!animationPlaying) return;
+  requestAnimationFrame( animate );
   var delta = clock.getDelta();
   if ( mixer ) mixer.update( delta );
 

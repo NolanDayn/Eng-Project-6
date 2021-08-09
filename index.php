@@ -70,7 +70,6 @@ if(isset($error) && $error != ""){
 <div id ="threeContainer" class="jumbotron text-center">
 	<h1>Three.js test</h1>
 	<button style="font-size:50px" id = "threeStart" class="col-sm-4 btn-success"><i class="fas fa-star-of-david"></i> On</button>
-	<button style="font-size:50px" id = "threeStop" class="col-sm-4 btn-danger"><i class="fas fa-star-of-david"></i> Off</button>
 	<canvas id="threeCanvas" width="800" height="600"></canvas>
 </div>
 <div class="parallax"></div>
