@@ -20,10 +20,11 @@ function InitializeControls(){
 }
 
 function ToggleAnimation(){
+	console.log(animationPlaying);
 	if(animationPlaying){
-		clock.running = false;
+		mixer.timeScale = 0;
 	} else {
-		clock.start;
+		mixer.timeScale = 0.4;
 	}
 	animationPlaying = !animationPlaying;
 }
