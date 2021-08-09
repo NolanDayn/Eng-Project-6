@@ -10,8 +10,6 @@ var mixer;
 var clock;
 var camera;
 
-var animationPlaying = true;
-
 InitializeControls();
 init();
 
@@ -20,13 +18,7 @@ function InitializeControls(){
 }
 
 function ToggleAnimation(){
-	console.log(animationPlaying);
-	if(animationPlaying){
-		mixer.timeScale = 0;
-	} else {
-		mixer.timeScale = 0.4;
-	}
-	animationPlaying = !animationPlaying;
+	mixer.timeScale = (mixer.timeScale == 0 ? 0.4 : 0);
 }
 
 function init() {
