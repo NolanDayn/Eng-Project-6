@@ -20,6 +20,11 @@ function InitializeControls(){
 }
 
 function ToggleAnimation(){
+	if(animationPlaying){
+		clock.running = false;
+	} else {
+		clock.start;
+	}
 	animationPlaying = !animationPlaying;
 }
 
@@ -70,7 +75,7 @@ function init() {
 }
 
 function animate() {
-  if (!animationPlaying) return;
+  
   requestAnimationFrame( animate );
   var delta = clock.getDelta();
   if ( mixer ) mixer.update( delta );
