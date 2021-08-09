@@ -69,6 +69,8 @@ if(isset($error) && $error != ""){
 <!-- Three.js Test -->
 <div id ="threeContainer" class="jumbotron text-center">
 	<h1>Three.js test</h1>
+	<button style="font-size:50px" id = "threeStart" class="col-sm-4 btn-success"><i class="fas fa-star-of-david"></i> On</button>
+	<button style="font-size:50px" id = "threeStop" class="col-sm-4 btn-danger"><i class="fas fa-star-of-david"></i> Off</button>
 	<canvas id="threeCanvas" width="800" height="600"></canvas>
 </div>
 <div class="parallax"></div>
@@ -128,7 +130,7 @@ if(isset($error) && $error != ""){
 
 <!--elevator controls-->
 <div id="controls" class="jumbotron text-center">
-	<h1>Test Controls</h1>
+	<h1>Elevator Controls</h1>
 	<?php
 	if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 	} else {
