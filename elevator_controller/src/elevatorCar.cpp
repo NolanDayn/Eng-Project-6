@@ -17,7 +17,12 @@ bool ElevatorCar::checkRequests(){
 
 	if(req_floorNum == 0){
 		//no requests at this time return false
+		db_setMovementVals(this->currentFloor,0,0,0);
 		return false;
+	}
+
+	if(req_floorNum == this->currentFloor){
+		db_deleteRequest(req_floorNum);
 	}	
 
 	printf("Requested Floor %d\n", req_floorNum);
@@ -43,12 +48,12 @@ void ElevatorCar::determineNextStop(){
 
 		//look if there is a floor in request that has that value
 		requestedFloor = db_checkIfRequested(target);
-		printf("Requestd Floor: %d\n", requestedFloor);
 			
 		if(requestedFloor == 0){
 			//this floor was not requested move on to check next
 		}
 		else{
+			db_setMovementVals(requestedFloor, 1, 0, this->direction);
 			move(requestedFloor);
 		}
 
@@ -75,6 +80,8 @@ void ElevatorCar::move(int floorNumber){
 		//update current floor
 		this->currentFloor = floorNumber;
 		db_setFloorNum(this->currentFloor);
+
+		db_setMovementVals(this->currentFloor,0,0, this->direction);
 
 		//Delete floor request with moves value
 		db_deleteRequest(floorNumber);
