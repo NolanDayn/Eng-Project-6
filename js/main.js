@@ -1,4 +1,7 @@
-var lastJson = "";
+//var lastJson = "";
+
+var lastCurrentFloor = -1;
+var lastDestinationFloor = -1;
 
 var doorState = 1; //1: closed 0:open
 var image = document.getElementById("sprite-image");
@@ -62,7 +65,7 @@ function CheckElevatorStatus(){
 	xhr.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			const json = JSON.parse( this.responseText );
-			
+			if()
 			if(JSON.stringify(json) !== lastJson){
 				FillTable(statusTable, json);
 				MoveFloor(parseInt(json[0].currentFloor), parseInt(json[0].destinationFloor));
