@@ -139,8 +139,8 @@ if(isset($error) && $error != ""){
 		<div class = "row">
 			<div class = "col-sm-4">
 				<div class="row">
-					<button style="height:128px;margin:10px;" class="get_floor_3 btn-primary col-sm-5">Up</button>
-					<button style="height:128px;margin:10px;"class="get_floor_3 btn-primary col-sm-5">Down</button>
+					<button style="height:128px;margin:10px;" class="get_floor_3 btn-primary col-sm-5"><i class="fas fa-arrow-up"></i></button>
+					<button style="height:128px;margin:10px;"class="get_floor_3 btn-primary col-sm-5"><i class="fab fa-github"></i></button>
 				</div>
 				<div class="row">
 					<button style="height:128px;margin:10px;"class="get_floor_2 btn-primary col-sm-5">Up</button>
