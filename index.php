@@ -69,7 +69,7 @@ if(isset($error) && $error != ""){
 <!-- Three.js Test -->
 <div id ="threeContainer" class="jumbotron text-center">
 	<h1>Three.js test</h1>
-	<button style="font-size:50px" id = "threeStart" class="col-sm-4 btn-success"><i class="fas fa-star-of-david"></i>Toggle Pause</button>
+	<button style="font-size:20px" id = "threeStart" class="col-sm-4 btn-info"><i class="fas fa-star-of-david"></i>Pause</button>
 	<canvas id="threeCanvas" width="800" height="600"></canvas>
 </div>
 <div class="parallax"></div>
