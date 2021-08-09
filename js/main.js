@@ -134,11 +134,15 @@ function CallNumber(){
 	xhr1.open('GET',`http://142.156.193.130:50050/Eng-Project-6/SetHelpFlag.php`, true);
 	xhr1.send();
 	
+	//Twillio redirect
+	location.href = 'https://helpphone.azurewebsites.net/sms';
+	/*
 	//twillio service
 	var url = `http://142.156.193.130:50050/Eng-Project-6/twilio/sendsms.php`;
 	var xhr = new XMLHttpRequest();
 	xhr.open('GET', url, true);
 	xhr.send();
+	*/
 }
 
 async function MoveFloor(currentFloor, destinationFloor){
