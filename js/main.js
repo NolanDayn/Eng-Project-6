@@ -135,7 +135,8 @@ function CallNumber(){
 	xhr1.send();
 	
 	//Twillio redirect
-	location.href = 'https://helpphone.azurewebsites.net/sms';
+	window.open('https://helpphone.azurewebsites.net/sms');
+	
 	/*
 	//twillio service
 	var url = `http://142.156.193.130:50050/Eng-Project-6/twilio/sendsms.php`;

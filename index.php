@@ -140,15 +140,15 @@ if(isset($error) && $error != ""){
 			<div class = "col-sm-4">
 				<div class="row">
 					<button style="height:128px;margin:10px;font-size:70px" class="get_floor_3 btn-primary col-sm-5"><i class="fas fa-arrow-up"></i></button>
-					<button style="height:128px;margin:10px;font-size:50px"class="get_floor_3 btn-primary col-sm-5"><i class="fas fa-arrow-down"></i></button>
+					<button style="height:128px;margin:10px;font-size:70px"class="get_floor_3 btn-primary col-sm-5"><i class="fas fa-arrow-down"></i></button>
 				</div>
 				<div class="row">
-					<button style="height:128px;margin:10px;"class="get_floor_2 btn-primary col-sm-5">Up</button>
-					<button style="height:128px;margin:10px;"class="get_floor_2 btn-primary col-sm-5">Down</button>
+					<button style="height:128px;margin:10px;font-size:70px"class="get_floor_2 btn-primary col-sm-5"><i class="fas fa-arrow-up"></i></button>
+					<button style="height:128px;margin:10px;font-size:70px"class="get_floor_2 btn-primary col-sm-5"><i class="fas fa-arrow-down"></i></button>
 				</div>
 				<div class="row">
-					<button style="height:128px;margin:10px;"class="get_floor_1 btn-primary col-sm-5">Up</button>
-					<button style="height:128px;margin:10px;"class="get_floor_1 btn-primary col-sm-5">Down</button>
+					<button style="height:128px;margin:10px;font-size:70px"class="get_floor_1 btn-primary col-sm-5"><i class="fas fa-arrow-up"></i></button>
+					<button style="height:128px;margin:10px;font-size:70px"class="get_floor_1 btn-primary col-sm-5"><i class="fas fa-arrow-down"></i></button>
 				</div>
 				
 			</div>
@@ -156,18 +156,18 @@ if(isset($error) && $error != ""){
 			<div class="col-sm-4">
 				<h3>Inside the elevator</h3>
 				<div class="row">
-					<button class="get_floor_1 col-sm-4 btn-primary">1</button>
-					<button class="get_floor_2 col-sm-4 btn-primary">2</button>
-					<button class="get_floor_3 col-sm-4 btn-primary">3</button>
+					<button style="font-size:50px" class="get_floor_1 col-sm-4 btn-primary">1</button>
+					<button style="font-size:50px" class="get_floor_2 col-sm-4 btn-primary">2</button>
+					<button style="font-size:50px" class="get_floor_3 col-sm-4 btn-primary">3</button>
 				</div>
 				<div class="row">
-					<button id="openButton" class="col-sm-4 btn-primary">O</button>
-					<button id="closeButton" class="col-sm-4 btn-primary">C</button>
-					<button id="alarmButton" class="col-sm-4 btn-primary">A</button>
+					<button style="font-size:50px" id="openButton" class="col-sm-4 btn-primary"><i class="fas fa-door-open"></i></button>
+					<button style="font-size:50px" id="closeButton" class="col-sm-4 btn-primary"><i class="fas fa-door-open"></i></button>
+					<button style="font-size:50px" id="alarmButton" class="col-sm-4 btn-primary"><i class="fas fa-bell"></i></button>
 				</div>
 				<div class="row">
-					<button id = "sabbathOn" class="col-sm-4 btn-success">Sabbath On</button>
-					<button id = "sabbathOff" class="col-sm-4 btn-danger">Sabbath Off</button>
+					<button style="font-size:50px" id = "sabbathOn" class="col-sm-4 btn-success"><i class="fas fa-star-of-david"></i> On</button>
+					<button style="font-size:50px" id = "sabbathOff" class="col-sm-4 btn-danger"><i class="fas fa-star-of-david"></i> Off</button>
 				</div>
 			</div>
 		</div>
