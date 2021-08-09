@@ -44,10 +44,10 @@ function showBarGraph(){
                 datasets: [
                     {
                         label : 'Date',
-                        backgroundColor: 'rgba(200,200,200,0.75)',
-                        borderColor: 'rgba(200,200,200,0.75)',
-                        hoverBackgroundColor: 'rgba(200,200,200,1)',
-                        hoverBorderColor: 'rgba(200,200,200,1)',
+                        backgroundColor: 'rgba(50,50,50,0.75)',
+                        borderColor: 'rgba(50,50,50,0.75)',
+                        hoverBackgroundColor: 'rgba(50,50,50,1)',
+                        hoverBorderColor: 'rgba(50,50,50,1)',
                         data: requestedFloor
                     }
                 ]

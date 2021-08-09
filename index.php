@@ -186,8 +186,8 @@ if(isset($error) && $error != ""){
 	<h1>Charts</h1>
 	<div id="chart-container">
 		<div class="row">
-			<button id = "barGraphB" class="btn-primary">Pie Chart</button>
-			<button id = "pieChartB" class="btn-primary">Bar Chart</button>
+			<button id = "barGraphB" class="btn-primary">Bar Chart</button>
+			<button id = "pieChartB" class="btn-primary">Pie Chart</button>
 		</div>
 		<div id = "canvasContainer">
 			<!-- <canvas id="mycanvas" width="800" height="600"></canvas> -->
