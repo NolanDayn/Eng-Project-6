@@ -37,7 +37,13 @@
 	} else {
 		header("location: login.php?error=You need to be logged in to view this page");
 	}
-?>  
+?> 
+
+<?php
+	require_once('./guest.php');
+	$guest = new Guest($_SESSION["username"]);
+	$guest->display_credentials();
+?> 
 
 </div>
 </body>
