@@ -13,15 +13,15 @@ class Guest{
     }
 
     public function display_credentials() {
-		/*
+		
 		$u = $this->username;
 		$result = mysqli_query($this->l, "SELECT * FROM credentials WHERE username = '$this->username'");
 		while($row = mysqli_fetch_assoc($result))
 		{
 			echo "<h5>" . $row['id'] . "</h5>";
 		}
-		*/
-		echo "<h5>" . $this->username . "</h5>" ;
+		
+		//echo "<h5>" . $this->username . "</h5>" ;
     }
 	
 	function __destruct() {
