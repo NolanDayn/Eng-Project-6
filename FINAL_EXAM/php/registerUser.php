@@ -9,7 +9,7 @@ $email = $_POST["email"];
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){ 
 	
-	$query = "INSERT INTO credentials(username, password, email) VALUES (blah, blah, blah)";
+	$query = "INSERT INTO credentials(username, password, email) VALUES ('blah', 'blah', 'blah')";
     $link->query($query);
 
 	//header("location: ../register.php?error=$login_err");
