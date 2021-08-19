@@ -15,7 +15,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		}
 	
 	$date = date("Y/m/d");
-	$time = time();
+	$time = date("h:i:s");
     $query = "INSERT INTO logbookEntries(id, date, time, text) VALUES ('$id', '$date', '$time', '$contents')";
 	$link->query($query);	
 
