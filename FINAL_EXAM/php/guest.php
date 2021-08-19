@@ -33,7 +33,7 @@ class Guest{
 		echo "<h1>Logbooks</h1>";
 		while($row = mysqli_fetch_assoc($result))
 		{
-			echo "Id: " . $row['id'] . "Date: " . $row['date'] . "Time: " . $row['time'] . "Text: " . $row['text'] . "</br>";
+			echo "Id:" . $row['id'] . " Date:" . $row['date'] . " Time:" . $row['time'] . " Text:" . $row['text'] . "</br>";
 		}
 	}
 	
