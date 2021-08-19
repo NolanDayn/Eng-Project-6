@@ -4,7 +4,7 @@ require_once "config.php";
 
 $contents = $_POST["text"];
 $username = $_SESSION["username"];
-$id;
+$id = 0;
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){ 
 	
@@ -14,9 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			$id = $row['id'];
 		}
 	
-	$date = date("Y/m/d");
-	$time = time();
-    $query = "INSERT INTO logbookEntries(id, date, time, text) VALUES ('$id', '$date', '$time', $contents)";
+    $query = "INSERT INTO logbookEntries(id, date, time, text) VALUES ('$id', 'CURDATE()', 'CURTIME()', '$contents')";
 	$link->query($query);	
 
 	header("location: ../logbook.php");
