@@ -14,7 +14,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			$id = $row['id'];
 		}
 	
-    $query = "INSERT INTO logbookEntries(id, date, time, text) VALUES ('$id', 'CURDATE()', 'CURTIME()', '$contents')";
+	$date = date("Y/m/d");
+	$time = time();
+    $query = "INSERT INTO logbookEntries(id, date, time, text) VALUES ('$id', '$date', '$time', '$contents')";
 	$link->query($query);	
 
 	header("location: ../logbook.php");
