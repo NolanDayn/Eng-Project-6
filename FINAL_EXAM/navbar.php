@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!-- Navigation Bar-->
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -17,7 +21,14 @@
 
       <ul class="nav navbar-nav navbar-right">
         <li><a href="./register.php">Register</a></li>
-		<li><a href="./login.php">Login</a></li>
+		<?php
+		if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+			echo '<li><a href="./login.php">Login</a></li>';
+			echo '<li><a href="./php/logout.php">Logout</a></li>';
+		} else {
+			echo '<li><a href="./login.php">Login</a></li>';
+		}
+		?> 
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
