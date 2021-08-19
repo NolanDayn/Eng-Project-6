@@ -3,6 +3,7 @@
 
 class Guest{
     private $username; //any INT
+	private $id;
 	private $l;
 
     public function __construct ($_username){
@@ -14,7 +15,6 @@ class Guest{
 
     public function display_credentials() {
 		
-		$u = $this->username;
 		$result = mysqli_query($this->l, "SELECT * FROM credentials WHERE username = '$this->username'");
 		while($row = mysqli_fetch_assoc($result))
 		{
@@ -22,9 +22,16 @@ class Guest{
 			echo "<h5> Username: " . $row['username'] . "</h5>";
 			echo "<h5> email: " . $row['email'] . "</h5>";
 		}
-		
-		//echo "<h5>" . $this->username . "</h5>" ;
+		$this->id = $row['id'];
     }
+	
+	public function display_logbooks(){
+		$result = mysqli_query($this->l, "SELECT * FROM logbookEntries WHERE id = '$this->id'");
+		while($row = mysqli_fetch_assoc($result))
+		{
+			echo "Id: " . $row['id'] . "Date: " . $row['date'] . "Time: " . $row['time'] . "Text: " . $row['text'] . "</br>";
+		}
+	}
 	
 	function __destruct() {
         $this->l->close();
