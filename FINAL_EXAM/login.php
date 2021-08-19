@@ -45,11 +45,12 @@
 <?php
 
 require_once "config.php";
-$result = $link->query("SELECT * FROM credentials ORDER BY username DESC");
+$result = $link->query("SELECT * FROM credentials ORDER BY username");
 
-while ($row = mysql_fetch_array($result))
+while($row = mysql_fetch_assoc($result))
 {
-     echo $row['username'] . "<br/>";
+   echo $row['username']." ";
+   echo $row['password']." ";
 }
 
 ?>
