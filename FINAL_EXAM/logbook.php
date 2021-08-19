@@ -56,6 +56,22 @@
 						require_once('php/user.php');
 						$guest = new User($_SESSION["username"]);
 						$guest->display_credentials();
+					echo '</div>';
+					echo '<div class="row">';
+					echo '<div class="col-sm-6">';
+						echo '<form id="form" action="./php/updateLogbooks.php" method="post">';
+						echo '<fieldset>';
+						echo '<legend>Logbooks</legend>';
+						echo '<div> ';
+						echo ' <label for="text" class="text_label">Contents: </label>  ';
+						echo '<textarea id="text" class="text_input" type="text" name="text"  /> ';
+						echo '</div>';
+						echo '<input id="submitButton" type="submit" value="Insert">';
+
+						echo '</fieldset>';
+						echo '</form>';
+					echo '</div>';
+					echo '<div class="col-sm-6">';
 						$guest->display_logbooks();
 					echo '</div>';
 			
