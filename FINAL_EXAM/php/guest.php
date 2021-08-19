@@ -18,7 +18,9 @@ class Guest{
 		$result = mysqli_query($this->l, "SELECT * FROM credentials WHERE username = '$this->username'");
 		while($row = mysqli_fetch_assoc($result))
 		{
-			echo "<h5>" . $row['id'] . "</h5>";
+			echo "<h5> Id: " . $row['id'] . "</h5>";
+			echo "<h5> Username: " . $row['username'] . "</h5>";
+			echo "<h5> email: " . $row['email'] . "</h5>";
 		}
 		
 		//echo "<h5>" . $this->username . "</h5>" ;
