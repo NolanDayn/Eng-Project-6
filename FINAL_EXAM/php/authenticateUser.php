@@ -33,8 +33,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             }
 		}
 	}
-
-	header("location: ../register.php?error=$login_err");
 }
 
 $link->close();
