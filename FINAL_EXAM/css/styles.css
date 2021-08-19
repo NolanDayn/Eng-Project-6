@@ -1,0 +1,53 @@
+body{
+    background: url("../images/background_darkened.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.text_label {						/* total width = 100+10+2 (border) = 112 */
+	display: inline-block;
+	width: 100px;
+	text-align: right;
+	padding: 0px 10px 0px 0px;
+	font-weight: bold;
+}
+
+.text_input {				 		/* total width = 200+10+2 (border) = 212*/	
+	width: 200px;
+	text-align: left;
+	padding: 0px 0px 0px 10px;
+}
+
+fieldset {padding: 5px;		/* total width = 324+5+5 (padding)= 334 */
+		  width: 334px;
+          border:2px solid black;
+          background-color:white;
+          box-shadow: 5px 5px;
+		  border-radius:10px;
+		  margin:200px auto 0px auto;
+}
+legend {
+	background-color: #000000;  /* Use Gimp to get exact color */
+	border-radius: 5px;
+	color: white;
+	font-size:18px;
+	width:100px;
+	padding-left:15px;
+}
+
+.errorMsg{
+	color:blue;
+	text-align:right;
+	margin-right:20px;
+}
+
+#submitButton{
+	float:right;
+}
+
+#message{
+	font-size:16px;
+	color:black;
+	text-align:center;
+	background:white;
+}
