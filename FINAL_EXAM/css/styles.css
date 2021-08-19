@@ -24,7 +24,7 @@ fieldset {padding: 5px;		/* total width = 324+5+5 (padding)= 334 */
           background-color:white;
           box-shadow: 5px 5px;
 		  border-radius:10px;
-		  margin:200px auto 0px auto;
+		  margin:0px auto 0px auto;
 }
 legend {
 	background-color: #000000;  /* Use Gimp to get exact color */
