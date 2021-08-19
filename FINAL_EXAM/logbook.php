@@ -57,7 +57,7 @@
 						$guest = new User($_SESSION["username"]);
 						$guest->display_credentials();
 						$guest->display_logbooks();
-					echo '</div>'
+					echo '</div>';
 			
 
 			
