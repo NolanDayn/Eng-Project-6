@@ -24,8 +24,8 @@ class Guest{
 			echo "<h5> Id: " . $row['id'] . "</h5>";
 			echo "<h5> Username: " . $row['username'] . "</h5>";
 			echo "<h5> email: " . $row['email'] . "</h5>";
+			$this->id = $row['id'];
 		}
-		$this->id = $row['id'];
     }
 	
 	public function display_logbooks(){
