@@ -40,7 +40,7 @@
 					<input id="email" class="text_input" type="text" name="email"  /> 
 					<p class="errorMsg" id="emailError"></p>
 				</div>
-				<input id="submitButton" type="submit" value="Register">
+				<input id="submitButton" type="submit" value="Register" disabled>
 
 			</fieldset>
 		</form>
