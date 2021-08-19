@@ -19,6 +19,8 @@
 </head>
 
 <body>
+<!-- Navigation Bar-->
+<?php require "navbar.php" ?>
 
         <form id="form" action="./php/authenticateUser.php" method="post">
 			<fieldset>
@@ -38,8 +40,7 @@
 			</fieldset>
 		</form>
 
-<!-- Navigation Bar-->
-<?php require "navbar.php" ?>
+
 
 <script type="text/javascript" src="js/login.js"></script>
 </body>
