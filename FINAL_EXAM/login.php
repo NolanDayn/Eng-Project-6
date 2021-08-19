@@ -50,7 +50,7 @@
 	<h3>Available Logbook Usernames</h3>
 		<?php
 		require_once "php/config.php";
-		$result = mysqli_query($link, "SELECT * FROM credentials WHERE username = '$user'");
+		$result = mysqli_query($link, "SELECT * FROM credentials");
 		while($row = mysqli_fetch_assoc($result))
 		{
 			echo "hi";
