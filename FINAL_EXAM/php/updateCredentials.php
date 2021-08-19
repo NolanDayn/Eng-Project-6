@@ -6,13 +6,16 @@ $email = $_POST["email"];
 $password = $_POST["password"];
 $username = $_SESSION["username"];
 
-if ($email == "") $email = "email";
-if ($password == "") $password = "password";
-
 if($_SERVER["REQUEST_METHOD"] == "POST"){ 
-	
-	$result = "UPDATE credentials SET password = '$password', email = '$email' WHERE username = '$username'";
-	$link->query($result);
+	$query = "";
+	if ($email == "") {
+		$query = "UPDATE credentials SET password = '$password' WHERE username = '$username'";
+	} else if ($password == "") {
+		$query = "UPDATE credentials SET email = '$email' WHERE username = '$username'";
+	} else{
+		$query = "UPDATE credentials SET password = '$password', email = '$email' WHERE username = '$username'";
+	}
+	$link->query($query);
 	
 
 	header("location: ../logbook.php");
