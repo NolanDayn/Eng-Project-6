@@ -32,28 +32,34 @@
 		if($_SESSION["isUser"] === 1){
 			echo "<h1>You are a user!</h1>";
 			
-			echo '<form id="form" action="./php/updateCredentials.php" method="post">';
-			echo '<fieldset>';
-			echo '<legend>Credentials</legend>';
-			echo '<div>';
-			echo '<label for="email" class="text_label" >email: </label>';
-			echo '<input id="email" class="text_input" type="text" name="email"  /> ';
+			echo '<div class="container">';
+				echo '<div class="row">';
+					echo '<div class="col-sm">';
+						echo '<form id="form" action="./php/updateCredentials.php" method="post">';
+						echo '<fieldset>';
+						echo '<legend>Credentials</legend>';
+						echo '<div>';
+						echo '<label for="email" class="text_label" >email: </label>';
+						echo '<input id="email" class="text_input" type="text" name="email"  /> ';
 
-			echo ' </div>';
-			echo '<div> ';
-			echo ' <label for="password" class="text_label">Password: </label>  ';
-			echo '<input id="password" class="text_input" type="text" name="password"  /> ';
-			echo '</div>';
-			echo '<input id="submitButton" type="submit" value="Update">';
+						echo ' </div>';
+						echo '<div> ';
+						echo ' <label for="password" class="text_label">Password: </label>  ';
+						echo '<input id="password" class="text_input" type="text" name="password"  /> ';
+						echo '</div>';
+						echo '<input id="submitButton" type="submit" value="Update">';
 
-			echo '</fieldset>';
-			echo '</form>';
-		
+						echo '</fieldset>';
+						echo '</form>';
+					echo '</div>';
+					echo '<div class="col-sm">';
+						require_once('php/user.php');
+						$guest = new User($_SESSION["username"]);
+						$guest->display_credentials();
+						$guest->display_logbooks();
+					echo '</div>'
 			
-			require_once('php/user.php');
-			$guest = new User($_SESSION["username"]);
-			$guest->display_credentials();
-			$guest->display_logbooks();
+
 			
 		} else {
 			echo "<h1>You are a guest!</h1>";
