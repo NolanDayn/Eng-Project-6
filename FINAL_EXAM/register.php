@@ -29,6 +29,14 @@
 					<label for="userName" class="text_label" >User Name: </label>
 					<input id="userName" class="text_input" type="text" name="userName"  /> 
 					<p class="errorMsg" id="usernameError"></p>
+					<?php
+						$error = $_GET["error"];
+						if(isset($error) && $error != ""){
+							echo '<p class = "errorMsg">';
+							echo "" . htmlspecialchars($error) . "";
+							echo '</p>';
+						}
+					?>
 				</div>
 				<div>
 					<label for="password" class="text_label">Password: </label>  
