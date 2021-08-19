@@ -2,7 +2,7 @@
 session_start();
 require_once "config.php";
 
-$email = $_POST["email"];
+$contents = $_POST["text"];
 $username = $_SESSION["username"];
 $id;
 
@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	
 	$date = date("Y/m/d");
 	$time = time();
-    $query = "INSERT INTO logbookEntries(id, date, time, text) VALUES ('$id', '$date', '$time', $email)";
+    $query = "INSERT INTO logbookEntries(id, date, time, text) VALUES ('$id', '$date', '$time', $contents)";
 	$link->query($query);	
 
 	header("location: ../logbook.php");
