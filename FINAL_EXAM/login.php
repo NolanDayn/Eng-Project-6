@@ -50,10 +50,10 @@
 	<h3>Available Logbook Usernames</h3>
 		<?php
 		require_once "php/config.php";
-		$result = mysqli_query($link, "SELECT * FROM credentials");
+		$result = mysqli_query($link, "SELECT * FROM credentials ORDER BY username");
 		while($row = mysqli_fetch_assoc($result))
 		{
-			echo "hi";
+			echo "<h6>" . $row['username'] . "/<h6>";
 		}
 		$link->close();
 
