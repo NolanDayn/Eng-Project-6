@@ -8,8 +8,8 @@ $username = $_SESSION["username"];
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){ 
 	
-	$result = "UPDATE credentials SET password = '$password', email = '$email' WHERE username = 'aaaaaaa'";
-	$link->query($query);
+	$result = "UPDATE credentials SET password = '$password', email = '$email' WHERE username = '$username'";
+	$link->query($result);
 	
 
 	header("location: ../logbook.php");
