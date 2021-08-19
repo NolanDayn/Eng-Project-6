@@ -11,11 +11,14 @@ class Guest{
     }
 
     public function display_credentials() {
+		/*
 		$result = mysqli_query($link, "SELECT * FROM credentials WHERE username = '$username'");
 		while($row = mysqli_fetch_assoc($result))
 		{
 			echo "<h5>" . $row['id'] . "</h5>";
 		}
+		*/
+		echo "hi";
     }
 	
 	function __destruct() {

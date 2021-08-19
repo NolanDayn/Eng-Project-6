@@ -37,9 +37,7 @@
 	} else {
 		header("location: login.php?error=You need to be logged in to view this page");
 	}
-?> 
 
-<?php
 	require_once('php/guest.php');
 	$guest = new Guest("aaaaaaa");
 	$guest->display_credentials();
