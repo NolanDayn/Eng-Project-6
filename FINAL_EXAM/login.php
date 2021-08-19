@@ -42,19 +42,6 @@
 		
 <div id="intro" class="jumbotron text-center">
 	<h1>Available Logbook Usernames</h1>
-<?php
-
-require_once "config.php";
-$result = $link->query("SELECT * FROM credentials");
-
-while($row = mysql_fetch_array($result))
-{
-   echo "<h1>hi</h1>";
-}
-
-$link->close();
-
-?>
 
 </div>
 
