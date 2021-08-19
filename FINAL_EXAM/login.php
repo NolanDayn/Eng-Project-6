@@ -51,9 +51,9 @@
 		<?php
 		require_once "php/config.php";
 		$result = mysqli_query($link, "SELECT * FROM credentials WHERE username = '$user'");
-		while($row = mysql_fetch_assoc($result))
+		while($row = mysqli_fetch_assoc($result))
 		{
-			echo "<h6>" . $row['username'] . "</h6>";
+			echo "hi";
 		}
 		$link->close();
 
