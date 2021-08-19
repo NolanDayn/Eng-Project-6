@@ -53,7 +53,7 @@
 		$result = mysqli_query($link, "SELECT * FROM credentials ORDER BY username");
 		while($row = mysqli_fetch_assoc($result))
 		{
-			echo "<h6>" . $row['username'] . "/<h6>";
+			echo "<h5>" . $row['username'] . "</h5>";
 		}
 		$link->close();
 
