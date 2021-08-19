@@ -64,7 +64,7 @@
 						echo '<legend>Logbooks</legend>';
 						echo '<div> ';
 						echo ' <label for="text" class="text_label">Contents: </label>  ';
-						echo '<textarea id="text" class="text_input" type="text" name="text"  /> ';
+						echo '<textarea id="text" class="text_input" type="text" name="text"  </textarea> ';
 						echo '</div>';
 						echo '<input id="submitButton" type="submit" value="Insert">';
 
