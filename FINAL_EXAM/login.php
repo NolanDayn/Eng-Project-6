@@ -49,9 +49,10 @@ $result = $link->query("SELECT * FROM credentials ORDER BY username");
 
 while($row = mysql_fetch_assoc($result))
 {
-   echo $row['username']." ";
-   echo $row['password']." ";
+   echo "<h1>hi</h1>";
 }
+
+$link->close();
 
 ?>
 
