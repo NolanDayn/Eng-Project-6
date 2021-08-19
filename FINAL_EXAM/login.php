@@ -28,12 +28,18 @@
 				<div>
 					<label for="userName" class="text_label" >User Name: </label>
 					<input id="userName" class="text_input" type="text" name="userName"  /> 
-					<p class="errorMsg" id="usernameError"></p>
+					<?php
+						$error = $_GET["error"];
+						if(isset($error) && $error != ""){
+							echo '<p class = "errorMsg">';
+							echo "" . htmlspecialchars($error) . "";
+							echo '</p>';
+						}
+					?>
 				</div>
 				<div>
 					<label for="password" class="text_label">Password: </label>  
 					<input id="password" class="text_input" type="text" name="password"  /> 
-					<p class="errorMsg" id="passwordError"></p>
 				</div>
 				<input id="submitButton" type="submit" value="Login">
 
@@ -41,14 +47,7 @@
 		</form>
 		
 <div id="intro" class="jumbotron text-center">
-	<h1>Available Logbook Usernames</h1>
-
-<?php
-
-require_once "config.php";
-$link->close();
-
-?>
+	<h3>Available Logbook Usernames</h3>
 
 </div>
 
