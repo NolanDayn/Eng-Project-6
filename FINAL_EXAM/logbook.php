@@ -40,8 +40,8 @@
 ?> 
 
 <?php
-	require "./guest.php";
-	$guest = new Guest($_SESSION["username"]);
+	//require "./guest.php";
+	//$guest = new Guest($_SESSION["username"]);
 	//$guest->display_credentials();
 ?> 
 
