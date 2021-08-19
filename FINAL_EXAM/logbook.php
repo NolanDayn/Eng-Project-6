@@ -27,17 +27,7 @@
 
 <div id="intro" class="jumbotron text-center">
 
-<?php
-	if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-		if($_SESSION["isUser"] === 1){
-			echo "<h1>You are a user!</h1>";
-		} else {
-			echo "<h1>You are a guest!</h1>";
-		}
-	} else {
-		header("location: login.php?error=You need to be logged in to view this page");
-	}
-?>  
+ 
 
 </div>
 </body>
