@@ -12,12 +12,12 @@ $login_err = "";
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){
-
+	/*
 	if(userExists($db, $_GET["username"])){
 		$login_err = "User already exists";
 		header("location: ../register.php?error=$login_err");
 	} 
-	
+	*/
 	$query = 'INSERT INTO credentials(username, password, email) VALUES (:u, :p, :e)';
     
     $statement = $db->prepare($query); 
