@@ -45,9 +45,9 @@
 <?php
 
 require_once "config.php";
-$result = $link->query("SELECT * FROM credentials ORDER BY username");
+$result = $link->query("SELECT * FROM credentials");
 
-while($row = mysql_fetch_assoc($result))
+while($row = mysql_fetch_array($result))
 {
    echo "<h1>hi</h1>";
 }
