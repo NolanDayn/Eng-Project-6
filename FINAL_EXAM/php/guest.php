@@ -16,6 +16,9 @@ class Guest{
     public function display_credentials() {
 		
 		$result = mysqli_query($this->l, "SELECT * FROM credentials WHERE username = '$this->username'");
+		
+		echo "<h1>Credentials</h1>";
+		
 		while($row = mysqli_fetch_assoc($result))
 		{
 			echo "<h5> Id: " . $row['id'] . "</h5>";
@@ -27,6 +30,7 @@ class Guest{
 	
 	public function display_logbooks(){
 		$result = mysqli_query($this->l, "SELECT * FROM logbookEntries WHERE id = '$this->id'");
+		echo "<h1>Logbooks</h1>";
 		while($row = mysqli_fetch_assoc($result))
 		{
 			echo "Id: " . $row['id'] . "Date: " . $row['date'] . "Time: " . $row['time'] . "Text: " . $row['text'] . "</br>";

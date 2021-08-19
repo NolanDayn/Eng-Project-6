@@ -43,6 +43,7 @@
 	require_once('php/guest.php');
 	$guest = new Guest($_SESSION["username"]);
 	$guest->display_credentials();
+	$guest->display_logbooks();
 ?> 
 
 </div>
