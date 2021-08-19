@@ -40,7 +40,7 @@
 ?> 
 
 <?php
-	require_once "php/guest.php";
+	require "php/guest.php";
 	$guest = new Guest($_SESSION["username"]);
 	//$guest->display_credentials();
 ?> 
