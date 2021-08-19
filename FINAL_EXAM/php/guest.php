@@ -18,7 +18,7 @@ class Guest{
 			echo "<h5>" . $row['id'] . "</h5>";
 		}
 		*/
-		echo "hi";
+		echo "$username";
     }
 	
 	function __destruct() {
