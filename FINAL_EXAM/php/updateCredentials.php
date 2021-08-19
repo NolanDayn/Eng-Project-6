@@ -8,7 +8,7 @@ $username = $_SESSION["username"];
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){ 
 	
-	$result = "UPDATE credentials SET password = '$password', email = '$email' WHERE username = '$username'";
+	$result = "UPDATE credentials SET password = '$password', email = '$email' WHERE username = 'aaaaaaa'";
 	$link->query($query);
 	
 
