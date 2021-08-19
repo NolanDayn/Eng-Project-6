@@ -9,7 +9,7 @@ $email = $_POST["email"];
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){ 
 	
-	$result = $mysqli->query("SELECT * FROM credentials WHERE username = '$user'");
+	$result = $link->query("SELECT * FROM credentials WHERE username = '$user'");
 	
 	if($result->num_rows == 0) {	
      	$query = "INSERT INTO credentials(username, password, email) VALUES ('$user', '$pass', '$email')";
