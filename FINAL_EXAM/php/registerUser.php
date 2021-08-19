@@ -22,9 +22,9 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     
     $statement = $db->prepare($query); 
     $params = [
-        'u' => $_GET["username"],
-        'p' => $_GET["password"],
-		'e' => $_GET["email"]
+        'u' => "",
+        'p' => "",
+		'e' => ""
     ];
     $result = $statement->execute($params); 
 
