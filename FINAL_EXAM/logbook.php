@@ -34,7 +34,7 @@
 			
 			echo '<form id="form" action="./php/updateCredentials.php" method="post">';
 			echo '<fieldset>';
-			echo '	<legend>Credentials</legend>';
+			echo '<legend>Credentials</legend>';
 			echo '<div>';
 			echo '<label for="email" class="text_label" >email: </label>';
 			echo '<input id="email" class="text_input" type="text" name="email"  /> ';
