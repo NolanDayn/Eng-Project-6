@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			header("location: ../logbook.php");
 		} else {
 			$row = mysqli_fetch_assoc($result);
-			if (password_verify($pass, $row['password'])) {
+			if ($pass == $row['password']) {
 				$_SESSION["loggedin"] = true;
 				$_SESSION["username"] = $username;  
 				$_SESSION["isUser"] = 1; 
