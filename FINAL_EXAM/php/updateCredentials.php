@@ -2,9 +2,9 @@
 session_start();
 require_once "config.php";
 
-$email = $_POST["email"] == "" ? "email" : $_POST["email"];
-$password = $_POST["password"] == "" ? "password" : $_POST["password"];
-$username = $_SESSION["username"]
+//$email = $_POST["email"] == "" ? "email" : $_POST["email"];
+//$password = $_POST["password"] == "" ? "password" : $_POST["password"];
+//$username = $_SESSION["username"]
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){ 
 	
