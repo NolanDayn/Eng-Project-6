@@ -47,7 +47,7 @@
 require_once "config.php";
 $result = $link->query("SELECT * FROM credentials ORDER BY username DESC");
 while ($row = $result->fetch_assoc()) {
-    echo '<h6>' . '$row['username']' . '</h6>';
+    echo "$row['username']";
 }
 ?>
 
