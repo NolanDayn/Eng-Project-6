@@ -12,7 +12,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	
 	if($result->num_rows == 0) {	
      	$login_err = "User doesn't exist";
-		header("location: ../register.php?error=$login_err");
+		header("location: ../login.php?error=$login_err");
 	} else {
 		if ($pass == ""){
 			$_SESSION["loggedin"] = true;
@@ -29,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				header("location: ../logbook.php");
             } else {
 				$login_err = "Incorrect Password";
-				header("location: ../register.php?error=$login_err");
+				header("location: ../login.php?error=$login_err");
             }
 		}
 	}
