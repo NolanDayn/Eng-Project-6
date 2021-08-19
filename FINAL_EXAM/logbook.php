@@ -34,7 +34,7 @@
 			
 			echo '<div class="container">';
 				echo '<div class="row">';
-					echo '<div class="col-sm">';
+					echo '<div class="col-sm-4">';
 						echo '<form id="form" action="./php/updateCredentials.php" method="post">';
 						echo '<fieldset>';
 						echo '<legend>Credentials</legend>';
@@ -52,7 +52,7 @@
 						echo '</fieldset>';
 						echo '</form>';
 					echo '</div>';
-					echo '<div class="col-sm">';
+					echo '<div class="col-sm-4">';
 						require_once('php/user.php');
 						$guest = new User($_SESSION["username"]);
 						$guest->display_credentials();
