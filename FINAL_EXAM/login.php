@@ -48,7 +48,12 @@
 		
 <div id="intro" class="jumbotron text-center">
 	<h3>Available Logbook Usernames</h3>
+<?php
+require_once "config.php";
+$result = mysqli_query($link, "SELECT * FROM credentials WHERE username = '$user'");
+$link->close();
 
+?>
 </div>
 
 
