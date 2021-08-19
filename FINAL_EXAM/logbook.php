@@ -41,7 +41,7 @@
 
 <?php
 	require_once('php/guest.php');
-	$guest = new Guest("a");
+	$guest = new Guest($_SESSION["username"]);
 	$guest->display_credentials();
 ?> 
 

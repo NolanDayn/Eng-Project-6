@@ -17,14 +17,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	} else {
 		if ($pass == ""){
 			$_SESSION["loggedin"] = true;
-			$_SESSION["username"] = $username;  
+			$_SESSION["username"] = $user;  
 			$_SESSION["isUser"] = 0; 
 			header("location: ../logbook.php");
 		} else {
 			$row = mysqli_fetch_assoc($result);
 			if ($pass == $row['password']) {
 				$_SESSION["loggedin"] = true;
-				$_SESSION["username"] = $username;  
+				$_SESSION["username"] = $user;  
 				$_SESSION["isUser"] = 1; 
                 
 				header("location: ../logbook.php");
