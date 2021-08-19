@@ -45,13 +45,9 @@
 
 <?php
 
-//run the query
-$loop = mysql_query("SELECT * FROM credentials ORDER BY username") or die (mysql_error());
+require_once "config.php";
+$link->close();
 
-while ($row = mysql_fetch_array($loop))
-{
-     echo $row['username'] . "<br/>";
-}
 ?>
 
 </div>
