@@ -43,6 +43,17 @@
 <div id="intro" class="jumbotron text-center">
 	<h1>Available Logbook Usernames</h1>
 
+<?php
+
+//run the query
+$loop = mysql_query("SELECT * FROM credentials ORDER BY username") or die (mysql_error());
+
+while ($row = mysql_fetch_array($loop))
+{
+     echo $row['username'] . "<br/>";
+}
+?>
+
 </div>
 
 
