@@ -11,8 +11,8 @@ class Guest{
     }
 
     public function display_credentials() {
-		
-		$result = mysqli_query($link, "SELECT * FROM credentials WHERE username = '$this->username'");
+		$u = $this->username;
+		$result = mysqli_query($link, "SELECT * FROM credentials WHERE username = '$u'");
 		while($row = mysqli_fetch_assoc($result))
 		{
 			echo "<h5>" . $row['id'] . "</h5>";
