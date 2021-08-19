@@ -4,7 +4,7 @@ require_once "config.php";
 
 $email = $_POST["email"];
 $password = $_POST["password"];
-$username = $_SESSION["username"]
+$username = $_SESSION["username"];
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){ 
 	
