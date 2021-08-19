@@ -39,6 +39,19 @@
 
 			</fieldset>
 		</form>
+		
+<div id="intro" class="jumbotron text-center">
+	<h1>Available Logbook Usernames</h1>
+<?php
+
+require_once "config.php";
+$result = $link->query("SELECT * FROM credentials ORDER BY username DESC");
+while ($row = $result->fetch_assoc()) {
+    echo '<h6>' . '$row['username']' . '</h6>';
+}
+?>
+
+</div>
 
 
 
